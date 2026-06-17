@@ -1,0 +1,16 @@
+# Dados brutos
+data/raw/
+
+# Arquivos ZIP
+*.zip
+
+# Arquivos temporários do Excel
+~$*.xlsx
+
+# Cache Python
+__pycache__/
+*.pyc
+
+# Ambiente virtual
+.venv/
+venv/
