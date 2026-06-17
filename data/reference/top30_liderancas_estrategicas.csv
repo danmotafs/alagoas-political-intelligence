@@ -1,0 +1,31 @@
+﻿rank_top30,rank_estrategico,municipio,prefeito,partido,votos_prefeito,percentual_prefeito,eleitorado_2024,indice_estrategico_pct,prioridade_politica,visitado_pre_campanha,quantidade_visitas,ultima_visita,grupo_politico,relacao_davi,peso_politico,status_articulacao,observacoes,status_classificacao
+1,1,Maceió,JOAO HENRIQUE HOLANDA CALDAS,PL,379544,83.25,632812,27.397829079873947,Prioridade Máxima,True,4,2026-06-09,Independente,adversario_potencial,muito_alto,mapear,Capital do estado e maior colégio eleitoral.,classificacao_inicial
+2,2,Arapiraca,JOSE LUCIANO BARBOSA DA SILVA,MDB,100890,85.04,155982,6.73965243482755,Prioridade Máxima,False,0,,Calheiros,aliado_forte,muito_alto,prioritario,Segundo maior colégio eleitoral de Alagoas.,classificacao_inicial
+3,3,Rio Largo,PEDRO CARLOS DA SILVA NETO,PP,32496,62.99,67172,2.83253283979211,Prioridade Máxima,False,0,,,,,,,pendente_revisao
+4,4,Palmeira dos Índios,LUISA JULIA DUARTE,MDB,23994,57.43,54858,2.25758554237497,Prioridade Máxima,True,1,2026-05-30,,,,,,pendente_revisao
+5,5,União dos Palmares,JOSÉ IRAN MENEZES DA SILVA JUNIOR,MDB,23163,63.83,48920,1.96891077098367,Prioridade Máxima,True,1,2026-05-24,,,,,,pendente_revisao
+6,6,Marechal Deodoro,ANDRÉ LUIZ BARROS DA SILVA,MDB,21621,58.47,46217,1.90512481404747,Prioridade Máxima,False,0,,,,,,,pendente_revisao
+7,7,Penedo,RONALDO PEREIRA LOPES,MDB,24059,71.33,44517,1.83636305682454,Prioridade Máxima,False,0,,,,,,,pendente_revisao
+8,8,São Miguel dos Campos,GEORGE CLEMENTE VIEIRA,MDB,25796,79.18,43990,1.7579287568954198,Prioridade Máxima,False,0,,,,,,,pendente_revisao
+9,9,Coruripe,MARCELO BELTRÃO SIQUEIRA,PP,27647,90.22,42038,1.68706079762416,Prioridade Máxima,False,0,,,,,,,pendente_revisao
+10,10,Delmiro Gouveia,ELIZIANE FERREIRA COSTA LIMA,MDB,24620,83.31,41113,1.67006746471436,Prioridade Máxima,False,0,,,,,,,pendente_revisao
+11,11,Santana do Ipanema,JOAO EDUARDO BULHOES PORTELA DE MELO,MDB,16302,64.77,33506,1.40167165913523,Alta Prioridade,False,0,,,,,,,pendente_revisao
+12,12,Atalaia,CECILIA LIMA HERRMANN,MDB,19600,79.95,32883,1.30121074857304,Alta Prioridade,False,0,,,,,,,pendente_revisao
+13,13,Teotônio Vilela,PEDRO HENRIQUE DE JESUS PEREIRA,PP,17729,77.19,31976,1.28109977433508,Alta Prioridade,False,0,,,,,,,pendente_revisao
+14,14,Pilar,MARIA DE FATIMA RESENDE ROCHA OITICICA,MDB,13008,56.14,29137,1.17494909850829,Alta Prioridade,False,0,,,,,,,pendente_revisao
+15,15,Girau do Ponciano,GILBERTO BEZERRA BARROS,PP,15885,71.42,28487,1.16411221684923,Alta Prioridade,False,0,,,,,,,pendente_revisao
+16,16,São Sebastião,CHARLES NUNES REGUEIRA,PP,11980,56.14,27531,1.09354595945992,Alta Prioridade,False,0,,,,,,,pendente_revisao
+17,17,Campo Alegre,PAULINE DE FÁTIMA PEREIRA ALBUQUERQUE,PP,12217,59.17,27202,1.08423973041757,Alta Prioridade,False,0,,,,,,,pendente_revisao
+18,18,Maragogi,DANIEL MENDES DE VASCONCELOS FERREIRA,PP,9877,49.04,25140,1.02998000326574,Alta Prioridade,False,0,,,,,,,pendente_revisao
+19,19,São Luís do Quitunde,MARCIA RAFAELA BARROS DE VASCONCELOS,MDB,10379,55.79,24159,0.98845418530158,Alta Prioridade,False,0,,,,,,,pendente_revisao
+20,20,São José da Tapera,JARBAS PEREIRA RICARDO,MDB,11679,68.49,23599,0.97021827350035,Alta Prioridade,True,1,2026-05-14,,,,,,pendente_revisao
+21,21,Craíbas,TEÓFILO JOSÉ BARROSO PEREIRA,PP,11286,61.4,22009,0.87395733156766,Média Prioridade,False,0,,,,,,,pendente_revisao
+22,22,Porto Calvo,ERONITA SPOSITO LEAO E LIMA,MDB,12829,74.18,22018,0.85935545390915,Média Prioridade,False,0,,,,,,,pendente_revisao
+23,23,Murici,REMI VASCONCELOS CALHEIROS FILHO,MDB,10363,66.01,20853,0.83913708773492,Média Prioridade,False,0,,,,,,,pendente_revisao
+24,24,Viçosa,JOÃO VICTOR CALHEIROS AMORIM SANTOS,MDB,9301,57.45,21118,0.83266267180308,Média Prioridade,False,0,,,,,,,pendente_revisao
+25,25,Igaci,JOSE PETRUCIO OLIVEIRA BARBOSA,MDB,10377,68.81,21092,0.8321878314131,Média Prioridade,False,0,,,,,,,pendente_revisao
+26,26,Limoeiro de Anadia,JAMES MARLAN FERREIRA BARBOSA,PP,11438,69.54,20574,0.82428555012198,Média Prioridade,False,0,,,,,,,pendente_revisao
+27,27,Junqueiro,CICERO LEANDRO PEREIRA DA SILVA,MDB,8805,54.46,20569,0.8165400384959399,Média Prioridade,False,0,,,,,,,pendente_revisao
+28,28,Piranhas,TIAGO TORRES FREITAS,MDB,11565,76.07,20339,0.79757722345121,Média Prioridade,False,0,,,,,,,pendente_revisao
+29,29,Traipu,MANUEL LUCAS KUMMER FREITAS DOS SANTOS,MDB,12379,88.76,19430,0.78150818662036,Média Prioridade,False,0,,,,,,,pendente_revisao
+30,30,Pão de Açúcar,JORGE SILVA DANTAS,MDB,10379,74.83,19298,0.77928163791783,Média Prioridade,False,0,,,,,,,pendente_revisao

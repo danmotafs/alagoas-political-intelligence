@@ -1,0 +1,498 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Alagoas Political Intelligence | Dashboard Executivo</title>
+    <script src="https://cdn.plot.ly/plotly-2.35.2.min.js"></script>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            background: #f4f6f8;
+            color: #17212b;
+        }
+
+        .container {
+            width: 94%;
+            max-width: 1380px;
+            margin: 0 auto;
+            padding: 28px 0 50px 0;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #0f172a, #1e3a5f);
+            color: white;
+            padding: 34px;
+            border-radius: 18px;
+            margin-bottom: 24px;
+            box-shadow: 0 12px 30px rgba(0,0,0,0.15);
+        }
+
+        .header h1 {
+            margin: 0;
+            font-size: 34px;
+            letter-spacing: -0.5px;
+        }
+
+        .header p {
+            margin: 10px 0 0 0;
+            font-size: 17px;
+            color: #dbeafe;
+        }
+
+        .tag {
+            display: inline-block;
+            margin-top: 18px;
+            padding: 8px 12px;
+            background: rgba(255,255,255,0.12);
+            border: 1px solid rgba(255,255,255,0.25);
+            border-radius: 999px;
+            font-size: 13px;
+            color: #e0f2fe;
+        }
+
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 18px;
+            margin-bottom: 24px;
+        }
+
+        .card {
+            background: white;
+            padding: 22px;
+            border-radius: 16px;
+            box-shadow: 0 8px 22px rgba(15, 23, 42, 0.08);
+            border: 1px solid #e5e7eb;
+        }
+
+        .card h3 {
+            margin: 0 0 8px 0;
+            font-size: 14px;
+            color: #64748b;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+
+        .card .value {
+            font-size: 30px;
+            font-weight: 800;
+            color: #0f172a;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 22px;
+            margin-bottom: 24px;
+        }
+
+        .panel {
+            background: white;
+            border-radius: 16px;
+            padding: 22px;
+            box-shadow: 0 8px 22px rgba(15, 23, 42, 0.08);
+            border: 1px solid #e5e7eb;
+        }
+
+        .panel h2 {
+            margin: 0 0 12px 0;
+            font-size: 20px;
+            color: #0f172a;
+        }
+
+        .insights {
+            background: #0f172a;
+            color: white;
+            border-radius: 16px;
+            padding: 26px;
+            margin-bottom: 24px;
+            box-shadow: 0 8px 22px rgba(15, 23, 42, 0.18);
+        }
+
+        .insights h2 {
+            margin-top: 0;
+            color: #f8fafc;
+        }
+
+        .insights ul {
+            margin-bottom: 0;
+            line-height: 1.7;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 14px;
+        }
+
+        th {
+            background: #0f172a;
+            color: white;
+            padding: 12px;
+            text-align: left;
+        }
+
+        td {
+            padding: 11px 12px;
+            border-bottom: 1px solid #e5e7eb;
+        }
+
+        tr:hover {
+            background: #f8fafc;
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 5px 9px;
+            background: #e0f2fe;
+            color: #075985;
+            border-radius: 999px;
+            font-weight: 700;
+            font-size: 12px;
+        }
+
+        .footer {
+            margin-top: 28px;
+            color: #64748b;
+            font-size: 13px;
+            text-align: center;
+        }
+
+        @media (max-width: 900px) {
+            .cards, .grid {
+                grid-template-columns: 1fr;
+            }
+
+            .header h1 {
+                font-size: 26px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+
+        <div class="header">
+            <h1>Alagoas Political Intelligence</h1>
+            <p>Dashboard Executivo de Inteligência Territorial e Eleitoral — Municípios de Alagoas | 2024</p>
+            <div class="tag">Entrega 01 · Ranking Estratégico Municipal · Expansão Política 2026-2028</div>
+        </div>
+
+        <div class="cards">
+            <div class="card">
+                <h3>Municípios Analisados</h3>
+                <div class="value">102</div>
+            </div>
+
+            <div class="card">
+                <h3>População Estimada</h3>
+                <div class="value">3.220.104</div>
+            </div>
+
+            <div class="card">
+                <h3>Eleitorado 2024</h3>
+                <div class="value">2.442.894</div>
+            </div>
+
+            <div class="card">
+                <h3>Taxa Estadual de Eleitorado</h3>
+                <div class="value">75,86%</div>
+            </div>
+        </div>
+
+        <div class="insights">
+            <h2>Leitura Estratégica Inicial</h2>
+            <ul>
+                <li>Maceió concentra 25,90% do eleitorado estadual.</li>
+                <li>Arapiraca representa 6,39% do eleitorado estadual.</li>
+                <li>Somadas, Maceió e Arapiraca concentram 32,29% dos eleitores de Alagoas.</li>
+                <li>O Top 10 municipal concentra 48,21% do eleitorado estadual.</li>
+                <li>A segunda camada estratégica está nos municípios médios do interior, com destaque para Rio Largo, Palmeira dos Índios, União dos Palmares, Marechal Deodoro, Penedo e São Miguel dos Campos.</li>
+                <li>A próxima entrega deve aprofundar Quebrangulo, Palmeira dos Índios e municípios de influência regional para uma leitura 2028.</li>
+            </ul>
+        </div>
+
+        <div class="grid">
+            <div class="panel">
+                <h2>Top 20 por Eleitorado</h2>
+                <div id="grafico-eleitorado"></div>
+            </div>
+
+            <div class="panel">
+                <h2>Top 20 por Índice Estratégico</h2>
+                <div id="grafico-indice"></div>
+            </div>
+        </div>
+
+        <div class="panel">
+            <h2>Top 20 Municípios Prioritários</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Rank</th>
+                        <th>Município</th>
+                        <th>População 2024</th>
+                        <th>Eleitorado 2024</th>
+                        <th>Part. Eleitoral</th>
+                        <th>Índice Estratégico</th>
+                        <th>Prioridade</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    
+        <tr>
+            <td>1</td>
+            <td>Maceió</td>
+            <td>994.464</td>
+            <td>632.812</td>
+            <td>25,90%</td>
+            <td>27,40%</td>
+            <td><span class="badge">Prioridade Máxima</span></td>
+        </tr>
+        
+        <tr>
+            <td>2</td>
+            <td>Arapiraca</td>
+            <td>243.661</td>
+            <td>155.982</td>
+            <td>6,39%</td>
+            <td>6,74%</td>
+            <td><span class="badge">Prioridade Máxima</span></td>
+        </tr>
+        
+        <tr>
+            <td>3</td>
+            <td>Rio Largo</td>
+            <td>97.435</td>
+            <td>67.172</td>
+            <td>2,75%</td>
+            <td>2,83%</td>
+            <td><span class="badge">Prioridade Máxima</span></td>
+        </tr>
+        
+        <tr>
+            <td>4</td>
+            <td>Palmeira dos Índios</td>
+            <td>73.596</td>
+            <td>54.858</td>
+            <td>2,25%</td>
+            <td>2,26%</td>
+            <td><span class="badge">Prioridade Máxima</span></td>
+        </tr>
+        
+        <tr>
+            <td>5</td>
+            <td>União dos Palmares</td>
+            <td>60.874</td>
+            <td>48.920</td>
+            <td>2,00%</td>
+            <td>1,97%</td>
+            <td><span class="badge">Prioridade Máxima</span></td>
+        </tr>
+        
+        <tr>
+            <td>6</td>
+            <td>Marechal Deodoro</td>
+            <td>62.341</td>
+            <td>46.217</td>
+            <td>1,89%</td>
+            <td>1,91%</td>
+            <td><span class="badge">Prioridade Máxima</span></td>
+        </tr>
+        
+        <tr>
+            <td>7</td>
+            <td>Penedo</td>
+            <td>60.189</td>
+            <td>44.517</td>
+            <td>1,82%</td>
+            <td>1,84%</td>
+            <td><span class="badge">Prioridade Máxima</span></td>
+        </tr>
+        
+        <tr>
+            <td>8</td>
+            <td>São Miguel dos Campos</td>
+            <td>53.391</td>
+            <td>43.990</td>
+            <td>1,80%</td>
+            <td>1,76%</td>
+            <td><span class="badge">Prioridade Máxima</span></td>
+        </tr>
+        
+        <tr>
+            <td>9</td>
+            <td>Coruripe</td>
+            <td>51.788</td>
+            <td>42.038</td>
+            <td>1,72%</td>
+            <td>1,69%</td>
+            <td><span class="badge">Prioridade Máxima</span></td>
+        </tr>
+        
+        <tr>
+            <td>10</td>
+            <td>Delmiro Gouveia</td>
+            <td>52.809</td>
+            <td>41.113</td>
+            <td>1,68%</td>
+            <td>1,67%</td>
+            <td><span class="badge">Prioridade Máxima</span></td>
+        </tr>
+        
+        <tr>
+            <td>11</td>
+            <td>Santana do Ipanema</td>
+            <td>47.397</td>
+            <td>33.506</td>
+            <td>1,37%</td>
+            <td>1,40%</td>
+            <td><span class="badge">Alta Prioridade</span></td>
+        </tr>
+        
+        <tr>
+            <td>12</td>
+            <td>Atalaia</td>
+            <td>38.530</td>
+            <td>32.883</td>
+            <td>1,35%</td>
+            <td>1,30%</td>
+            <td><span class="badge">Alta Prioridade</span></td>
+        </tr>
+        
+        <tr>
+            <td>13</td>
+            <td>Teotônio Vilela</td>
+            <td>39.161</td>
+            <td>31.976</td>
+            <td>1,31%</td>
+            <td>1,28%</td>
+            <td><span class="badge">Alta Prioridade</span></td>
+        </tr>
+        
+        <tr>
+            <td>14</td>
+            <td>Pilar</td>
+            <td>36.499</td>
+            <td>29.137</td>
+            <td>1,19%</td>
+            <td>1,17%</td>
+            <td><span class="badge">Alta Prioridade</span></td>
+        </tr>
+        
+        <tr>
+            <td>15</td>
+            <td>Girau do Ponciano</td>
+            <td>37.335</td>
+            <td>28.487</td>
+            <td>1,17%</td>
+            <td>1,16%</td>
+            <td><span class="badge">Alta Prioridade</span></td>
+        </tr>
+        
+        <tr>
+            <td>16</td>
+            <td>São Sebastião</td>
+            <td>32.701</td>
+            <td>27.531</td>
+            <td>1,13%</td>
+            <td>1,09%</td>
+            <td><span class="badge">Alta Prioridade</span></td>
+        </tr>
+        
+        <tr>
+            <td>17</td>
+            <td>Campo Alegre</td>
+            <td>32.714</td>
+            <td>27.202</td>
+            <td>1,11%</td>
+            <td>1,08%</td>
+            <td><span class="badge">Alta Prioridade</span></td>
+        </tr>
+        
+        <tr>
+            <td>18</td>
+            <td>Maragogi</td>
+            <td>33.232</td>
+            <td>25.140</td>
+            <td>1,03%</td>
+            <td>1,03%</td>
+            <td><span class="badge">Alta Prioridade</span></td>
+        </tr>
+        
+        <tr>
+            <td>19</td>
+            <td>São Luís do Quitunde</td>
+            <td>31.792</td>
+            <td>24.159</td>
+            <td>0,99%</td>
+            <td>0,99%</td>
+            <td><span class="badge">Alta Prioridade</span></td>
+        </tr>
+        
+        <tr>
+            <td>20</td>
+            <td>São José da Tapera</td>
+            <td>31.557</td>
+            <td>23.599</td>
+            <td>0,97%</td>
+            <td>0,97%</td>
+            <td><span class="badge">Alta Prioridade</span></td>
+        </tr>
+        
+                </tbody>
+            </table>
+        </div>
+
+        <div class="footer">
+            Alagoas Political Intelligence · Dados oficiais IBGE/TSE · Pipeline ETL próprio · Dashboard gerado automaticamente
+        </div>
+
+    </div>
+
+    <script>
+        const municipiosTop20 = ["Maceió", "Arapiraca", "Rio Largo", "Palmeira dos Índios", "União dos Palmares", "Marechal Deodoro", "Penedo", "São Miguel dos Campos", "Coruripe", "Delmiro Gouveia", "Santana do Ipanema", "Atalaia", "Teotônio Vilela", "Pilar", "Girau do Ponciano", "São Sebastião", "Campo Alegre", "Maragogi", "São Luís do Quitunde", "São José da Tapera"];
+        const eleitoradoTop20 = [632812, 155982, 67172, 54858, 48920, 46217, 44517, 43990, 42038, 41113, 33506, 32883, 31976, 29137, 28487, 27531, 27202, 25140, 24159, 23599];
+        const indiceTop20 = [27.3978, 6.7397, 2.8325, 2.2576, 1.9689, 1.9051, 1.8364, 1.7579, 1.6871, 1.6701, 1.4017, 1.3012, 1.2811, 1.1749, 1.1641, 1.0935, 1.0842, 1.03, 0.9885, 0.9702];
+
+        Plotly.newPlot("grafico-eleitorado", [{
+            x: eleitoradoTop20.slice().reverse(),
+            y: municipiosTop20.slice().reverse(),
+            type: "bar",
+            orientation: "h",
+            text: eleitoradoTop20.slice().reverse().map(v => v.toLocaleString("pt-BR")),
+            textposition: "auto"
+        }], {
+            margin: { l: 150, r: 30, t: 20, b: 40 },
+            height: 520,
+            xaxis: { title: "Eleitorado 2024" },
+            yaxis: { title: "" }
+        }, {
+            responsive: true,
+            displayModeBar: false
+        });
+
+        Plotly.newPlot("grafico-indice", [{
+            x: indiceTop20.slice().reverse(),
+            y: municipiosTop20.slice().reverse(),
+            type: "bar",
+            orientation: "h",
+            text: indiceTop20.slice().reverse().map(v => v.toFixed(2).replace(".", ",") + "%"),
+            textposition: "auto"
+        }], {
+            margin: { l: 150, r: 30, t: 20, b: 40 },
+            height: 520,
+            xaxis: { title: "Índice Estratégico (%)" },
+            yaxis: { title: "" }
+        }, {
+            responsive: true,
+            displayModeBar: false
+        });
+    </script>
+
+</body>
+</html>
