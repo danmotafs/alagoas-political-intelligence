@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Inteligência Territorial e Eleitoral | Dashboard V2</title>
+
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body>
+  <div class="app">
+
+    <header class="hero">
+      <div class="hero-content">
+
+        <div class="hero-brand">
+          <img
+            src="../public/images/brand_davi_maia_01.png"
+            alt="Davi Maia"
+            class="logo-campanha"
+          />
+
+          <div class="hero-text">
+            <p class="eyebrow">Dashboard Executivo V2</p>
+
+            <h1>Inteligência Territorial e Eleitoral</h1>
+
+            <p class="subtitle">
+              Plataforma de análise política, eleitoral e territorial para expansão estratégica em Alagoas.
+            </p>
+
+            <div class="hero-tags">
+              <span>Pré-Campanha 2026</span>
+              <span>Deputado Federal</span>
+              <span>Alagoas</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-profile">
+          <img
+            src="../public/images/foto_perfil_instagram_davi_maia.jpg"
+            alt="Davi Maia"
+            class="foto-davi"
+          />
+
+          <div class="profile-info">
+            <h3>Davi Maia</h3>
+            <p>Pré-candidato a Deputado Federal</p>
+          </div>
+        </div>
+
+      </div>
+    </header>
+
+    <main>
+      <section class="section">
+        <div class="section-header">
+          <div>
+            <p class="eyebrow">Visão Geral</p>
+            <h2>Indicadores Estratégicos</h2>
+          </div>
+        </div>
+
+        <div class="cards-grid">
+          <article class="card"><span>Municípios</span><strong id="cardMunicipios">-</strong></article>
+          <article class="card"><span>Eleitorado</span><strong id="cardEleitorado">-</strong></article>
+          <article class="card"><span>População</span><strong id="cardPopulacao">-</strong></article>
+          <article class="card"><span>Visitados</span><strong id="cardVisitados">-</strong></article>
+          <article class="card"><span>Cobertura</span><strong id="cardCobertura">-</strong></article>
+          <article class="card"><span>Prefeitos Mapeados</span><strong id="cardPrefeitos">-</strong></article>
+        </div>
+      </section>
+
+      <section class="section filters-section">
+        <div class="section-header">
+          <div>
+            <p class="eyebrow">Filtros</p>
+            <h2>Exploração Territorial</h2>
+          </div>
+          <button id="btnLimparFiltros" class="btn-secondary">Limpar filtros</button>
+        </div>
+
+        <div class="filters-grid">
+          <label>Município<select id="filtroMunicipio"><option value="">Todos</option></select></label>
+          <label>Partido<select id="filtroPartido"><option value="">Todos</option></select></label>
+          <label>Visitado<select id="filtroVisitado"><option value="">Todos</option><option value="true">Visitado</option><option value="false">Não visitado</option></select></label>
+          <label>Prioridade<select id="filtroPrioridade"><option value="">Todas</option></select></label>
+          <label>Faixa de eleitorado<select id="filtroEleitorado"><option value="">Todas</option><option value="ate_10000">Até 10 mil</option><option value="10000_30000">10 mil a 30 mil</option><option value="30000_100000">30 mil a 100 mil</option><option value="acima_100000">Acima de 100 mil</option></select></label>
+        </div>
+      </section>
+
+      <section class="section two-columns">
+        <div class="panel">
+          <div class="section-header"><div><p class="eyebrow">Ranking Estratégico</p><h2>Top Municípios</h2></div></div>
+          <div class="table-wrap">
+            <table>
+              <thead><tr><th>Rank</th><th>Município</th><th>Eleitorado</th><th>Índice</th></tr></thead>
+              <tbody id="tabelaRanking"></tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="panel">
+          <div class="section-header"><div><p class="eyebrow">Oportunidades</p><h2>Não Visitados Prioritários</h2></div></div>
+          <div class="table-wrap">
+            <table>
+              <thead><tr><th>Município</th><th>Partido</th><th>Eleitorado</th><th>Índice</th></tr></thead>
+              <tbody id="tabelaNaoVisitados"></tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="section-header">
+          <div><p class="eyebrow">Rede de Poder</p><h2>Controle Político Municipal</h2></div>
+          <span id="contadorRegistros" class="counter">- registros</span>
+        </div>
+
+        <div class="table-wrap large">
+          <table>
+            <thead>
+              <tr>
+                <th>Município</th>
+                <th>Prefeito</th>
+                <th>Partido</th>
+                <th>Eleitorado</th>
+                <th>Margem %</th>
+                <th>Segundo colocado</th>
+                <th>Status</th>
+                <th>Prioridade</th>
+              </tr>
+            </thead>
+            <tbody id="tabelaRedePoder"></tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="section two-columns">
+        <div class="panel">
+          <div class="section-header"><div><p class="eyebrow">Competitividade</p><h2>Menores Margens de Vitória</h2></div></div>
+          <div class="table-wrap">
+            <table>
+              <thead><tr><th>Município</th><th>Prefeito</th><th>Margem %</th></tr></thead>
+              <tbody id="tabelaMargem"></tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="panel">
+          <div class="section-header"><div><p class="eyebrow">Articulação</p><h2>Maior Score Político</h2></div></div>
+          <div class="table-wrap">
+            <table>
+              <thead><tr><th>Município</th><th>Grupo</th><th>Score</th></tr></thead>
+              <tbody id="tabelaScore"></tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+    </main>
+
+  </div>
+
+  <script src="js/dashboard.js"></script>
+</body>
+</html>
