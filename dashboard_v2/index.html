@@ -3,30 +3,20 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
   <title>Inteligência Territorial e Eleitoral | Dashboard V2</title>
-
   <link rel="stylesheet" href="css/style.css" />
 </head>
 
 <body>
   <div class="app">
-
     <header class="hero">
       <div class="hero-content">
-
         <div class="hero-brand">
-          <img
-            src="../public/images/brand_davi_maia_01.png"
-            alt="Davi Maia"
-            class="logo-campanha"
-          />
+          <img src="../public/images/brand_davi_maia_01.png" alt="Davi Maia" class="logo-campanha" />
 
           <div class="hero-text">
             <p class="eyebrow">Dashboard Executivo V2</p>
-
             <h1>Inteligência Territorial e Eleitoral</h1>
-
             <p class="subtitle">
               Plataforma de análise política, eleitoral e territorial para expansão estratégica em Alagoas.
             </p>
@@ -40,18 +30,12 @@
         </div>
 
         <div class="hero-profile">
-          <img
-            src="../public/images/foto_perfil_instagram_davi_maia.jpg"
-            alt="Davi Maia"
-            class="foto-davi"
-          />
-
+          <img src="../public/images/foto_perfil_instagram_davi_maia.jpg" alt="Davi Maia" class="foto-davi" />
           <div class="profile-info">
             <h3>Davi Maia</h3>
             <p>Pré-candidato a Deputado Federal</p>
           </div>
         </div>
-
       </div>
     </header>
 
@@ -61,16 +45,45 @@
           <div>
             <p class="eyebrow">Visão Geral</p>
             <h2>Indicadores Estratégicos</h2>
+            <p class="section-description">
+              Resumo geral da base territorial analisada, incluindo municípios, eleitorado, população, visitas realizadas,
+              prefeitos e vereadores mapeados.
+            </p>
           </div>
         </div>
 
         <div class="cards-grid">
-          <article class="card"><span>Municípios</span><strong id="cardMunicipios">-</strong></article>
-          <article class="card"><span>Eleitorado</span><strong id="cardEleitorado">-</strong></article>
-          <article class="card"><span>População</span><strong id="cardPopulacao">-</strong></article>
-          <article class="card"><span>Visitados</span><strong id="cardVisitados">-</strong></article>
-          <article class="card"><span>Cobertura</span><strong id="cardCobertura">-</strong></article>
-          <article class="card"><span>Prefeitos Mapeados</span><strong id="cardPrefeitos">-</strong></article>
+          <article class="card" title="Quantidade total de municípios de Alagoas presentes na base.">
+            <span>Municípios</span><strong id="cardMunicipios">-</strong>
+          </article>
+
+          <article class="card" title="Soma do eleitorado municipal de Alagoas em 2024.">
+            <span>Eleitorado</span><strong id="cardEleitorado">-</strong>
+          </article>
+
+          <article class="card" title="Soma da população estimada dos municípios em 2024.">
+            <span>População</span><strong id="cardPopulacao">-</strong>
+          </article>
+
+          <article class="card" title="Municípios já identificados com presença territorial na pré-campanha.">
+            <span>Visitados</span><strong id="cardVisitados">-</strong>
+          </article>
+
+          <article class="card" title="Percentual dos municípios de Alagoas já visitados.">
+            <span>Cobertura</span><strong id="cardCobertura">-</strong>
+          </article>
+
+          <article class="card" title="Quantidade de prefeitos mapeados na base política municipal.">
+            <span>Prefeitos</span><strong id="cardPrefeitos">-</strong>
+          </article>
+
+          <article class="card" title="Quantidade total de vereadores eleitos mapeados nos 102 municípios de Alagoas.">
+            <span>Vereadores</span><strong id="cardVereadores">-</strong>
+          </article>
+
+          <article class="card" title="Estimativa conservadora de votos que a rede de vereadores poderia contribuir para Davi Maia, considerando 20% dos votos nominais agregados.">
+            <span>Potencial Conservador</span><strong id="cardPotencialConservador">-</strong>
+          </article>
         </div>
       </section>
 
@@ -79,6 +92,9 @@
           <div>
             <p class="eyebrow">Filtros</p>
             <h2>Exploração Territorial</h2>
+            <p class="section-description">
+              Use os filtros para analisar municípios específicos, partidos, status de visitação, prioridade política e tamanho do eleitorado.
+            </p>
           </div>
           <button id="btnLimparFiltros" class="btn-secondary">Limpar filtros</button>
         </div>
@@ -94,7 +110,15 @@
 
       <section class="section two-columns">
         <div class="panel">
-          <div class="section-header"><div><p class="eyebrow">Ranking Estratégico</p><h2>Top Municípios</h2></div></div>
+          <div class="section-header">
+            <div>
+              <p class="eyebrow">Ranking Estratégico</p>
+              <h2>Top Municípios</h2>
+              <p class="section-description">
+                Municípios mais relevantes segundo o índice estratégico, considerando peso eleitoral e prioridade territorial.
+              </p>
+            </div>
+          </div>
           <div class="table-wrap">
             <table>
               <thead><tr><th>Rank</th><th>Município</th><th>Eleitorado</th><th>Índice</th></tr></thead>
@@ -104,7 +128,15 @@
         </div>
 
         <div class="panel">
-          <div class="section-header"><div><p class="eyebrow">Oportunidades</p><h2>Não Visitados Prioritários</h2></div></div>
+          <div class="section-header">
+            <div>
+              <p class="eyebrow">Oportunidades</p>
+              <h2>Não Visitados Prioritários</h2>
+              <p class="section-description">
+                Municípios ainda não visitados que possuem relevância eleitoral e podem representar oportunidade de expansão.
+              </p>
+            </div>
+          </div>
           <div class="table-wrap">
             <table>
               <thead><tr><th>Município</th><th>Partido</th><th>Eleitorado</th><th>Índice</th></tr></thead>
@@ -116,7 +148,45 @@
 
       <section class="section">
         <div class="section-header">
-          <div><p class="eyebrow">Rede de Poder</p><h2>Controle Político Municipal</h2></div>
+          <div>
+            <p class="eyebrow">Rede de Lideranças Municipais</p>
+            <h2>Força Política dos Vereadores</h2>
+            <p class="section-description">
+              Mostra a força agregada dos vereadores eleitos em cada município, o total de votos da Câmara e a principal liderança local.
+              Passe o cursor sobre o nome da liderança para ver o potencial estimado de contribuição eleitoral.
+            </p>
+          </div>
+        </div>
+
+        <div class="table-wrap large">
+          <table>
+            <thead>
+              <tr>
+                <th title="Posição do município no ranking de força política dos vereadores.">Rank</th>
+                <th title="Município analisado.">Município</th>
+                <th title="Quantidade de vereadores eleitos no município.">Vereadores</th>
+                <th title="Soma dos votos nominais obtidos pelos vereadores eleitos.">Total de Votos</th>
+                <th title="Vereador mais votado do município.">Principal Liderança</th>
+                <th title="Partido da principal liderança municipal.">Partido</th>
+                <th title="Votos recebidos pela principal liderança em 2024.">Votos</th>
+                <th title="Classificação do potencial político agregado do município.">Potencial</th>
+              </tr>
+            </thead>
+            <tbody id="tabelaLiderancasMunicipais"></tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="section-header">
+          <div>
+            <p class="eyebrow">Rede de Poder</p>
+            <h2>Controle Político Municipal</h2>
+            <p class="section-description">
+              Mapeia prefeitos, partidos, margem de vitória, segundo colocado e prioridade política de cada município.
+              Passe o cursor sobre os nomes para ver contexto político resumido.
+            </p>
+          </div>
           <span id="contadorRegistros" class="counter">- registros</span>
         </div>
 
@@ -141,7 +211,15 @@
 
       <section class="section two-columns">
         <div class="panel">
-          <div class="section-header"><div><p class="eyebrow">Competitividade</p><h2>Menores Margens de Vitória</h2></div></div>
+          <div class="section-header">
+            <div>
+              <p class="eyebrow">Competitividade</p>
+              <h2>Menores Margens de Vitória</h2>
+              <p class="section-description">
+                Municípios onde a disputa municipal foi mais apertada, indicando maior competitividade e possibilidade de rearranjo político.
+              </p>
+            </div>
+          </div>
           <div class="table-wrap">
             <table>
               <thead><tr><th>Município</th><th>Prefeito</th><th>Margem %</th></tr></thead>
@@ -151,7 +229,15 @@
         </div>
 
         <div class="panel">
-          <div class="section-header"><div><p class="eyebrow">Articulação</p><h2>Maior Score Político</h2></div></div>
+          <div class="section-header">
+            <div>
+              <p class="eyebrow">Articulação</p>
+              <h2>Maior Score Político</h2>
+              <p class="section-description">
+                Municípios com maior score de articulação política, considerando prioridade estratégica e classificação política local.
+              </p>
+            </div>
+          </div>
           <div class="table-wrap">
             <table>
               <thead><tr><th>Município</th><th>Grupo</th><th>Score</th></tr></thead>
@@ -161,7 +247,6 @@
         </div>
       </section>
     </main>
-
   </div>
 
   <script src="js/dashboard.js"></script>

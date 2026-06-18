@@ -16,6 +16,15 @@ const formatPercent = (value) => {
 
 const getById = (id) => document.getElementById(id);
 
+function escapeHtml(value) {
+  return String(value ?? "")
+    .replaceAll("&", "&amp;")
+    .replaceAll("<", "&lt;")
+    .replaceAll(">", "&gt;")
+    .replaceAll('"', "&quot;")
+    .replaceAll("'", "&#039;");
+}
+
 async function carregarDados() {
   try {
     const response = await fetch(DATA_URL);
@@ -31,7 +40,6 @@ async function carregarDados() {
     preencherFiltros();
     renderizarDashboard(municipios);
     configurarEventos();
-
   } catch (error) {
     console.error(error);
     alert(
@@ -50,6 +58,11 @@ function preencherCards() {
   getById("cardVisitados").textContent = formatNumber(indicadores.municipios_visitados);
   getById("cardCobertura").textContent = formatPercent(indicadores.cobertura_territorial_pct);
   getById("cardPrefeitos").textContent = formatNumber(indicadores.prefeitos_mapeados);
+
+  getById("cardVereadores").textContent = formatNumber(indicadores.vereadores_mapeados);
+  getById("cardPotencialConservador").textContent = formatNumber(
+    indicadores.potencial_transferencia_conservador_total
+  );
 }
 
 function preencherFiltros() {
@@ -113,7 +126,9 @@ function aplicarFiltros() {
   }
 
   if (faixaEleitorado) {
-    dadosFiltrados = dadosFiltrados.filter((item) => filtrarFaixaEleitorado(item.eleitorado_2024, faixaEleitorado));
+    dadosFiltrados = dadosFiltrados.filter((item) =>
+      filtrarFaixaEleitorado(item.eleitorado_2024, faixaEleitorado)
+    );
   }
 
   renderizarDashboard(dadosFiltrados);
@@ -143,6 +158,7 @@ function limparFiltros() {
 function renderizarDashboard(dados) {
   renderizarRanking(dados);
   renderizarNaoVisitados(dados);
+  renderizarLiderancasMunicipais();
   renderizarRedePoder(dados);
   renderizarMargens(dados);
   renderizarScore(dados);
@@ -159,10 +175,12 @@ function renderizarRanking(dados) {
   tbody.innerHTML = "";
 
   ranking.forEach((item) => {
+    const titulo = `Município de ${item.municipio}. Eleitorado: ${formatNumber(item.eleitorado_2024)}. Índice estratégico: ${formatPercent(item.indice_estrategico_pct)}.`;
+
     tbody.innerHTML += `
       <tr>
         <td>${item.rank || "-"}</td>
-        <td><strong>${item.municipio || "-"}</strong></td>
+        <td title="${escapeHtml(titulo)}"><strong>${escapeHtml(item.municipio || "-")}</strong></td>
         <td>${formatNumber(item.eleitorado_2024)}</td>
         <td>${formatPercent(item.indice_estrategico_pct)}</td>
       </tr>
@@ -180,15 +198,59 @@ function renderizarNaoVisitados(dados) {
   tbody.innerHTML = "";
 
   lista.forEach((item) => {
+    const titulo = `${item.municipio} ainda não aparece como visitado na base. Possui eleitorado de ${formatNumber(item.eleitorado_2024)} e índice estratégico de ${formatPercent(item.indice_estrategico_pct)}.`;
+
     tbody.innerHTML += `
       <tr>
-        <td><strong>${item.municipio || "-"}</strong></td>
-        <td>${item.partido || "-"}</td>
+        <td title="${escapeHtml(titulo)}"><strong>${escapeHtml(item.municipio || "-")}</strong></td>
+        <td>${escapeHtml(item.partido || "-")}</td>
         <td>${formatNumber(item.eleitorado_2024)}</td>
         <td>${formatPercent(item.indice_estrategico_pct)}</td>
       </tr>
     `;
   });
+}
+
+function renderizarLiderancasMunicipais() {
+  const lista = dashboardData.vereadores_municipais || [];
+  const tbody = getById("tabelaLiderancasMunicipais");
+
+  if (!tbody) return;
+
+  tbody.innerHTML = "";
+
+  lista
+    .sort((a, b) => Number(a.rank_municipal || 9999) - Number(b.rank_municipal || 9999))
+    .slice(0, 50)
+    .forEach((item) => {
+      const conservador = Number(item.potencial_transferencia_conservador || 0);
+      const alto = Number(item.potencial_transferencia_alto || 0);
+      const votosLider = Number(item.principal_lideranca_votos || 0);
+      const totalVotos = Number(item.total_votos_vereadores || 0);
+
+      const tooltipLideranca =
+        `${item.principal_lideranca || "Esta liderança"} foi a principal liderança municipal em votos em ${item.municipio || "seu município"}, ` +
+        `com ${formatNumber(votosLider)} votos. Considerando a força agregada dos vereadores do município, ` +
+        `o potencial estimado de contribuição para Davi Maia varia de ${formatNumber(conservador)} votos em cenário conservador ` +
+        `a ${formatNumber(alto)} votos em cenário alto.`;
+
+      const tooltipMunicipio =
+        `${item.municipio || "Município"} possui ${formatNumber(item.vereadores_eleitos)} vereadores eleitos, ` +
+        `com ${formatNumber(totalVotos)} votos nominais somados. Potencial político municipal: ${item.potencial_politico_municipio || "-"}.`;
+
+      tbody.innerHTML += `
+        <tr>
+          <td>${item.rank_municipal || "-"}</td>
+          <td title="${escapeHtml(tooltipMunicipio)}"><strong>${escapeHtml(item.municipio || "-")}</strong></td>
+          <td>${formatNumber(item.vereadores_eleitos)}</td>
+          <td>${formatNumber(item.total_votos_vereadores)}</td>
+          <td title="${escapeHtml(tooltipLideranca)}"><strong>${escapeHtml(item.principal_lideranca || "-")}</strong></td>
+          <td>${escapeHtml(item.principal_lideranca_partido || "-")}</td>
+          <td>${formatNumber(item.principal_lideranca_votos)}</td>
+          <td><span class="badge prioridade" title="${escapeHtml(tooltipMunicipio)}">${escapeHtml(item.potencial_politico_municipio || "-")}</span></td>
+        </tr>
+      `;
+    });
 }
 
 function renderizarRedePoder(dados) {
@@ -201,16 +263,29 @@ function renderizarRedePoder(dados) {
     const statusClass = item.visitado_pre_campanha ? "visitado" : "nao-visitado";
     const statusTexto = item.visitado_pre_campanha ? "Visitado" : "Não visitado";
 
+    const tooltipPrefeito =
+      `${item.prefeito || "Prefeito"} é o prefeito de ${item.municipio || "município"}, pelo partido ${item.partido || "-"}. ` +
+      `Teve ${formatNumber(item.votos_prefeito)} votos, com ${formatPercent(item.percentual_prefeito)} dos votos. ` +
+      `A margem de vitória foi de ${formatPercent(item.margem_vitoria_pct)}.`;
+
+    const tooltipMunicipio =
+      `${item.municipio || "Município"} possui eleitorado de ${formatNumber(item.eleitorado_2024)}. ` +
+      `Status de visitação: ${statusTexto}. Prioridade: ${item.prioridade_final || item.prioridade_politica || "-"}.`;
+
+    const tooltipSegundo =
+      `${item.segundo_colocado || "Segundo colocado"} foi o principal concorrente municipal, pelo partido ${item.partido_segundo_colocado || "-"}, ` +
+      `com ${formatNumber(item.votos_segundo_colocado)} votos.`;
+
     tbody.innerHTML += `
       <tr>
-        <td><strong>${item.municipio || "-"}</strong></td>
-        <td>${item.prefeito || "-"}</td>
-        <td>${item.partido || "-"}</td>
+        <td title="${escapeHtml(tooltipMunicipio)}"><strong>${escapeHtml(item.municipio || "-")}</strong></td>
+        <td title="${escapeHtml(tooltipPrefeito)}"><strong>${escapeHtml(item.prefeito || "-")}</strong></td>
+        <td>${escapeHtml(item.partido || "-")}</td>
         <td>${formatNumber(item.eleitorado_2024)}</td>
         <td>${formatPercent(item.margem_vitoria_pct)}</td>
-        <td>${item.segundo_colocado || "-"}</td>
-        <td><span class="badge ${statusClass}">${statusTexto}</span></td>
-        <td><span class="badge prioridade">${item.prioridade_final || item.prioridade_politica || "-"}</span></td>
+        <td title="${escapeHtml(tooltipSegundo)}">${escapeHtml(item.segundo_colocado || "-")}</td>
+        <td><span class="badge ${statusClass}" title="${escapeHtml(tooltipMunicipio)}">${statusTexto}</span></td>
+        <td><span class="badge prioridade">${escapeHtml(item.prioridade_final || item.prioridade_politica || "-")}</span></td>
       </tr>
     `;
   });
@@ -226,10 +301,12 @@ function renderizarMargens(dados) {
   tbody.innerHTML = "";
 
   lista.forEach((item) => {
+    const titulo = `${item.municipio} teve uma das menores margens de vitória municipal: ${formatPercent(item.margem_vitoria_pct)}. Isso pode indicar ambiente político competitivo.`;
+
     tbody.innerHTML += `
       <tr>
-        <td><strong>${item.municipio || "-"}</strong></td>
-        <td>${item.prefeito || "-"}</td>
+        <td title="${escapeHtml(titulo)}"><strong>${escapeHtml(item.municipio || "-")}</strong></td>
+        <td>${escapeHtml(item.prefeito || "-")}</td>
         <td>${formatPercent(item.margem_vitoria_pct)}</td>
       </tr>
     `;
@@ -245,10 +322,12 @@ function renderizarScore(dados) {
   tbody.innerHTML = "";
 
   lista.forEach((item) => {
+    const titulo = `${item.municipio} possui score de articulação ${formatNumber(item.score_articulacao)}. Grupo político: ${item.grupo_politico || item.grupo_politico_classificacao || "-"}.`;
+
     tbody.innerHTML += `
       <tr>
-        <td><strong>${item.municipio || "-"}</strong></td>
-        <td>${item.grupo_politico || item.grupo_politico_classificacao || "-"}</td>
+        <td title="${escapeHtml(titulo)}"><strong>${escapeHtml(item.municipio || "-")}</strong></td>
+        <td>${escapeHtml(item.grupo_politico || item.grupo_politico_classificacao || "-")}</td>
         <td>${formatNumber(item.score_articulacao)}</td>
       </tr>
     `;
