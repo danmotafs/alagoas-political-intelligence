@@ -5,6 +5,158 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Inteligência Territorial e Eleitoral | Dashboard V2</title>
   <link rel="stylesheet" href="css/style.css" />
+
+<style id="parceiros-estrategicos-style">
+  .parceiros-section {
+    margin-top: 36px;
+  }
+
+  .parceiros-grid {
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: 16px;
+    margin: 20px 0 28px;
+  }
+
+  .parceiros-card {
+    background: #ffffff;
+    border: 1px solid rgba(15, 91, 45, 0.14);
+    border-radius: 18px;
+    padding: 18px;
+    box-shadow: 0 10px 30px rgba(15, 23, 42, 0.06);
+  }
+
+  .parceiros-card small {
+    display: block;
+    color: #64748b;
+    font-size: 12px;
+    font-weight: 700;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+    letter-spacing: .04em;
+  }
+
+  .parceiros-card strong {
+    display: block;
+    color: #063b20;
+    font-size: 26px;
+    line-height: 1.1;
+  }
+
+  .parceiros-card span {
+    display: block;
+    margin-top: 6px;
+    color: #64748b;
+    font-size: 12px;
+  }
+
+  .parceiros-note {
+    background: #fff9db;
+    border: 1px solid #f4d66a;
+    color: #5a4600;
+    border-radius: 16px;
+    padding: 14px 16px;
+    font-size: 13px;
+    margin: 12px 0 22px;
+  }
+
+  .parceiros-subgrid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 22px;
+  }
+
+  .parceiros-table-wrap {
+    width: 100%;
+    overflow-x: auto;
+    border: 1px solid rgba(15, 91, 45, 0.14);
+    border-radius: 18px;
+    background: #ffffff;
+  }
+
+  .parceiros-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13px;
+  }
+
+  .parceiros-table th {
+    background: #063b20;
+    color: #ffffff;
+    text-align: left;
+    padding: 12px 10px;
+    white-space: nowrap;
+  }
+
+  .parceiros-table td {
+    border-bottom: 1px solid #edf2ef;
+    padding: 10px;
+    vertical-align: top;
+  }
+
+  .parceiros-table tr:nth-child(even) td {
+    background: #fbfdfc;
+  }
+
+  .parceiros-pill {
+    display: inline-block;
+    border-radius: 999px;
+    padding: 5px 9px;
+    font-size: 11px;
+    font-weight: 800;
+    background: #eaf4ee;
+    color: #063b20;
+    white-space: nowrap;
+  }
+
+  .parceiros-pill.alta {
+    background: #dcfce7;
+    color: #166534;
+  }
+
+  .parceiros-pill.media {
+    background: #fef9c3;
+    color: #854d0e;
+  }
+
+  .parceiros-pill.baixa {
+    background: #e0f2fe;
+    color: #075985;
+  }
+
+  .parceiros-empty {
+    color: #64748b;
+    padding: 16px;
+  }
+
+  @media (max-width: 1100px) {
+    .parceiros-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+
+  @media (max-width: 720px) {
+    .parceiros-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  @media print {
+    .parceiros-section {
+      break-inside: avoid;
+    }
+
+    .parceiros-table {
+      font-size: 10px;
+    }
+
+    .parceiros-table th,
+    .parceiros-table td {
+      padding: 6px;
+    }
+  }
+</style>
+
 </head>
 
 <body>
@@ -246,9 +398,188 @@
           </div>
         </div>
       </section>
-    </main>
+    
+<section id="parceiros-estrategicos-2026" class="section parceiros-section">
+  <div class="section-header">
+    <div>
+      <p class="eyebrow">Matriz de Parceiros Políticos</p>
+      <h2>Parceiros Estratégicos 2026</h2>
+      <p class="section-description">
+        Cruzamento entre a votação dos parceiros de Davi em 2022 e os redutos dos vereadores alagoanos em 2024.
+        A ferramenta identifica quais parceiros podem abrir portas para Davi em territórios e locais de votação específicos.
+      </p>
+    </div>
+  </div>
+
+  <div class="parceiros-note">
+    Leitura metodológica: a convergência não representa apoio confirmado nem previsão automática de votos.
+    Ela indica onde existe sobreposição territorial entre o parceiro e vereadores que podem ser abordados politicamente.
+  </div>
+
+  <div class="parceiros-grid">
+    <div class="parceiros-card">
+      <small>Parceiros processados</small>
+      <strong id="parceiros-processados">-</strong>
+      <span>Parceiros incluídos na matriz</span>
+    </div>
+
+    <div class="parceiros-card">
+      <small>Municípios</small>
+      <strong id="parceiros-municipios">-</strong>
+      <span>Com convergência territorial</span>
+    </div>
+
+    <div class="parceiros-card">
+      <small>Vereadores</small>
+      <strong id="parceiros-vereadores">-</strong>
+      <span>Com redutos convergentes</span>
+    </div>
+
+    <div class="parceiros-card">
+      <small>Potencial 20%</small>
+      <strong id="parceiros-potencial">-</strong>
+      <span>Vereadores únicos</span>
+    </div>
+
+    <div class="parceiros-card">
+      <small>% da meta</small>
+      <strong id="parceiros-meta">-</strong>
+      <span>Sobre meta de 60 mil votos</span>
+    </div>
+  </div>
+
+  <div class="parceiros-subgrid">
+    <div>
+      <h3>Ranking de Parceiros por Utilidade Territorial</h3>
+      <div class="parceiros-table-wrap">
+        <table class="parceiros-table">
+          <thead>
+            <tr>
+              <th>Parceiro</th>
+              <th>Cruzamentos</th>
+              <th>Municípios</th>
+              <th>Vereadores</th>
+              <th>Potencial 20%</th>
+              <th>% Meta</th>
+              <th>Principal Município</th>
+              <th>Principal Local</th>
+            </tr>
+          </thead>
+          <tbody id="parceiros-ranking-body">
+            <tr><td colspan="8" class="parceiros-empty">Carregando dados...</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div>
+      <h3>Top Convergências Parceiro x Vereador</h3>
+      <div class="parceiros-table-wrap">
+        <table class="parceiros-table">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Parceiro</th>
+              <th>Município</th>
+              <th>Local de votação</th>
+              <th>Vereador</th>
+              <th>Partido</th>
+              <th>Votos Parceiro</th>
+              <th>Votos Vereador</th>
+              <th>Índice</th>
+              <th>Classificação</th>
+              <th>Potencial 20%</th>
+            </tr>
+          </thead>
+          <tbody id="parceiros-convergencias-body">
+            <tr><td colspan="11" class="parceiros-empty">Carregando dados...</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div>
+      <h3>Vereadores Prioritários para Abordagem com Parceiros</h3>
+      <div class="parceiros-table-wrap">
+        <table class="parceiros-table">
+          <thead>
+            <tr>
+              <th>Parceiro</th>
+              <th>Município</th>
+              <th>Vereador</th>
+              <th>Partido</th>
+              <th>Local de votação</th>
+              <th>Votos Parceiro</th>
+              <th>Votos Vereador</th>
+              <th>Índice</th>
+              <th>Potencial 20%</th>
+            </tr>
+          </thead>
+          <tbody id="parceiros-vereadores-body">
+            <tr><td colspan="9" class="parceiros-empty">Carregando dados...</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
   </div>
 
   <script src="js/dashboard.js?v=20260624-corrigido"></script>
+<!-- SPRINT01_GABI_PARTNER_LINK -->
+<style>
+  .gabi-partner-floating-link {
+    position: fixed;
+    right: 18px;
+    bottom: 18px;
+    z-index: 9999;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 16px;
+    border-radius: 999px;
+    background: linear-gradient(135deg, #1A4392 0%, #0B1F4D 100%);
+    color: #ffffff;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 13px;
+    font-weight: 800;
+    letter-spacing: .02em;
+    text-decoration: none;
+    box-shadow: 0 14px 30px rgba(11, 31, 77, .28);
+    border: 1px solid rgba(255, 255, 255, .22);
+  }
+
+  .gabi-partner-floating-link span {
+    width: 10px;
+    height: 10px;
+    border-radius: 999px;
+    background: #F1D214;
+    box-shadow: 0 0 0 4px rgba(241, 210, 20, .20);
+  }
+
+  .gabi-partner-floating-link:hover {
+    transform: translateY(-2px);
+    filter: brightness(1.06);
+  }
+
+  @media (max-width: 720px) {
+    .gabi-partner-floating-link {
+      left: 14px;
+      right: 14px;
+      bottom: 14px;
+      justify-content: center;
+      border-radius: 18px;
+    }
+  }
+</style>
+
+<a class="gabi-partner-floating-link" href="../parceiros/gabi-goncalves/" title="Abrir painel parceiro da Gabi Gonçalves">
+  <span></span>
+  Painel Parceiro · Gabi Gonçalves
+</a>
+
+<script src="js/parceiros.js?v=parceiros-estrategicos-v1"></script>
 </body>
 </html>

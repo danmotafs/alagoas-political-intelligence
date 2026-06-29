@@ -1,0 +1,153 @@
+{
+  "metadata": {
+    "titulo": "Atuação Territorial de Parceiros — Gabi Gonçalves",
+    "versao": "v1",
+    "gerado_em": "2026-06-29 14:50:27",
+    "fonte": "TSE — votação por seção eleitoral 2024 / AL",
+    "observacao_metodologica": "A base oficial informa votos por seção, local de votação e endereço. Bairro/região é estimativa operacional derivada do endereço do local de votação."
+  },
+  "candidata_identificada": {
+    "sq_candidato": "20001967997",
+    "numero": "15123",
+    "nome_votavel": "MARIA GABRIELA RICARDO GABRIEL DA SILVA",
+    "cargo": "Vereador",
+    "municipio_principal": "TAQUARANA",
+    "votos_total_auditoria": 562
+  },
+  "resumo": {
+    "total_votos_gabi": 562,
+    "municipios_com_votos": 1,
+    "locais_votacao_com_votos": 4,
+    "secoes_com_votos": 50,
+    "regioes_estimadas": 2
+  },
+  "top_municipios": [
+    {
+      "municipio": "TAQUARANA",
+      "votos_gabi": 562,
+      "locais_votacao": 4,
+      "secoes_com_voto": 50,
+      "regioes_estimadas": 2,
+      "percentual_votos_gabi": 100.0,
+      "ranking_municipio_gabi": 1
+    }
+  ],
+  "top_locais_votacao": [
+    {
+      "municipio": "TAQUARANA",
+      "NR_ZONA": "45",
+      "NR_LOCAL_VOTACAO": "1040",
+      "local_votacao": "ESCOLA MARIA IRACI TEÓFILO DE CASTRO",
+      "endereco_local_votacao": "RUA 24 DE AGOSTO, 88",
+      "regiao_estimada": "NÃO INFORMADO",
+      "votos_gabi": 256,
+      "secoes_com_voto": 21,
+      "percentual_votos_gabi": 45.5516,
+      "forca_reduto": "NÚCLEO FORTE",
+      "ranking_local_gabi": 1
+    },
+    {
+      "municipio": "TAQUARANA",
+      "NR_ZONA": "45",
+      "NR_LOCAL_VOTACAO": "1031",
+      "local_votacao": "ESCOLA MUNICIPAL PROFESSORA DIVONETE CAVALCANTE DE ALBUQUERQUE",
+      "endereco_local_votacao": "RUA PROFESSORA DIVONETE CAVALCANTE DE ALBUQUERQUE",
+      "regiao_estimada": "NÃO INFORMADO",
+      "votos_gabi": 143,
+      "secoes_com_voto": 14,
+      "percentual_votos_gabi": 25.4448,
+      "forca_reduto": "NÚCLEO FORTE",
+      "ranking_local_gabi": 2
+    },
+    {
+      "municipio": "TAQUARANA",
+      "NR_ZONA": "45",
+      "NR_LOCAL_VOTACAO": "1015",
+      "local_votacao": "GRUPO ESCOLAR SANTOS FERRAZ",
+      "endereco_local_votacao": "RUA JOAQUIM MAURÍCIO",
+      "regiao_estimada": "NÃO INFORMADO",
+      "votos_gabi": 104,
+      "secoes_com_voto": 9,
+      "percentual_votos_gabi": 18.5053,
+      "forca_reduto": "NÚCLEO FORTE",
+      "ranking_local_gabi": 3
+    },
+    {
+      "municipio": "TAQUARANA",
+      "NR_ZONA": "45",
+      "NR_LOCAL_VOTACAO": "1058",
+      "local_votacao": "CRECHE PROFESSORA MARIA GENILSA COSTA",
+      "endereco_local_votacao": "RUA VEREADOR SEBASTIÃO DOMINGOS DA COSTA - PV PAI JOÃO",
+      "regiao_estimada": "PV PAI JOAO",
+      "votos_gabi": 59,
+      "secoes_com_voto": 6,
+      "percentual_votos_gabi": 10.4982,
+      "forca_reduto": "NÚCLEO FORTE",
+      "ranking_local_gabi": 4
+    }
+  ],
+  "top_regioes_estimadas": [
+    {
+      "municipio": "TAQUARANA",
+      "regiao_estimada": "NÃO INFORMADO",
+      "votos_gabi": 503,
+      "locais_votacao": 3,
+      "secoes_com_voto": 44,
+      "percentual_votos_gabi": 89.5018,
+      "forca_reduto": "NÚCLEO FORTE",
+      "ranking_regiao_gabi": 1
+    },
+    {
+      "municipio": "TAQUARANA",
+      "regiao_estimada": "PV PAI JOAO",
+      "votos_gabi": 59,
+      "locais_votacao": 1,
+      "secoes_com_voto": 6,
+      "percentual_votos_gabi": 10.4982,
+      "forca_reduto": "NÚCLEO FORTE",
+      "ranking_regiao_gabi": 2
+    }
+  ],
+  "agenda_sugerida_davi_gabi": [
+    {
+      "municipio": "TAQUARANA",
+      "local_votacao": "ESCOLA MARIA IRACI TEÓFILO DE CASTRO",
+      "regiao_estimada": "NÃO INFORMADO",
+      "votos_gabi": 256,
+      "percentual_votos_gabi": 45.5516,
+      "forca_reduto": "NÚCLEO FORTE",
+      "acao_recomendada": "Agenda conjunta Davi + Gabi com visita territorial, reunião com lideranças locais e validação de interlocutores comunitários.",
+      "objetivo_politico": "Converter capital territorial da Gabi em abertura de portas para Davi, priorizando presença física e relacionamento local."
+    },
+    {
+      "municipio": "TAQUARANA",
+      "local_votacao": "ESCOLA MUNICIPAL PROFESSORA DIVONETE CAVALCANTE DE ALBUQUERQUE",
+      "regiao_estimada": "NÃO INFORMADO",
+      "votos_gabi": 143,
+      "percentual_votos_gabi": 25.4448,
+      "forca_reduto": "NÚCLEO FORTE",
+      "acao_recomendada": "Agenda conjunta Davi + Gabi com visita territorial, reunião com lideranças locais e validação de interlocutores comunitários.",
+      "objetivo_politico": "Converter capital territorial da Gabi em abertura de portas para Davi, priorizando presença física e relacionamento local."
+    },
+    {
+      "municipio": "TAQUARANA",
+      "local_votacao": "GRUPO ESCOLAR SANTOS FERRAZ",
+      "regiao_estimada": "NÃO INFORMADO",
+      "votos_gabi": 104,
+      "percentual_votos_gabi": 18.5053,
+      "forca_reduto": "NÚCLEO FORTE",
+      "acao_recomendada": "Agenda conjunta Davi + Gabi com visita territorial, reunião com lideranças locais e validação de interlocutores comunitários.",
+      "objetivo_politico": "Converter capital territorial da Gabi em abertura de portas para Davi, priorizando presença física e relacionamento local."
+    },
+    {
+      "municipio": "TAQUARANA",
+      "local_votacao": "CRECHE PROFESSORA MARIA GENILSA COSTA",
+      "regiao_estimada": "PV PAI JOAO",
+      "votos_gabi": 59,
+      "percentual_votos_gabi": 10.4982,
+      "forca_reduto": "NÚCLEO FORTE",
+      "acao_recomendada": "Agenda conjunta Davi + Gabi com visita territorial, reunião com lideranças locais e validação de interlocutores comunitários.",
+      "objetivo_politico": "Converter capital territorial da Gabi em abertura de portas para Davi, priorizando presença física e relacionamento local."
+    }
+  ]
+}

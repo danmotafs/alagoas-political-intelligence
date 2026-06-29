@@ -1,0 +1,58 @@
+{
+  "metadata": {
+    "projeto": "Painel Parceiro Gabi Gonçalves 2026",
+    "versao": "sprint01_estrutura",
+    "atualizacao": "25/06/2026 09:20",
+    "candidata": "Gabi Gonçalves",
+    "cargo": "Deputada Estadual",
+    "painel_matriz": "Davi Maia - Deputado Federal",
+    "status": "Estrutura criada; dados próprios da Gabi pendentes de curadoria"
+  },
+  "identidade_visual": {
+    "azul_principal": "#1A4392",
+    "azul_escuro": "#0B1F4D",
+    "amarelo_destaque": "#F1D214",
+    "rosa_campanha": "#E280B2",
+    "fundo_claro": "#F6F8FC"
+  },
+  "indicadores_alagoas": {
+    "municipios": 102,
+    "eleitorado_total": 2442894,
+    "populacao_total": 3220104,
+    "prefeitos_mapeados": 102,
+    "vereadores_mapeados": 2462,
+    "votos_vereadores_total": 1114135
+  },
+  "indicadores_gabi": {
+    "meta_eleitoral": null,
+    "municipios_prioritarios": 0,
+    "liderancas_mapeadas": 0,
+    "municipios_com_sinergia_davi": 0,
+    "status_meta": "A definir no Sprint 02"
+  },
+  "ranking_municipios": [],
+  "liderancas": [],
+  "oportunidades": [],
+  "proximos_passos": [
+    {
+      "sprint": "Sprint 02",
+      "titulo": "Base Eleitoral da Gabi",
+      "descricao": "Definir meta estadual, municípios prioritários, status de visita e campos próprios da candidata."
+    },
+    {
+      "sprint": "Sprint 03",
+      "titulo": "Rede de Lideranças",
+      "descricao": "Cruzar vereadores, prefeitos, partidos, votos municipais e aderência política à Gabi."
+    },
+    {
+      "sprint": "Sprint 04",
+      "titulo": "Cruzamento Davi x Gabi",
+      "descricao": "Criar camada de sinergia territorial, agendas conjuntas e potencial de transferência política."
+    },
+    {
+      "sprint": "Sprint 05",
+      "titulo": "Publicação",
+      "descricao": "Validar visualmente, subir ao GitHub Pages e gerar link de compartilhamento."
+    }
+  ]
+}

@@ -1,0 +1,7 @@
+﻿etapa,bloco,pergunta,campo_relacionado,opcoes_sugeridas
+1,Relação política,A liderança tem relação direta com Gabi?,relacao_gabi,Forte; Média; Fraca; Contra; A CURAR
+2,Relação política,A liderança tem relação direta com Davi Maia?,relacao_davi,Forte; Média; Fraca; Contra; A CURAR
+3,Eixo estadual,"O grupo local possui alinhamento com Renan Filho, Renan Calheiros ou Paulo Dantas?",relacao_renan_filho / relacao_renan_calheiros / relacao_paulo_dantas,Forte; Médio; Fraco; Oposição; A CURAR
+4,Risco político,Existe conflito local que possa impedir agenda Davi + Gabi?,conflito_apoio,Sim; Não; A verificar
+5,Agenda,A agenda deve ser pública ou reservada?,agenda_publica_ou_reservada,Pública; Reservada; Primeiro contato reservado
+6,Decisão,Qual decisão operacional após a curadoria?,decisao_agenda,Agendar; Reunião reservada; Monitorar; Não avançar

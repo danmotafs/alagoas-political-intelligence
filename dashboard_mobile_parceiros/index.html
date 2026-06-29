@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Painel Mobile — Parceiros Davi Maia 2026</title>
+
+  <link rel="stylesheet" href="css/mobile-parceiros.css?v=3" />
+</head>
+
+<body>
+  <main class="app-shell">
+    <header class="hero">
+      <div class="topbar">
+        <a href="../dashboard_v2/" class="back-link">← Painel completo</a>
+        
+        <a href="../dashboard_v2/" class="davi-logo-wrap" aria-label="Abrir painel principal do Davi Maia" title="Abrir painel principal do Davi Maia">
+          <img src="assets/parceiros/logo_davi_maia.webp" alt="Davi Maia" />
+        </a>
+        
+      </div>
+
+      <p class="eyebrow yellow">Rede Davi Maia 2026</p>
+      <h1>Parceiros Estratégicos</h1>
+      <p class="subtitle">
+        Decisão rápida: quem ajuda, onde ajuda, com quais vereadores e com qual potencial de votos.
+      </p>
+    </header>
+
+    <section class="section compact">
+      <p class="eyebrow">Selecionar liderança</p>
+      <h2>Quem vai abrir território?</h2>
+      <div id="partner-selector" class="partner-selector">
+        <div class="loading-card">Carregando lideranças...</div>
+      </div>
+    </section>
+
+    <section id="partner-detail" class="partner-detail hidden">
+      <div class="partner-profile-card">
+        <div id="partner-avatar" class="partner-avatar">
+          <span>--</span>
+        </div>
+
+        <div class="partner-profile-info">
+          <p id="selected-cargo-label" class="eyebrow">Liderança selecionada</p>
+          <h2 id="partner-name">-</h2>
+          <p id="partner-role">-</p>
+        </div>
+      </div>
+
+      <section class="metric-grid">
+        <article class="metric-card featured">
+          <small>Votos em 2022</small>
+          <strong id="metric-votos-2022">-</strong>
+          <span id="legend-votos-2022">Capital eleitoral da liderança</span>
+        </article>
+
+        <article class="metric-card info">
+          <small>Municípios em convergência</small>
+          <strong id="metric-municipios">-</strong>
+          <span id="legend-municipios">Municípios com sobreposição territorial.</span>
+        </article>
+
+        <article class="metric-card">
+          <small>Vereadores</small>
+          <strong id="metric-vereadores">-</strong>
+          <span>Prioritários para abordagem</span>
+        </article>
+
+        <article class="metric-card featured">
+          <small>Potencial de votos</small>
+          <strong id="metric-potencial">-</strong>
+          <span class="footnote">
+            fórmula: 50% dos votos da liderança no território + 50% dos votos do vereador convergente
+          </span>
+        </article>
+
+        <article class="metric-card">
+          <small>% da meta</small>
+          <strong id="metric-percentual-meta">-</strong>
+          <span>Meta Davi: 60 mil votos</span>
+        </article>
+      </section>
+
+      <section class="decision-card">
+        <p class="eyebrow">Decisão rápida</p>
+        <h2 id="quick-decision-title">-</h2>
+        <p id="quick-decision-text">-</p>
+      </section>
+
+      <section class="section">
+        <p class="eyebrow">Principais cidades</p>
+        <h2 id="cities-title">Cidades onde a liderança mais ajuda</h2>
+        <div id="top-cities" class="list-stack"></div>
+      </section>
+
+      <section class="section">
+        <p class="eyebrow">Locais + vereadores</p>
+        <h2>Onde visitar e quem abordar</h2>
+        <div id="school-vereador-list" class="list-stack"></div>
+      </section>
+
+      <section class="section">
+        <p class="eyebrow">Relevância para a meta</p>
+        <h2>Impacto estimado na meta de 60 mil votos</h2>
+
+        <div id="impact-tabs" class="impact-tabs"></div>
+
+        <div class="impact-card">
+          <div class="impact-header">
+            <div>
+              <strong id="impact-title">-</strong>
+              <span id="impact-subtitle">-</span>
+            </div>
+            <strong id="impact-value">-</strong>
+          </div>
+
+          <div class="progress-wrap">
+            <div id="impact-bar" class="progress-bar"></div>
+          </div>
+
+          <p id="impact-note" class="impact-note">-</p>
+        </div>
+      </section>
+    </section>
+
+    <section id="empty-state" class="empty-state hidden">
+      <h2>Nenhuma liderança processada ainda</h2>
+      <p>O painel mobile será preenchido automaticamente pelo painel completo.</p>
+    </section>
+  </main>
+
+  <script src="js/mobile-parceiros.js?v=3"></script>
+</body>
+</html>

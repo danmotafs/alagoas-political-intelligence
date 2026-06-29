@@ -1,0 +1,8 @@
+﻿coluna,tipo,preenchidos,vazios,percentual_preenchido,exemplo_1,exemplo_2
+chave_local,object,445,0,100.0,ARAPIRACA|COLEGIO QUINTELA CAVALCANTE|AV. VENTURA DE FARIAS S/N,ARAPIRACA|ESCOLA DE 1 E 2 GRAUS SENADOR RUI PALMEIRA|RUA MANOEL NUNES NETO S/N
+latitude,float64,236,209,53.03,-9.7466266,-9.7414437
+longitude,float64,236,209,53.03,-36.6673366,-36.6642875
+bairro,object,235,210,52.81,Eldorado,Capiatá
+distrito,object,1,444,0.22,Maceió,
+status_geocodificacao,object,445,0,100.0,ENCONTRADO,ENCONTRADO
+consulta_geocoding,object,445,0,100.0,"AV. VENTURA DE FARIAS S/N, Arapiraca, Alagoas, Brasil","RUA MANOEL NUNES NETO S/N, Arapiraca, Alagoas, Brasil"

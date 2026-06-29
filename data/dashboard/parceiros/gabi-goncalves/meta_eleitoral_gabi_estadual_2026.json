@@ -1,0 +1,52 @@
+{
+  "metadata": {
+    "projeto": "Meta Eleitoral Gabi Gonçalves Reeleição 2026",
+    "versao": "sprint02_base_eleitoral",
+    "atualizacao": "25/06/2026 10:37",
+    "status": "Meta operacional preliminar criada para planejamento inicial."
+  },
+  "meta_eleitoral_gabi_2026": {
+    "cargo": "Deputada Estadual em mandato",
+    "tipo_candidatura": "Reeleição",
+    "meta_votos": 45000,
+    "cenario": "Operacional preliminar",
+    "observacao": "Meta de trabalho definida para estruturar o painel inicial. Deve ser revisada após inserção da votação histórica de 2022, base de apoiadores, municípios de mandato e alianças formalizadas."
+  },
+  "cenarios_meta": [
+    {
+      "cenario": "Conservador",
+      "meta_votos": 35000,
+      "descricao": "Cenário de proteção de mandato, com expansão territorial controlada."
+    },
+    {
+      "cenario": "Operacional",
+      "meta_votos": 45000,
+      "descricao": "Cenário usado como referência inicial para distribuição municipal no painel."
+    },
+    {
+      "cenario": "Expansão",
+      "meta_votos": 55000,
+      "descricao": "Cenário de crescimento com maior capilaridade territorial e agendas conjuntas."
+    }
+  ],
+  "cenarios_transferencia_vereadores": [
+    {
+      "cenario": "Baixa conversão",
+      "percentual_transferencia_vereadores": 5,
+      "potencial_estimado": 54742,
+      "descricao": "Hipótese conservadora de aproveitamento da rede legislativa municipal."
+    },
+    {
+      "cenario": "Conversão moderada",
+      "percentual_transferencia_vereadores": 10,
+      "potencial_estimado": 109483,
+      "descricao": "Hipótese intermediária para municípios com articulação ativa."
+    },
+    {
+      "cenario": "Alta conversão",
+      "percentual_transferencia_vereadores": 15,
+      "potencial_estimado": 164225,
+      "descricao": "Hipótese agressiva, dependente de pactuação política e presença territorial."
+    }
+  ]
+}

@@ -1,0 +1,955 @@
+from __future__ import annotations
+
+import json
+import math
+import unicodedata
+from datetime import datetime
+from pathlib import Path
+
+import pandas as pd
+
+
+META_TRABALHO_GABI = 45000
+
+CENARIOS_META_GABI = {
+    "conservador": 35000,
+    "operacional": 45000,
+    "expansao": 55000,
+}
+
+
+def detectar_raiz_projeto() -> Path:
+    caminho_script = Path(__file__).resolve()
+
+    if (
+        caminho_script.parent.name.lower() == "analytics"
+        and caminho_script.parent.parent.name.lower() == "scripts"
+    ):
+        return caminho_script.parent.parent.parent
+
+    return Path.cwd()
+
+
+def normalizar_texto(valor: object) -> str:
+    if valor is None or pd.isna(valor):
+        return ""
+
+    texto = str(valor).strip().upper()
+    texto = unicodedata.normalize("NFKD", texto)
+    texto = "".join(ch for ch in texto if not unicodedata.combining(ch))
+    texto = " ".join(texto.split())
+    return texto
+
+
+def normalizar_coluna(coluna: str) -> str:
+    texto = normalizar_texto(coluna).lower()
+    texto = texto.replace(" ", "_")
+    texto = texto.replace("-", "_")
+    texto = texto.replace("/", "_")
+    texto = texto.replace(".", "")
+    texto = texto.replace("ç", "c")
+    return texto
+
+
+def encontrar_arquivo(root: Path, candidatos: list[str]) -> Path | None:
+    for relativo in candidatos:
+        caminho = root / relativo
+        if caminho.exists():
+            return caminho
+
+    return None
+
+
+def ler_csv_robusto(caminho: Path) -> pd.DataFrame:
+    tentativas = [
+        {"encoding": "utf-8-sig", "sep": None, "engine": "python"},
+        {"encoding": "utf-8", "sep": None, "engine": "python"},
+        {"encoding": "latin1", "sep": None, "engine": "python"},
+        {"encoding": "cp1252", "sep": None, "engine": "python"},
+    ]
+
+    ultimo_erro: Exception | None = None
+
+    for kwargs in tentativas:
+        try:
+            df = pd.read_csv(caminho, **kwargs)
+            df.columns = [normalizar_coluna(c) for c in df.columns]
+            return df
+        except Exception as erro:
+            ultimo_erro = erro
+
+    raise RuntimeError(f"Não foi possível ler o arquivo {caminho}. Erro: {ultimo_erro}")
+
+
+def encontrar_coluna(df: pd.DataFrame, candidatos: list[str]) -> str | None:
+    colunas = list(df.columns)
+
+    candidatos_norm = [normalizar_coluna(c) for c in candidatos]
+
+    for candidato in candidatos_norm:
+        if candidato in colunas:
+            return candidato
+
+    for candidato in candidatos_norm:
+        for coluna in colunas:
+            if candidato in coluna:
+                return coluna
+
+    return None
+
+
+def converter_numero(serie: pd.Series) -> pd.Series:
+    if serie is None:
+        return pd.Series(dtype="float64")
+
+    return (
+        serie.astype(str)
+        .str.replace(".", "", regex=False)
+        .str.replace(",", ".", regex=False)
+        .str.extract(r"([-+]?\d*\.?\d+)", expand=False)
+        .astype(float)
+        .fillna(0)
+    )
+
+
+def normalizar_0_100(serie: pd.Series) -> pd.Series:
+    valores = converter_numero(serie)
+
+    minimo = valores.min()
+    maximo = valores.max()
+
+    if pd.isna(minimo) or pd.isna(maximo) or maximo == minimo:
+        return pd.Series([0.0] * len(valores), index=valores.index)
+
+    return ((valores - minimo) / (maximo - minimo)) * 100
+
+
+def preparar_base_municipios(root: Path) -> pd.DataFrame:
+    caminho = encontrar_arquivo(
+        root,
+        [
+            "data/final/alagoas_municipios_base_2024.csv",
+            "data/processed/alagoas_municipios_base_2024.csv",
+            "data/final/municipios_alagoas_eleitorado_2024.csv",
+            "data/processed/municipios_alagoas_eleitorado_2024.csv",
+        ],
+    )
+
+    if caminho is None:
+        raise FileNotFoundError(
+            "Não encontrei a base municipal. Esperado algo como "
+            "data/final/alagoas_municipios_base_2024.csv"
+        )
+
+    print(f"[OK] Base municipal encontrada: {caminho}")
+    df = ler_csv_robusto(caminho)
+
+    col_municipio = encontrar_coluna(
+        df,
+        [
+            "municipio",
+            "nm_municipio",
+            "nome_municipio",
+            "municipio_nome",
+        ],
+    )
+
+    col_eleitorado = encontrar_coluna(
+        df,
+        [
+            "eleitorado_2024",
+            "eleitorado",
+            "qt_eleitores",
+            "eleitores",
+            "total_eleitores",
+        ],
+    )
+
+    col_populacao = encontrar_coluna(
+        df,
+        [
+            "populacao_estimada_2024",
+            "populacao_2024",
+            "populacao",
+            "populacao_estimada",
+        ],
+    )
+
+    if col_municipio is None:
+        raise RuntimeError("Não encontrei coluna de município na base municipal.")
+
+    base = pd.DataFrame()
+    base["municipio"] = df[col_municipio].astype(str).str.strip()
+    base["municipio_key"] = base["municipio"].apply(normalizar_texto)
+
+    if col_eleitorado:
+        base["eleitorado"] = converter_numero(df[col_eleitorado]).astype(int)
+    else:
+        base["eleitorado"] = 0
+
+    if col_populacao:
+        base["populacao"] = converter_numero(df[col_populacao]).astype(int)
+    else:
+        base["populacao"] = 0
+
+    base = base.drop_duplicates(subset=["municipio_key"]).reset_index(drop=True)
+
+    return base
+
+
+def preparar_ranking(root: Path) -> pd.DataFrame:
+    caminho = encontrar_arquivo(
+        root,
+        [
+            "data/final/ranking_estrategico_alagoas_2024.csv",
+            "data/processed/ranking_estrategico_alagoas_2024.csv",
+        ],
+    )
+
+    if caminho is None:
+        print("[AVISO] Ranking estratégico não encontrado. A priorização usará eleitorado.")
+        return pd.DataFrame(columns=["municipio_key"])
+
+    print(f"[OK] Ranking estratégico encontrado: {caminho}")
+    df = ler_csv_robusto(caminho)
+
+    col_municipio = encontrar_coluna(df, ["municipio", "nm_municipio", "nome_municipio"])
+    col_rank = encontrar_coluna(df, ["ranking", "rank", "posicao", "ranking_estrategico"])
+    col_score = encontrar_coluna(
+        df,
+        [
+            "indice_estrategico",
+            "score_estrategico",
+            "pontuacao_estrategica",
+            "indice",
+            "score",
+        ],
+    )
+
+    if col_municipio is None:
+        print("[AVISO] Ranking existe, mas não encontrei coluna de município.")
+        return pd.DataFrame(columns=["municipio_key"])
+
+    ranking = pd.DataFrame()
+    ranking["municipio_key"] = df[col_municipio].apply(normalizar_texto)
+
+    if col_rank:
+        ranking["ranking_base_davi"] = converter_numero(df[col_rank]).astype(int)
+    else:
+        ranking["ranking_base_davi"] = 0
+
+    if col_score:
+        ranking["indice_estrategico_base_davi"] = converter_numero(df[col_score])
+    else:
+        ranking["indice_estrategico_base_davi"] = 0
+
+    ranking = ranking.drop_duplicates(subset=["municipio_key"]).reset_index(drop=True)
+
+    return ranking
+
+
+def preparar_politica_municipal(root: Path) -> pd.DataFrame:
+    caminho = encontrar_arquivo(
+        root,
+        [
+            "data/final/base_politica_municipal_2024.csv",
+            "data/processed/base_politica_municipal_2024.csv",
+        ],
+    )
+
+    if caminho is None:
+        print("[AVISO] Base política municipal não encontrada.")
+        return pd.DataFrame(columns=["municipio_key"])
+
+    print(f"[OK] Base política municipal encontrada: {caminho}")
+    df = ler_csv_robusto(caminho)
+
+    col_municipio = encontrar_coluna(df, ["municipio", "nm_municipio", "nome_municipio"])
+    col_prefeito = encontrar_coluna(df, ["prefeito", "nome_prefeito", "prefeito_eleito"])
+    col_partido = encontrar_coluna(df, ["partido_prefeito", "sigla_partido_prefeito", "partido"])
+    col_votos_prefeito = encontrar_coluna(df, ["votos_prefeito", "qt_votos_prefeito", "votos_eleito"])
+    col_margem = encontrar_coluna(df, ["margem_vitoria", "margem", "diferenca_votos"])
+
+    if col_municipio is None:
+        print("[AVISO] Base política existe, mas não encontrei coluna de município.")
+        return pd.DataFrame(columns=["municipio_key"])
+
+    politica = pd.DataFrame()
+    politica["municipio_key"] = df[col_municipio].apply(normalizar_texto)
+    politica["prefeito_2024"] = df[col_prefeito].astype(str).str.strip() if col_prefeito else ""
+    politica["partido_prefeito_2024"] = df[col_partido].astype(str).str.strip() if col_partido else ""
+
+    if col_votos_prefeito:
+        politica["votos_prefeito_2024"] = converter_numero(df[col_votos_prefeito]).astype(int)
+    else:
+        politica["votos_prefeito_2024"] = 0
+
+    if col_margem:
+        politica["margem_vitoria_prefeito"] = converter_numero(df[col_margem])
+    else:
+        politica["margem_vitoria_prefeito"] = 0
+
+    politica = politica.drop_duplicates(subset=["municipio_key"]).reset_index(drop=True)
+
+    return politica
+
+
+def preparar_vereadores_municipal(root: Path) -> pd.DataFrame:
+    caminho = encontrar_arquivo(
+        root,
+        [
+            "data/final/inteligencia_municipal_vereadores.csv",
+            "data/processed/inteligencia_municipal_vereadores.csv",
+        ],
+    )
+
+    if caminho is None:
+        print("[AVISO] Inteligência municipal de vereadores não encontrada.")
+        return pd.DataFrame(columns=["municipio_key"])
+
+    print(f"[OK] Base municipal de vereadores encontrada: {caminho}")
+    df = ler_csv_robusto(caminho)
+
+    col_municipio = encontrar_coluna(df, ["municipio", "nm_municipio", "nome_municipio"])
+    col_total_vereadores = encontrar_coluna(
+        df,
+        [
+            "total_vereadores",
+            "vereadores_mapeados",
+            "qtd_vereadores",
+            "qt_vereadores",
+        ],
+    )
+    col_votos = encontrar_coluna(
+        df,
+        [
+            "votos_vereadores_total",
+            "total_votos_vereadores",
+            "votos_total_vereadores",
+            "votos_vereadores",
+            "qt_votos",
+        ],
+    )
+
+    if col_municipio is None:
+        print("[AVISO] Base de vereadores existe, mas não encontrei coluna de município.")
+        return pd.DataFrame(columns=["municipio_key"])
+
+    vereadores = pd.DataFrame()
+    vereadores["municipio_key"] = df[col_municipio].apply(normalizar_texto)
+
+    if col_total_vereadores:
+        vereadores["vereadores_mapeados"] = converter_numero(df[col_total_vereadores]).astype(int)
+    else:
+        vereadores["vereadores_mapeados"] = 0
+
+    if col_votos:
+        vereadores["votos_vereadores_total"] = converter_numero(df[col_votos]).astype(int)
+    else:
+        vereadores["votos_vereadores_total"] = 0
+
+    vereadores = vereadores.drop_duplicates(subset=["municipio_key"]).reset_index(drop=True)
+
+    return vereadores
+
+
+def classificar_prioridade(rank: int) -> str:
+    if rank <= 10:
+        return "Muito alta"
+    if rank <= 20:
+        return "Alta"
+    if rank <= 40:
+        return "Média"
+    return "Monitoramento"
+
+
+def classificar_status(rank: int) -> str:
+    if rank <= 20:
+        return "Priorizar curadoria"
+    if rank <= 40:
+        return "Avaliar após top 20"
+    return "Monitorar"
+
+
+def justificar_prioridade(rank: int, eleitorado: int, votos_vereadores: int) -> str:
+    if rank <= 10:
+        return (
+            "Município no núcleo prioritário inicial pela combinação de peso eleitoral, "
+            "força municipal e potencial de articulação política."
+        )
+
+    if rank <= 20:
+        return (
+            "Município estratégico para expansão inicial da candidatura à reeleição, "
+            "com necessidade de curadoria de lideranças locais."
+        )
+
+    if rank <= 40:
+        return (
+            "Município relevante para segunda onda de visitas e validação de aderência política."
+        )
+
+    return (
+        "Município mantido em monitoramento para atualização posterior conforme novas alianças."
+    )
+
+
+def calcular_base_gabi(root: Path) -> pd.DataFrame:
+    base = preparar_base_municipios(root)
+    ranking = preparar_ranking(root)
+    politica = preparar_politica_municipal(root)
+    vereadores = preparar_vereadores_municipal(root)
+
+    df = base.merge(ranking, on="municipio_key", how="left")
+    df = df.merge(politica, on="municipio_key", how="left")
+    df = df.merge(vereadores, on="municipio_key", how="left")
+
+    colunas_num = [
+        "ranking_base_davi",
+        "indice_estrategico_base_davi",
+        "votos_prefeito_2024",
+        "margem_vitoria_prefeito",
+        "vereadores_mapeados",
+        "votos_vereadores_total",
+    ]
+
+    for coluna in colunas_num:
+        if coluna not in df.columns:
+            df[coluna] = 0
+        df[coluna] = converter_numero(df[coluna])
+
+    for coluna in ["prefeito_2024", "partido_prefeito_2024"]:
+        if coluna not in df.columns:
+            df[coluna] = ""
+        df[coluna] = df[coluna].fillna("").astype(str)
+
+    df["score_eleitorado"] = normalizar_0_100(df["eleitorado"])
+    df["score_vereadores"] = normalizar_0_100(df["votos_vereadores_total"])
+
+    if df["indice_estrategico_base_davi"].sum() > 0:
+        df["score_base_davi"] = normalizar_0_100(df["indice_estrategico_base_davi"])
+    else:
+        df["score_base_davi"] = df["score_eleitorado"]
+
+    df["score_gabi_preliminar"] = (
+        df["score_base_davi"] * 0.50
+        + df["score_eleitorado"] * 0.35
+        + df["score_vereadores"] * 0.15
+    )
+
+    df = df.sort_values(
+        by=["score_gabi_preliminar", "eleitorado"],
+        ascending=[False, False],
+    ).reset_index(drop=True)
+
+    df["ranking_gabi_preliminar"] = range(1, len(df) + 1)
+    df["prioridade_visita_gabi"] = df["ranking_gabi_preliminar"].apply(classificar_prioridade)
+    df["status_articulacao_gabi"] = df["ranking_gabi_preliminar"].apply(classificar_status)
+
+    df["relacao_gabi"] = "A CURAR"
+    df["aderencia_gabi"] = "A CURAR"
+    df["grupo_politico_gabi"] = "A CURAR"
+    df["observacao_curadoria_gabi"] = ""
+
+    df["justificativa_prioridade_gabi"] = df.apply(
+        lambda row: justificar_prioridade(
+            int(row["ranking_gabi_preliminar"]),
+            int(row["eleitorado"]),
+            int(row["votos_vereadores_total"]),
+        ),
+        axis=1,
+    )
+
+    peso = df["score_gabi_preliminar"].clip(lower=1)
+
+    fator_prioridade = df["ranking_gabi_preliminar"].apply(
+        lambda rank: 1.0 if rank <= 40 else 0.25
+    )
+
+    pesos_ajustados = peso * fator_prioridade
+    total_pesos = pesos_ajustados.sum()
+
+    if total_pesos > 0:
+        df["meta_votos_referencia_gabi"] = (
+            (pesos_ajustados / total_pesos) * META_TRABALHO_GABI
+        ).round().astype(int)
+    else:
+        df["meta_votos_referencia_gabi"] = 0
+
+    diferenca = META_TRABALHO_GABI - int(df["meta_votos_referencia_gabi"].sum())
+
+    if len(df) > 0 and diferenca != 0:
+        df.loc[0, "meta_votos_referencia_gabi"] += diferenca
+
+    df["potencial_transferencia_vereadores_5pct"] = (
+        df["votos_vereadores_total"] * 0.05
+    ).round().astype(int)
+
+    df["potencial_transferencia_vereadores_10pct"] = (
+        df["votos_vereadores_total"] * 0.10
+    ).round().astype(int)
+
+    df["potencial_transferencia_vereadores_15pct"] = (
+        df["votos_vereadores_total"] * 0.15
+    ).round().astype(int)
+
+    ordem_colunas = [
+        "ranking_gabi_preliminar",
+        "municipio",
+        "eleitorado",
+        "populacao",
+        "score_gabi_preliminar",
+        "prioridade_visita_gabi",
+        "status_articulacao_gabi",
+        "meta_votos_referencia_gabi",
+        "ranking_base_davi",
+        "indice_estrategico_base_davi",
+        "prefeito_2024",
+        "partido_prefeito_2024",
+        "votos_prefeito_2024",
+        "margem_vitoria_prefeito",
+        "vereadores_mapeados",
+        "votos_vereadores_total",
+        "potencial_transferencia_vereadores_5pct",
+        "potencial_transferencia_vereadores_10pct",
+        "potencial_transferencia_vereadores_15pct",
+        "relacao_gabi",
+        "aderencia_gabi",
+        "grupo_politico_gabi",
+        "observacao_curadoria_gabi",
+        "justificativa_prioridade_gabi",
+        "municipio_key",
+    ]
+
+    for coluna in ordem_colunas:
+        if coluna not in df.columns:
+            df[coluna] = ""
+
+    return df[ordem_colunas]
+
+
+def gerar_curadoria(df: pd.DataFrame) -> pd.DataFrame:
+    top = df.head(40).copy()
+
+    curadoria = top[
+        [
+            "ranking_gabi_preliminar",
+            "municipio",
+            "prioridade_visita_gabi",
+            "status_articulacao_gabi",
+            "prefeito_2024",
+            "partido_prefeito_2024",
+            "vereadores_mapeados",
+            "votos_vereadores_total",
+            "meta_votos_referencia_gabi",
+            "relacao_gabi",
+            "aderencia_gabi",
+            "grupo_politico_gabi",
+            "observacao_curadoria_gabi",
+        ]
+    ].copy()
+
+    curadoria["lideranca_chave_gabi"] = ""
+    curadoria["telefone_contato"] = ""
+    curadoria["responsavel_articulacao"] = ""
+    curadoria["agenda_recomendada"] = ""
+    curadoria["risco_politico"] = ""
+    curadoria["proximo_passo"] = ""
+
+    return curadoria
+
+
+def gerar_base_dashboard(df: pd.DataFrame) -> dict:
+    top20 = df.head(20).copy()
+    top10 = df.head(10).copy()
+
+    ranking_municipios = []
+
+    for _, row in top20.iterrows():
+        ranking_municipios.append(
+            {
+                "rank": int(row["ranking_gabi_preliminar"]),
+                "municipio": row["municipio"],
+                "eleitorado": int(row["eleitorado"]),
+                "prioridade": row["prioridade_visita_gabi"],
+                "status": row["status_articulacao_gabi"],
+                "score": round(float(row["score_gabi_preliminar"]), 2),
+                "meta_referencia": int(row["meta_votos_referencia_gabi"]),
+            }
+        )
+
+    oportunidades = []
+
+    for _, row in top10.iterrows():
+        oportunidades.append(
+            {
+                "municipio": row["municipio"],
+                "prioridade": row["prioridade_visita_gabi"],
+                "eleitorado": int(row["eleitorado"]),
+                "meta_referencia": int(row["meta_votos_referencia_gabi"]),
+                "justificativa": row["justificativa_prioridade_gabi"],
+            }
+        )
+
+    eleitorado_total = int(df["eleitorado"].sum())
+    populacao_total = int(df["populacao"].sum())
+    votos_vereadores_total = int(df["votos_vereadores_total"].sum())
+    vereadores_mapeados = int(df["vereadores_mapeados"].sum())
+
+    if vereadores_mapeados == 0:
+        vereadores_mapeados = 2462
+
+    return {
+        "metadata": {
+            "projeto": "Painel Parceiro Gabi Gonçalves 2026",
+            "versao": "sprint02_base_eleitoral",
+            "atualizacao": datetime.now().strftime("%d/%m/%Y %H:%M"),
+            "candidata": "Gabi Gonçalves",
+            "cargo": "Deputada Estadual em mandato",
+            "tipo_candidatura": "Reeleição",
+            "painel_matriz": "Davi Maia - Deputado Federal",
+            "status": "Base eleitoral preliminar criada a partir das bases municipais do projeto matriz."
+        },
+        "identidade_visual": {
+            "azul_principal": "#1A4392",
+            "azul_escuro": "#0B1F4D",
+            "amarelo_destaque": "#F1D214",
+            "rosa_campanha": "#E280B2",
+            "fundo_claro": "#F6F8FC"
+        },
+        "indicadores_alagoas": {
+            "municipios": int(len(df)),
+            "eleitorado_total": eleitorado_total,
+            "populacao_total": populacao_total,
+            "prefeitos_mapeados": int(len(df[df["prefeito_2024"].astype(str).str.len() > 0])),
+            "vereadores_mapeados": vereadores_mapeados,
+            "votos_vereadores_total": votos_vereadores_total
+        },
+        "indicadores_gabi": {
+            "meta_eleitoral": META_TRABALHO_GABI,
+            "meta_tipo": "Meta operacional preliminar",
+            "situacao_politica": "Deputada Estadual em mandato",
+            "tipo_candidatura": "Reeleição",
+            "municipios_prioritarios": int(len(df[df["ranking_gabi_preliminar"] <= 20])),
+            "municipios_top40": int(len(df[df["ranking_gabi_preliminar"] <= 40])),
+            "liderancas_mapeadas": 0,
+            "municipios_com_sinergia_davi": int(len(df[df["ranking_gabi_preliminar"] <= 20])),
+            "status_meta": "Meta preliminar calibrada para planejamento inicial; revisar após inserir votação histórica da Gabi."
+        },
+        "ranking_municipios": ranking_municipios,
+        "liderancas": [],
+        "oportunidades": oportunidades,
+        "proximos_passos": [
+            {
+                "sprint": "Sprint 03",
+                "titulo": "Rede de Lideranças da Gabi",
+                "descricao": "Mapear lideranças reais, vereadores aliados, prefeitos e responsáveis por articulação em cada município prioritário."
+            },
+            {
+                "sprint": "Sprint 04",
+                "titulo": "Cruzamento Davi + Gabi",
+                "descricao": "Cruzar municípios prioritários do Davi com a base preliminar da Gabi para identificar agendas conjuntas."
+            },
+            {
+                "sprint": "Sprint 05",
+                "titulo": "Mapa de Oportunidades",
+                "descricao": "Transformar a priorização municipal em roteiro de visitas e plano semanal de articulação."
+            },
+            {
+                "sprint": "Sprint 06",
+                "titulo": "Publicação e Validação",
+                "descricao": "Validar painel com Davi, ajustar leitura política e publicar versão de aprovação."
+            }
+        ]
+    }
+
+
+def gerar_meta_json(df: pd.DataFrame) -> dict:
+    total_votos_vereadores = int(df["votos_vereadores_total"].sum())
+
+    return {
+        "metadata": {
+            "projeto": "Meta Eleitoral Gabi Gonçalves Reeleição 2026",
+            "versao": "sprint02_base_eleitoral",
+            "atualizacao": datetime.now().strftime("%d/%m/%Y %H:%M"),
+            "status": "Meta operacional preliminar criada para planejamento inicial."
+        },
+        "meta_eleitoral_gabi_2026": {
+            "cargo": "Deputada Estadual em mandato",
+            "tipo_candidatura": "Reeleição",
+            "meta_votos": META_TRABALHO_GABI,
+            "cenario": "Operacional preliminar",
+            "observacao": (
+                "Meta de trabalho definida para estruturar o painel inicial. "
+                "Deve ser revisada após inserção da votação histórica de 2022, "
+                "base de apoiadores, municípios de mandato e alianças formalizadas."
+            )
+        },
+        "cenarios_meta": [
+            {
+                "cenario": "Conservador",
+                "meta_votos": CENARIOS_META_GABI["conservador"],
+                "descricao": "Cenário de proteção de mandato, com expansão territorial controlada."
+            },
+            {
+                "cenario": "Operacional",
+                "meta_votos": CENARIOS_META_GABI["operacional"],
+                "descricao": "Cenário usado como referência inicial para distribuição municipal no painel."
+            },
+            {
+                "cenario": "Expansão",
+                "meta_votos": CENARIOS_META_GABI["expansao"],
+                "descricao": "Cenário de crescimento com maior capilaridade territorial e agendas conjuntas."
+            }
+        ],
+        "cenarios_transferencia_vereadores": [
+            {
+                "cenario": "Baixa conversão",
+                "percentual_transferencia_vereadores": 5,
+                "potencial_estimado": int(round(total_votos_vereadores * 0.05)),
+                "descricao": "Hipótese conservadora de aproveitamento da rede legislativa municipal."
+            },
+            {
+                "cenario": "Conversão moderada",
+                "percentual_transferencia_vereadores": 10,
+                "potencial_estimado": int(round(total_votos_vereadores * 0.10)),
+                "descricao": "Hipótese intermediária para municípios com articulação ativa."
+            },
+            {
+                "cenario": "Alta conversão",
+                "percentual_transferencia_vereadores": 15,
+                "potencial_estimado": int(round(total_votos_vereadores * 0.15)),
+                "descricao": "Hipótese agressiva, dependente de pactuação política e presença territorial."
+            }
+        ]
+    }
+
+
+def gerar_cruzamento_json(df: pd.DataFrame) -> dict:
+    top10 = df.head(10)
+
+    municipios_alta_sinergia = []
+
+    for _, row in top10.iterrows():
+        municipios_alta_sinergia.append(
+            {
+                "municipio": row["municipio"],
+                "ranking_gabi_preliminar": int(row["ranking_gabi_preliminar"]),
+                "prioridade_gabi": row["prioridade_visita_gabi"],
+                "meta_referencia_gabi": int(row["meta_votos_referencia_gabi"]),
+                "score_gabi_preliminar": round(float(row["score_gabi_preliminar"]), 2),
+                "status": "Alta prioridade para cruzamento com base Davi"
+            }
+        )
+
+    return {
+        "metadata": {
+            "projeto": "Cruzamento Davi Maia + Gabi Gonçalves",
+            "versao": "sprint02_base_eleitoral",
+            "atualizacao": datetime.now().strftime("%d/%m/%Y %H:%M"),
+            "status": "Primeira camada de sinergia criada a partir do ranking preliminar da Gabi."
+        },
+        "eixo_politico": {
+            "descricao": "Davi Maia é tratado como eixo político principal; Gabi Gonçalves é analisada como parceira estadual e candidata à reeleição.",
+            "hipotese_estrategica": (
+                "A força territorial e institucional do Davi pode ser usada para apoiar a expansão "
+                "da Gabi em municípios prioritários, principalmente onde já há rede política municipal mapeada."
+            )
+        },
+        "cards": [
+            {
+                "etiqueta": "Eixo principal",
+                "titulo": "Davi como hub político",
+                "texto": "O painel considera Davi Maia como eixo de articulação territorial e Gabi como parceira estadual com prioridade de reeleição."
+            },
+            {
+                "etiqueta": "Eficiência territorial",
+                "titulo": "Agendas conjuntas",
+                "texto": "A base preliminar permite iniciar a seleção de municípios onde uma agenda conjunta pode gerar retorno político para Federal e Estadual."
+            },
+            {
+                "etiqueta": "Base de apoio",
+                "titulo": "Vereadores e lideranças",
+                "texto": "O próximo sprint vai mapear lideranças capazes de operar simultaneamente a construção de votos para Davi e Gabi."
+            }
+        ],
+        "municipios_alta_sinergia_preliminar": municipios_alta_sinergia,
+        "campos_futuros": [
+            "municipio",
+            "forca_davi",
+            "forca_gabi",
+            "sinergia_davi_gabi",
+            "liderancas_compartilhadas",
+            "agenda_conjunta_recomendada",
+            "potencial_transferencia_federal",
+            "potencial_transferencia_estadual",
+            "prioridade_operacional"
+        ]
+    }
+
+
+def gerar_briefing_sprint02() -> str:
+    linhas = [
+        "# Briefing — Sprint 02 — Base Eleitoral Gabi Gonçalves",
+        "",
+        "## Objetivo",
+        "",
+        "Criar a primeira base eleitoral própria da Gabi Gonçalves dentro do projeto alagoas-political-intelligence.",
+        "",
+        "A Gabi é tratada como Deputada Estadual em mandato e candidata à reeleição em 2026.",
+        "",
+        "## Decisão metodológica",
+        "",
+        "A base gerada neste sprint é preliminar. Ela usa como insumos as bases municipais já existentes no projeto matriz do Davi Maia:",
+        "",
+        "- base municipal de população e eleitorado;",
+        "- ranking estratégico municipal;",
+        "- base política municipal de prefeitos;",
+        "- inteligência municipal de vereadores.",
+        "",
+        "## Meta eleitoral",
+        "",
+        f"A meta operacional preliminar definida no script foi de {META_TRABALHO_GABI:,} votos.".replace(",", "."),
+        "",
+        "Essa meta deve ser revisada após entrada da votação histórica da Gabi em 2022, base de apoiadores, municípios de mandato e alianças formalizadas.",
+        "",
+        "## Arquivos gerados",
+        "",
+        "- data/final/parceiros/gabi-goncalves/base_eleitoral_gabi_v1.csv",
+        "- data/final/parceiros/gabi-goncalves/base_eleitoral_gabi_v1.xlsx",
+        "- data/reference/parceiros/gabi-goncalves/campos_curadoria_gabi_v1.csv",
+        "- data/dashboard/parceiros/gabi-goncalves/base_dashboard_gabi_v1.json",
+        "- data/dashboard/parceiros/gabi-goncalves/meta_eleitoral_gabi_estadual_2026.json",
+        "- data/dashboard/parceiros/gabi-goncalves/cruzamento_davi_gabi_v1.json",
+        "",
+        "## Campos de curadoria criados",
+        "",
+        "- relacao_gabi",
+        "- aderencia_gabi",
+        "- grupo_politico_gabi",
+        "- status_articulacao_gabi",
+        "- prioridade_visita_gabi",
+        "- lideranca_chave_gabi",
+        "- responsavel_articulacao",
+        "- agenda_recomendada",
+        "- risco_politico",
+        "- proximo_passo",
+        "",
+        "## Próximo sprint recomendado",
+        "",
+        "Sprint 03 — Rede de Lideranças da Gabi.",
+        "",
+        "Nesse sprint, a base de vereadores e lideranças deve ser aberta por município para identificar os nomes mais relevantes para articulação política e agenda territorial.",
+    ]
+
+    return "\n".join(linhas) + "\n"
+
+
+def salvar_resultados(root: Path, df: pd.DataFrame) -> None:
+    final_dir = root / "data" / "final" / "parceiros" / "gabi-goncalves"
+    reference_dir = root / "data" / "reference" / "parceiros" / "gabi-goncalves"
+    dashboard_dir = root / "data" / "dashboard" / "parceiros" / "gabi-goncalves"
+    docs_dir = root / "docs"
+
+    final_dir.mkdir(parents=True, exist_ok=True)
+    reference_dir.mkdir(parents=True, exist_ok=True)
+    dashboard_dir.mkdir(parents=True, exist_ok=True)
+    docs_dir.mkdir(parents=True, exist_ok=True)
+
+    base_csv = final_dir / "base_eleitoral_gabi_v1.csv"
+    base_xlsx = final_dir / "base_eleitoral_gabi_v1.xlsx"
+    curadoria_csv = reference_dir / "campos_curadoria_gabi_v1.csv"
+    dashboard_json = dashboard_dir / "base_dashboard_gabi_v1.json"
+    meta_json = dashboard_dir / "meta_eleitoral_gabi_estadual_2026.json"
+    cruzamento_json = dashboard_dir / "cruzamento_davi_gabi_v1.json"
+    briefing_md = docs_dir / "briefing_gabi_sprint02.md"
+
+    df.to_csv(base_csv, index=False, encoding="utf-8-sig")
+    print(f"[OK] CSV salvo: {base_csv}")
+
+    try:
+        df.to_excel(base_xlsx, index=False)
+        print(f"[OK] XLSX salvo: {base_xlsx}")
+    except Exception as erro:
+        print(f"[AVISO] Não foi possível salvar XLSX. CSV foi gerado normalmente. Erro: {erro}")
+
+    curadoria = gerar_curadoria(df)
+    curadoria.to_csv(curadoria_csv, index=False, encoding="utf-8-sig")
+    print(f"[OK] Planilha de curadoria salva: {curadoria_csv}")
+
+    dashboard_json.write_text(
+        json.dumps(gerar_base_dashboard(df), ensure_ascii=False, indent=2),
+        encoding="utf-8",
+    )
+    print(f"[OK] JSON dashboard salvo: {dashboard_json}")
+
+    meta_json.write_text(
+        json.dumps(gerar_meta_json(df), ensure_ascii=False, indent=2),
+        encoding="utf-8",
+    )
+    print(f"[OK] JSON meta salvo: {meta_json}")
+
+    cruzamento_json.write_text(
+        json.dumps(gerar_cruzamento_json(df), ensure_ascii=False, indent=2),
+        encoding="utf-8",
+    )
+    print(f"[OK] JSON cruzamento salvo: {cruzamento_json}")
+
+    briefing_md.write_text(gerar_briefing_sprint02(), encoding="utf-8")
+    print(f"[OK] Briefing salvo: {briefing_md}")
+
+
+def imprimir_resumo(df: pd.DataFrame) -> None:
+    print("")
+    print("============================================================")
+    print("RESUMO DO SPRINT 02")
+    print("============================================================")
+    print(f"Municípios na base Gabi: {len(df)}")
+    print(f"Eleitorado total: {int(df['eleitorado'].sum()):,}".replace(",", "."))
+    print(f"População total: {int(df['populacao'].sum()):,}".replace(",", "."))
+    print(f"Meta operacional preliminar: {META_TRABALHO_GABI:,}".replace(",", "."))
+    print(f"Municípios prioridade Muito alta: {len(df[df['prioridade_visita_gabi'] == 'Muito alta'])}")
+    print(f"Municípios prioridade Alta: {len(df[df['prioridade_visita_gabi'] == 'Alta'])}")
+    print(f"Municípios prioridade Média: {len(df[df['prioridade_visita_gabi'] == 'Média'])}")
+    print("")
+    print("TOP 10 preliminar Gabi:")
+    print("------------------------------------------------------------")
+
+    cols = [
+        "ranking_gabi_preliminar",
+        "municipio",
+        "eleitorado",
+        "prioridade_visita_gabi",
+        "meta_votos_referencia_gabi",
+    ]
+
+    print(df[cols].head(10).to_string(index=False))
+    print("============================================================")
+
+
+def main() -> None:
+    root = detectar_raiz_projeto()
+
+    print("============================================================")
+    print("SPRINT 02 — BASE ELEITORAL GABI GONÇALVES")
+    print("============================================================")
+    print(f"[INFO] Raiz detectada: {root}")
+    print(f"[INFO] Meta operacional preliminar: {META_TRABALHO_GABI}")
+
+    df = calcular_base_gabi(root)
+    salvar_resultados(root, df)
+    imprimir_resumo(df)
+
+    print("")
+    print("SPRINT 02 CONCLUÍDO.")
+    print("")
+    print("Agora teste o painel:")
+    print("  cd C:\\Users\\user\\Documents\\Workspace\\campanha_2026\\alagoas-political-intelligence")
+    print("  python -m http.server 8000")
+    print("")
+    print("Abra:")
+    print("  http://localhost:8000/parceiros/gabi-goncalves/")
+
+
+if __name__ == "__main__":
+    main()

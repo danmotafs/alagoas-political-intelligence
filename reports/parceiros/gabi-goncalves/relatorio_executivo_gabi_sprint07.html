@@ -1,0 +1,1136 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Relatório Executivo — Davi Maia + Gabi Gonçalves</title>
+
+  <style>
+    :root {
+      --blue-900: #0B1F4D;
+      --blue-700: #1A4392;
+      --yellow: #F1D214;
+      --pink: #D65091;
+      --pink-soft: #E280B2;
+      --bg: #F6F8FC;
+      --text: #14213D;
+      --muted: #61708F;
+      --line: #DCE4F4;
+      --white: #FFFFFF;
+      --radius: 24px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at 10% 0%, rgba(241, 210, 20, .12), transparent 30%),
+        radial-gradient(circle at 90% 10%, rgba(214, 80, 145, .13), transparent 30%),
+        var(--bg);
+      line-height: 1.45;
+    }
+
+    .page {
+      width: min(1180px, calc(100% - 40px));
+      margin: 0 auto;
+      padding: 28px 0 60px;
+    }
+
+    .cover {
+      display: grid;
+      grid-template-columns: 1.25fr .75fr;
+      gap: 28px;
+      align-items: stretch;
+      min-height: 620px;
+      margin-bottom: 28px;
+      padding: 32px;
+      border-radius: 34px;
+      background:
+        linear-gradient(135deg, rgba(11,31,77,.98), rgba(26,67,146,.94)),
+        var(--blue-900);
+      color: #fff;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .cover::before {
+      content: "";
+      position: absolute;
+      width: 360px;
+      height: 360px;
+      right: -120px;
+      top: -120px;
+      border-radius: 999px;
+      background: rgba(241, 210, 20, .22);
+    }
+
+    .cover::after {
+      content: "";
+      position: absolute;
+      width: 360px;
+      height: 360px;
+      left: -140px;
+      bottom: -120px;
+      border-radius: 999px;
+      background: rgba(214, 80, 145, .20);
+    }
+
+    .cover-main,
+    .cover-side {
+      position: relative;
+      z-index: 2;
+    }
+
+    .eyebrow {
+      margin: 0 0 12px;
+      color: var(--yellow);
+      font-size: 12px;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: .14em;
+    }
+
+    .cover h1 {
+      max-width: 760px;
+      margin: 0;
+      font-size: clamp(42px, 7vw, 78px);
+      line-height: .92;
+      letter-spacing: -0.07em;
+    }
+
+    .cover .subtitle {
+      max-width: 660px;
+      margin: 24px 0 0;
+      color: rgba(255,255,255,.82);
+      font-size: 20px;
+    }
+
+    .meta-list {
+      display: grid;
+      gap: 10px;
+      margin-top: 34px;
+    }
+
+    .meta-list div {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+      color: rgba(255,255,255,.82);
+      font-weight: 700;
+    }
+
+    .meta-list strong {
+      color: #fff;
+    }
+
+    .cover-side {
+      display: grid;
+      grid-template-rows: 1fr auto;
+      gap: 18px;
+    }
+
+    .photo-box {
+      min-height: 420px;
+      overflow: hidden;
+      border-radius: 28px;
+      background: rgba(255,255,255,.12);
+      border: 1px solid rgba(255,255,255,.20);
+    }
+
+    .photo-box img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center top;
+      display: block;
+    }
+
+    .logo-box {
+      display: grid;
+      place-items: center;
+      min-height: 150px;
+      padding: 18px;
+      border-radius: 28px;
+      background: #fff;
+    }
+
+    .logo-box img {
+      max-width: 100%;
+      max-height: 120px;
+      object-fit: contain;
+      display: block;
+    }
+
+    .section {
+      margin: 28px 0;
+      padding: 28px;
+      border-radius: 30px;
+      background: rgba(255,255,255,.94);
+      border: 1px solid var(--line);
+      box-shadow: 0 18px 50px rgba(11,31,77,.08);
+    }
+
+    .section-header {
+      margin-bottom: 22px;
+    }
+
+    .section-header h2 {
+      margin: 0;
+      color: var(--blue-900);
+      font-size: 34px;
+      line-height: 1;
+      letter-spacing: -0.05em;
+    }
+
+    .section-header p {
+      max-width: 880px;
+      margin: 12px 0 0;
+      color: var(--muted);
+      font-size: 16px;
+    }
+
+    .kpi-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    .kpi-card {
+      padding: 20px;
+      border-radius: 22px;
+      border: 1px solid var(--line);
+      background:
+        radial-gradient(circle at 100% 0%, rgba(241,210,20,.16), transparent 34%),
+        #fff;
+    }
+
+    .kpi-card span {
+      display: block;
+      color: var(--muted);
+      font-size: 11px;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: .10em;
+    }
+
+    .kpi-card strong {
+      display: block;
+      margin-top: 10px;
+      color: var(--blue-700);
+      font-size: 30px;
+      line-height: 1;
+      letter-spacing: -0.05em;
+    }
+
+    .kpi-card small {
+      display: block;
+      margin-top: 9px;
+      color: var(--muted);
+      font-weight: 700;
+    }
+
+    .highlight-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 16px;
+    }
+
+    .highlight {
+      padding: 22px;
+      border-radius: 24px;
+      background: #fff;
+      border: 1px solid var(--line);
+      border-top: 5px solid var(--yellow);
+    }
+
+    .highlight:nth-child(2) {
+      border-top-color: var(--pink);
+    }
+
+    .highlight:nth-child(3) {
+      border-top-color: var(--blue-700);
+    }
+
+    .highlight strong {
+      display: block;
+      color: var(--blue-900);
+      font-size: 20px;
+      margin-bottom: 8px;
+    }
+
+    .highlight p {
+      margin: 0;
+      color: var(--muted);
+    }
+
+    .week-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    .week-card {
+      padding: 20px;
+      border-radius: 24px;
+      background: #fff;
+      border: 1px solid var(--line);
+      border-top: 5px solid var(--pink);
+    }
+
+    .week-card span {
+      color: var(--pink);
+      font-size: 12px;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: .10em;
+    }
+
+    .week-card strong {
+      display: block;
+      margin: 10px 0;
+      color: var(--blue-900);
+      font-size: 20px;
+    }
+
+    .week-card p {
+      margin: 0 0 10px;
+      color: var(--muted);
+    }
+
+    .week-card small {
+      color: var(--blue-700);
+      font-weight: 700;
+    }
+
+    .table-wrap {
+      overflow-x: auto;
+      border-radius: 20px;
+      border: 1px solid var(--line);
+      background: #fff;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 13px;
+    }
+
+    th {
+      background: var(--blue-900);
+      color: #fff;
+      padding: 12px;
+      text-align: left;
+      white-space: nowrap;
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: .06em;
+    }
+
+    td {
+      padding: 12px;
+      border-top: 1px solid var(--line);
+      color: var(--text);
+      vertical-align: top;
+    }
+
+    tr:nth-child(even) td {
+      background: #F8FAFF;
+    }
+
+    .empty {
+      padding: 22px;
+      border-radius: 20px;
+      background: #fff;
+      border: 1px solid var(--line);
+      color: var(--muted);
+      font-weight: 700;
+    }
+
+    .footer {
+      padding: 24px;
+      text-align: center;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .print-note {
+      display: inline-flex;
+      gap: 8px;
+      align-items: center;
+      margin-top: 18px;
+      padding: 12px 16px;
+      border-radius: 999px;
+      background: rgba(241,210,20,.18);
+      color: #fff;
+      font-weight: 800;
+    }
+
+    @media print {
+      body {
+        background: #fff !important;
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+      }
+
+      .page {
+        width: 100%;
+        padding: 0;
+      }
+
+      .cover,
+      .section {
+        box-shadow: none !important;
+        break-inside: avoid;
+        page-break-inside: avoid;
+      }
+
+      .cover {
+        min-height: auto;
+      }
+
+      .photo-box {
+        min-height: 360px;
+      }
+
+      .kpi-grid {
+        grid-template-columns: repeat(4, 1fr);
+      }
+
+      .week-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      table {
+        font-size: 11px;
+      }
+
+      th, td {
+        padding: 8px;
+      }
+
+      .print-note {
+        display: none;
+      }
+    }
+
+    @media (max-width: 900px) {
+      .cover {
+        grid-template-columns: 1fr;
+      }
+
+      .kpi-grid,
+      .highlight-grid,
+      .week-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  
+    /* ===== SPRINT07B_IMAGENS_PRINT_INICIO ===== */
+
+    .photo-box img,
+    .logo-box img {
+      display: block !important;
+      opacity: 1 !important;
+      visibility: visible !important;
+    }
+
+    @media print {
+      * {
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+      }
+
+      .cover {
+        grid-template-columns: 1.25fr .75fr !important;
+        break-inside: avoid !important;
+        page-break-inside: avoid !important;
+      }
+
+      .cover-side {
+        display: grid !important;
+        grid-template-rows: 1fr auto !important;
+        gap: 18px !important;
+      }
+
+      .photo-box {
+        display: block !important;
+        min-height: 360px !important;
+        height: 360px !important;
+        overflow: hidden !important;
+        background: rgba(255,255,255,.12) !important;
+        break-inside: avoid !important;
+        page-break-inside: avoid !important;
+      }
+
+      .photo-box img {
+        display: block !important;
+        width: 100% !important;
+        height: 360px !important;
+        object-fit: cover !important;
+        object-position: center top !important;
+        opacity: 1 !important;
+        visibility: visible !important;
+        filter: none !important;
+        transform: none !important;
+      }
+
+      .logo-box {
+        display: grid !important;
+        place-items: center !important;
+        min-height: 130px !important;
+        height: 130px !important;
+        background: #ffffff !important;
+        break-inside: avoid !important;
+        page-break-inside: avoid !important;
+      }
+
+      .logo-box img {
+        display: block !important;
+        max-width: 92% !important;
+        max-height: 105px !important;
+        width: auto !important;
+        height: auto !important;
+        object-fit: contain !important;
+        opacity: 1 !important;
+        visibility: visible !important;
+        filter: none !important;
+        transform: none !important;
+      }
+    }
+
+    /* ===== SPRINT07B_IMAGENS_PRINT_FIM ===== */
+
+  
+    /* ===== SPRINT07C_TABELAS_PRINT_INICIO ===== */
+
+    /*
+      Correção para impressão das tabelas do relatório executivo.
+      Motivo:
+      - No navegador, .table-wrap usa overflow-x:auto.
+      - Na impressão, isso faz o Chrome cortar as colunas à direita.
+      - Esta regra força as tabelas a caberem dentro da área útil do PDF.
+    */
+
+    @page {
+      size: A4 landscape;
+      margin: 8mm;
+    }
+
+    .table-wrap {
+      width: 100%;
+      max-width: 100%;
+    }
+
+    table {
+      width: 100%;
+      max-width: 100%;
+    }
+
+    th,
+    td {
+      overflow-wrap: anywhere;
+      word-break: break-word;
+      hyphens: auto;
+    }
+
+    @media print {
+      html,
+      body {
+        width: 100% !important;
+        max-width: 100% !important;
+        overflow: visible !important;
+      }
+
+      body {
+        background: #ffffff !important;
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+      }
+
+      .page {
+        width: 100% !important;
+        max-width: 100% !important;
+        margin: 0 !important;
+        padding: 0 !important;
+      }
+
+      .section {
+        width: 100% !important;
+        max-width: 100% !important;
+        margin: 8mm 0 !important;
+        padding: 8mm !important;
+        border-radius: 14px !important;
+        overflow: visible !important;
+        box-shadow: none !important;
+        break-inside: avoid-page !important;
+        page-break-inside: avoid !important;
+      }
+
+      .section-header {
+        margin-bottom: 10px !important;
+      }
+
+      .section-header h2 {
+        font-size: 22px !important;
+        line-height: 1.05 !important;
+        letter-spacing: -0.04em !important;
+      }
+
+      .section-header p {
+        font-size: 11px !important;
+        line-height: 1.35 !important;
+        max-width: none !important;
+      }
+
+      .table-wrap {
+        width: 100% !important;
+        max-width: 100% !important;
+        overflow: visible !important;
+        border-radius: 8px !important;
+        border: 1px solid #DCE4F4 !important;
+        break-inside: auto !important;
+        page-break-inside: auto !important;
+      }
+
+      table {
+        width: 100% !important;
+        max-width: 100% !important;
+        min-width: 0 !important;
+        table-layout: fixed !important;
+        border-collapse: collapse !important;
+        font-size: 7.4px !important;
+        line-height: 1.16 !important;
+      }
+
+      thead {
+        display: table-header-group !important;
+      }
+
+      tbody {
+        display: table-row-group !important;
+      }
+
+      tr {
+        break-inside: avoid !important;
+        page-break-inside: avoid !important;
+      }
+
+      th {
+        padding: 4px 4px !important;
+        white-space: normal !important;
+        overflow-wrap: anywhere !important;
+        word-break: break-word !important;
+        line-height: 1.12 !important;
+        font-size: 6.7px !important;
+        letter-spacing: .02em !important;
+        vertical-align: middle !important;
+      }
+
+      td {
+        padding: 4px 4px !important;
+        white-space: normal !important;
+        overflow-wrap: anywhere !important;
+        word-break: break-word !important;
+        line-height: 1.16 !important;
+        vertical-align: top !important;
+      }
+
+      /*
+        Distribuição genérica para tabelas com muitas colunas.
+        Mantém todas as colunas visíveis, sem rolagem horizontal.
+      */
+      table th:nth-child(1),
+      table td:nth-child(1) {
+        width: 6% !important;
+      }
+
+      table th:nth-child(2),
+      table td:nth-child(2) {
+        width: 12% !important;
+      }
+
+      table th:nth-child(3),
+      table td:nth-child(3) {
+        width: 12% !important;
+      }
+
+      table th:nth-child(4),
+      table td:nth-child(4) {
+        width: 13% !important;
+      }
+
+      table th:nth-child(5),
+      table td:nth-child(5) {
+        width: 16% !important;
+      }
+
+      table th:nth-child(6),
+      table td:nth-child(6) {
+        width: 13% !important;
+      }
+
+      table th:nth-child(7),
+      table td:nth-child(7) {
+        width: 14% !important;
+      }
+
+      table th:nth-child(8),
+      table td:nth-child(8) {
+        width: 14% !important;
+      }
+
+      /*
+        Para tabelas com textos muito longos na última coluna,
+        permite quebra agressiva sem cortar conteúdo.
+      */
+      table td:last-child,
+      table th:last-child {
+        overflow-wrap: anywhere !important;
+        word-break: break-word !important;
+      }
+
+      .cover {
+        margin-bottom: 8mm !important;
+      }
+
+      .kpi-grid,
+      .highlight-grid,
+      .week-grid {
+        break-inside: avoid !important;
+        page-break-inside: avoid !important;
+      }
+    }
+
+    /* ===== SPRINT07C_TABELAS_PRINT_FIM ===== */
+
+  </style>
+</head>
+
+<body>
+  <div class="page">
+    <section class="cover">
+      <div class="cover-main">
+        <p class="eyebrow">Relatório executivo · Aprovação estratégica</p>
+        <h1>Davi Maia + Gabi Gonçalves</h1>
+        <p class="subtitle">
+          Consolidação da inteligência territorial, rede de lideranças, roteiro de visitas
+          e matriz de curadoria política para apoio à reeleição de Gabi Gonçalves.
+        </p>
+
+        <div class="meta-list">
+          <div><strong>Projeto:</strong> Painel Parceiro Gabi Gonçalves 2026</div>
+          <div><strong>Eixo político:</strong> Davi Maia como articulador territorial</div>
+          <div><strong>Status:</strong> Versão executiva para validação e aprovação</div>
+          <div><strong>Atualização:</strong> 25/06/2026 11:53</div>
+        </div>
+
+        <div class="print-note">Para enviar ao Davi: Ctrl + P → Salvar como PDF</div>
+      </div>
+
+      <aside class="cover-side">
+        <div class="photo-box">
+          <img
+            src="assets/foto-gabi.png"
+            alt="Foto de Gabi Gonçalves"
+            loading="eager"
+            decoding="sync"
+          />
+        </div>
+
+        <div class="logo-box">
+          <img
+            src="assets/logo-gabi-2026.png"
+            alt="Logomarca Gabi Gonçalves 2026"
+            loading="eager"
+            decoding="sync"
+          />
+        </div>
+      </aside>
+    </section>
+
+    <section class="section">
+      <div class="section-header">
+        <p class="eyebrow">Resumo executivo</p>
+        <h2>Leitura estratégica da parceria</h2>
+        <p>
+          A análise organiza a candidatura de Gabi Gonçalves à reeleição como Deputada Estadual
+          dentro da rede territorial liderada por Davi Maia. O painel identifica onde a parceria
+          apresenta maior eficiência política, quais lideranças devem ser validadas e quais municípios
+          devem compor o roteiro inicial de visitas.
+        </p>
+      </div>
+
+      <div class="highlight-grid">
+        <article class="highlight">
+          <strong>1. Davi como eixo de articulação</strong>
+          <p>
+            O projeto considera Davi Maia como hub político capaz de organizar agendas, abrir portas
+            municipais e conectar a pauta federal com a estadual.
+          </p>
+        </article>
+
+        <article class="highlight">
+          <strong>2. Gabi como candidata à reeleição</strong>
+          <p>
+            A base trabalha Gabi como deputada estadual em mandato, priorizando proteção e expansão
+            territorial com base em municípios de maior sinergia.
+          </p>
+        </article>
+
+        <article class="highlight">
+          <strong>3. Curadoria antes da agenda pública</strong>
+          <p>
+            As agendas recomendadas precisam passar por validação política para evitar conflitos locais,
+            sobreposição de apoios e baixa conversão territorial.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-header">
+        <p class="eyebrow">Indicadores centrais</p>
+        <h2>Painel de controle executivo</h2>
+        <p>
+          Indicadores consolidados a partir dos sprints de base eleitoral, liderança, cruzamento,
+          roteiro territorial e curadoria política.
+        </p>
+      </div>
+
+      <div class="kpi-grid">
+        
+        <article class="kpi-card">
+          <span>Meta operacional Gabi</span>
+          <strong>45.000</strong>
+          <small>Referência preliminar para planejamento</small>
+        </article>
+        
+
+        <article class="kpi-card">
+          <span>Municípios prioritários</span>
+          <strong>20</strong>
+          <small>Top 20 da base preliminar</small>
+        </article>
+        
+
+        <article class="kpi-card">
+          <span>Lideranças mapeadas</span>
+          <strong>1.559</strong>
+          <small>Base municipal de vereadores</small>
+        </article>
+        
+
+        <article class="kpi-card">
+          <span>Municípios no roteiro</span>
+          <strong>30</strong>
+          <small>Agenda Davi + Gabi</small>
+        </article>
+        
+
+        <article class="kpi-card">
+          <span>Meta no roteiro</span>
+          <strong>38.194</strong>
+          <small>Soma dos municípios priorizados</small>
+        </article>
+        
+
+        <article class="kpi-card">
+          <span>Curadorias pendentes</span>
+          <strong>30</strong>
+          <small>Validação política necessária</small>
+        </article>
+        
+
+        <article class="kpi-card">
+          <span>Eleitorado AL</span>
+          <strong>2.442.894</strong>
+          <small>Base estadual de referência</small>
+        </article>
+        
+
+        <article class="kpi-card">
+          <span>População AL</span>
+          <strong>3.220.104</strong>
+          <small>População estimada IBGE 2024</small>
+        </article>
+        
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-header">
+        <p class="eyebrow">Base eleitoral</p>
+        <h2>Municípios prioritários da Gabi</h2>
+        <p>
+          Ranking preliminar de municípios para a reeleição de Gabi, considerando peso eleitoral,
+          prioridade territorial e aderência com a base estratégica do projeto matriz.
+        </p>
+      </div>
+
+      
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th>Ranking Gabi Preliminar</th><th>Municipio</th><th>Eleitorado</th><th>Prioridade Visita Gabi</th><th>Meta Votos Referencia Gabi</th><th>Status Articulacao Gabi</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>1</td><td>Maceió</td><td>632.812</td><td>Muito alta</td><td>14.996</td><td>Priorizar curadoria</td></tr>
+<tr><td>2</td><td>Arapiraca</td><td>155.982</td><td>Muito alta</td><td>3.812</td><td>Priorizar curadoria</td></tr>
+<tr><td>3</td><td>Rio Largo</td><td>67.172</td><td>Muito alta</td><td>1.561</td><td>Priorizar curadoria</td></tr>
+<tr><td>4</td><td>Palmeira dos Índios</td><td>54.858</td><td>Muito alta</td><td>1.234</td><td>Priorizar curadoria</td></tr>
+<tr><td>5</td><td>União dos Palmares</td><td>48.920</td><td>Muito alta</td><td>1.101</td><td>Priorizar curadoria</td></tr>
+<tr><td>6</td><td>Marechal Deodoro</td><td>46.217</td><td>Muito alta</td><td>1.037</td><td>Priorizar curadoria</td></tr>
+<tr><td>7</td><td>São Miguel dos Campos</td><td>43.990</td><td>Muito alta</td><td>977</td><td>Priorizar curadoria</td></tr>
+<tr><td>8</td><td>Penedo</td><td>44.517</td><td>Muito alta</td><td>967</td><td>Priorizar curadoria</td></tr>
+<tr><td>9</td><td>Coruripe</td><td>42.038</td><td>Muito alta</td><td>945</td><td>Priorizar curadoria</td></tr>
+<tr><td>10</td><td>Delmiro Gouveia</td><td>41.113</td><td>Muito alta</td><td>911</td><td>Priorizar curadoria</td></tr>
+<tr><td>11</td><td>Atalaia</td><td>32.883</td><td>Alta</td><td>753</td><td>Priorizar curadoria</td></tr>
+<tr><td>12</td><td>Santana do Ipanema</td><td>33.506</td><td>Alta</td><td>750</td><td>Priorizar curadoria</td></tr>
+        </tbody>
+      </table>
+    </div>
+    
+    </section>
+
+    <section class="section">
+      <div class="section-header">
+        <p class="eyebrow">Rede política</p>
+        <h2>Lideranças municipais prioritárias</h2>
+        <p>
+          Primeira camada de lideranças municipais extraída da base de vereadores e associada
+          aos municípios de maior prioridade para a Gabi.
+        </p>
+      </div>
+
+      
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th>Ranking Lideranca Gabi</th><th>Municipio</th><th>Nome Lideranca</th><th>Partido</th><th>Votos 2024</th><th>Prioridade Lideranca Gabi</th><th>Potencial Transferencia 10Pct</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>1</td><td>MACEIÓ</td><td>LUCIANO MARINHO</td><td>PL</td><td>8.545</td><td>Muito alta</td><td>854</td></tr>
+<tr><td>2</td><td>MACEIÓ</td><td>DAVI DAVINO</td><td>PP</td><td>5.713</td><td>Muito alta</td><td>571</td></tr>
+<tr><td>3</td><td>ARAPIRACA</td><td>ROGERIO NEZINHO</td><td>MDB</td><td>4.543</td><td>Muito alta</td><td>454</td></tr>
+<tr><td>4</td><td>MACEIÓ</td><td>SIDERLANE MENDONÇA</td><td>PL</td><td>4.857</td><td>Muito alta</td><td>486</td></tr>
+<tr><td>5</td><td>ARAPIRACA</td><td>SERGIO DO SINDICATO</td><td>PP</td><td>4.328</td><td>Muito alta</td><td>433</td></tr>
+<tr><td>6</td><td>MACEIÓ</td><td>ZÉ MÁRCIO FILHO</td><td>MDB</td><td>4.727</td><td>Muito alta</td><td>473</td></tr>
+<tr><td>7</td><td>MACEIÓ</td><td>KELMANN</td><td>MDB</td><td>4.544</td><td>Muito alta</td><td>454</td></tr>
+<tr><td>8</td><td>RIO LARGO</td><td>BALA SOARES</td><td>PP</td><td>2.625</td><td>Muito alta</td><td>262</td></tr>
+<tr><td>9</td><td>ARAPIRACA</td><td>LEO SATURNINO</td><td>MDB</td><td>3.256</td><td>Muito alta</td><td>326</td></tr>
+<tr><td>10</td><td>MACEIÓ</td><td>BRIVALDO MARQUES</td><td>PL</td><td>4.099</td><td>Alta</td><td>410</td></tr>
+<tr><td>11</td><td>PALMEIRA DOS ÍNDIOS</td><td>PEDRINHO GAIA</td><td>MDB</td><td>2.237</td><td>Muito alta</td><td>224</td></tr>
+<tr><td>12</td><td>RIO LARGO</td><td>NADIELLE RUFINO</td><td>PP</td><td>2.002</td><td>Muito alta</td><td>200</td></tr>
+        </tbody>
+      </table>
+    </div>
+    
+    </section>
+
+    <section class="section">
+      <div class="section-header">
+        <p class="eyebrow">Davi Maia + Gabi Gonçalves</p>
+        <h2>Municípios de maior sinergia</h2>
+        <p>
+          Cruzamento entre prioridade eleitoral da Gabi, força territorial do Davi,
+          rede de lideranças e potencial de agenda conjunta.
+        </p>
+      </div>
+
+      
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th>Ranking Sinergia Davi Gabi</th><th>Municipio</th><th>Prioridade Sinergia Davi Gabi</th><th>Score Sinergia Davi Gabi</th><th>Principal Lideranca</th><th>Meta Votos Referencia Gabi</th><th>Acao Recomendada</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>1</td><td>Maceió</td><td>Muito alta</td><td>100,00</td><td>LUCIANO MARINHO</td><td>14.996</td><td>Agendar visita conjunta Davi + Gabi</td></tr>
+<tr><td>2</td><td>Arapiraca</td><td>Monitoramento</td><td>33,65</td><td>ROGERIO NEZINHO</td><td>3.812</td><td>Monitorar</td></tr>
+<tr><td>3</td><td>Rio Largo</td><td>Monitoramento</td><td>19,57</td><td>BALA SOARES</td><td>1.561</td><td>Monitorar</td></tr>
+<tr><td>4</td><td>Palmeira dos Índios</td><td>Monitoramento</td><td>17,50</td><td>PEDRINHO GAIA</td><td>1.234</td><td>Monitorar</td></tr>
+<tr><td>5</td><td>União dos Palmares</td><td>Monitoramento</td><td>16,78</td><td>MILTON DO COMPLEMENTAR</td><td>1.101</td><td>Monitorar</td></tr>
+<tr><td>6</td><td>Marechal Deodoro</td><td>Monitoramento</td><td>16,33</td><td>THIAGO GONDIN</td><td>1.037</td><td>Monitorar</td></tr>
+<tr><td>7</td><td>São Miguel dos Campos</td><td>Monitoramento</td><td>16,01</td><td>DINEY TORRES</td><td>977</td><td>Monitorar</td></tr>
+<tr><td>8</td><td>Coruripe</td><td>Monitoramento</td><td>15,86</td><td>DALMO PORTO</td><td>945</td><td>Monitorar</td></tr>
+<tr><td>9</td><td>Penedo</td><td>Monitoramento</td><td>15,76</td><td>IVO COSTA</td><td>967</td><td>Monitorar</td></tr>
+<tr><td>10</td><td>Delmiro Gouveia</td><td>Monitoramento</td><td>15,57</td><td>EDNA DO TATUAKARA</td><td>911</td><td>Monitorar</td></tr>
+<tr><td>11</td><td>Atalaia</td><td>Monitoramento</td><td>12,32</td><td>RUDINHO</td><td>753</td><td>Monitorar</td></tr>
+<tr><td>12</td><td>Santana do Ipanema</td><td>Monitoramento</td><td>12,12</td><td>MIGUEL OLIVEIRA</td><td>750</td><td>Monitorar</td></tr>
+        </tbody>
+      </table>
+    </div>
+    
+    </section>
+
+    <section class="section">
+      <div class="section-header">
+        <p class="eyebrow">Roteiro territorial</p>
+        <h2>Plano semanal de visitas Davi + Gabi</h2>
+        <p>
+          Organização operacional das visitas recomendadas por semana, com foco em eficiência logística,
+          validação de lideranças e conversão política.
+        </p>
+      </div>
+
+      <div class="week-grid">
+        
+        <article class="week-card">
+          <span>Semana 1</span>
+          <strong>8 município(s)</strong>
+          <p>Maceió, Rio Largo, Marechal Deodoro, Palmeira dos Índios, União dos Palmares, Arapiraca, São Miguel dos Campos, Coruripe</p>
+          <small>Abrir agenda conjunta nos municípios de maior sinergia e validar lideranças prioritárias.</small>
+        </article>
+        
+
+        <article class="week-card">
+          <span>Semana 2</span>
+          <strong>8 município(s)</strong>
+          <p>Pilar, Teotônio Vilela, Girau do Ponciano, São Sebastião, Atalaia, Penedo, Delmiro Gouveia, Santana do Ipanema</p>
+          <small>Expandir presença territorial e confirmar apoios municipais de segunda camada.</small>
+        </article>
+        
+
+        <article class="week-card">
+          <span>Semana 3</span>
+          <strong>8 município(s)</strong>
+          <p>Murici, Viçosa, Craíbas, Campo Alegre, São Luís do Quitunde, Porto Calvo, Maragogi, São José da Tapera</p>
+          <small>Consolidar municípios de média prioridade e corrigir lacunas de articulação.</small>
+        </article>
+        
+
+        <article class="week-card">
+          <span>Semana 4</span>
+          <strong>6 município(s)</strong>
+          <p>Feira Grande, Limoeiro de Anadia, Traipu, Junqueiro, Piranhas, Igaci</p>
+          <small>Fechar ciclo inicial de visitas e organizar retorno aos municípios com maior resposta.</small>
+        </article>
+        
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-header">
+        <p class="eyebrow">Agenda operacional</p>
+        <h2>Primeiras visitas recomendadas</h2>
+        <p>
+          Roteiro inicial de municípios, lideranças e tipos de agenda sugeridos para validação.
+        </p>
+      </div>
+
+      
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th>Ordem Prioridade</th><th>Semana Roteiro</th><th>Dia Sugerido</th><th>Turno Sugerido</th><th>Municipio</th><th>Principal Lideranca</th><th>Tipo Agenda</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>1</td><td>Semana 1</td><td>Segunda-feira</td><td>Manhã</td><td>Maceió</td><td>LUCIANO MARINHO</td><td>Agenda conjunta pública + reunião com lideranças</td></tr>
+<tr><td>3</td><td>Semana 1</td><td>Segunda-feira</td><td>Tarde/Noite</td><td>Rio Largo</td><td>BALA SOARES</td><td>Monitoramento político</td></tr>
+<tr><td>6</td><td>Semana 1</td><td>Terça-feira</td><td>Manhã</td><td>Marechal Deodoro</td><td>THIAGO GONDIN</td><td>Monitoramento político</td></tr>
+<tr><td>4</td><td>Semana 1</td><td>Terça-feira</td><td>Tarde/Noite</td><td>Palmeira dos Índios</td><td>PEDRINHO GAIA</td><td>Monitoramento político</td></tr>
+<tr><td>5</td><td>Semana 1</td><td>Quarta-feira</td><td>Manhã</td><td>União dos Palmares</td><td>MILTON DO COMPLEMENTAR</td><td>Monitoramento político</td></tr>
+<tr><td>2</td><td>Semana 1</td><td>Quarta-feira</td><td>Tarde/Noite</td><td>Arapiraca</td><td>ROGERIO NEZINHO</td><td>Monitoramento político</td></tr>
+<tr><td>7</td><td>Semana 1</td><td>Quinta-feira</td><td>Manhã</td><td>São Miguel dos Campos</td><td>DINEY TORRES</td><td>Monitoramento político</td></tr>
+<tr><td>8</td><td>Semana 1</td><td>Quinta-feira</td><td>Tarde/Noite</td><td>Coruripe</td><td>DALMO PORTO</td><td>Monitoramento político</td></tr>
+<tr><td>13</td><td>Semana 2</td><td>Segunda-feira</td><td>Manhã</td><td>Pilar</td><td>ALEX CAVALCANTE</td><td>Monitoramento político</td></tr>
+<tr><td>14</td><td>Semana 2</td><td>Segunda-feira</td><td>Tarde/Noite</td><td>Teotônio Vilela</td><td>SERGIO CELESTINO</td><td>Monitoramento político</td></tr>
+<tr><td>15</td><td>Semana 2</td><td>Terça-feira</td><td>Manhã</td><td>Girau do Ponciano</td><td>FLAVINHA BARROS</td><td>Monitoramento político</td></tr>
+<tr><td>16</td><td>Semana 2</td><td>Terça-feira</td><td>Tarde/Noite</td><td>São Sebastião</td><td>ANA PACHECO</td><td>Monitoramento político</td></tr>
+<tr><td>11</td><td>Semana 2</td><td>Quarta-feira</td><td>Manhã</td><td>Atalaia</td><td>RUDINHO</td><td>Monitoramento político</td></tr>
+<tr><td>9</td><td>Semana 2</td><td>Quarta-feira</td><td>Tarde/Noite</td><td>Penedo</td><td>IVO COSTA</td><td>Monitoramento político</td></tr>
+<tr><td>10</td><td>Semana 2</td><td>Quinta-feira</td><td>Manhã</td><td>Delmiro Gouveia</td><td>EDNA DO TATUAKARA</td><td>Monitoramento político</td></tr>
+<tr><td>12</td><td>Semana 2</td><td>Quinta-feira</td><td>Tarde/Noite</td><td>Santana do Ipanema</td><td>MIGUEL OLIVEIRA</td><td>Monitoramento político</td></tr>
+<tr><td>23</td><td>Semana 3</td><td>Segunda-feira</td><td>Manhã</td><td>Murici</td><td>MORAIS</td><td>Monitoramento político</td></tr>
+<tr><td>24</td><td>Semana 3</td><td>Segunda-feira</td><td>Tarde/Noite</td><td>Viçosa</td><td>DAVI DO TÊDA</td><td>Monitoramento político</td></tr>
+<tr><td>18</td><td>Semana 3</td><td>Terça-feira</td><td>Manhã</td><td>Craíbas</td><td>CARLINHOS FOLHA</td><td>Monitoramento político</td></tr>
+<tr><td>19</td><td>Semana 3</td><td>Terça-feira</td><td>Tarde/Noite</td><td>Campo Alegre</td><td>JEANE NASCIMENTO</td><td>Monitoramento político</td></tr>
+        </tbody>
+      </table>
+    </div>
+    
+    </section>
+
+    <section class="section">
+      <div class="section-header">
+        <p class="eyebrow">Curadoria política</p>
+        <h2>Matriz de validação antes da execução</h2>
+        <p>
+          Campos de curadoria criados para confirmar relação com Gabi, Davi, Renan Filho,
+          Renan Calheiros, Paulo Dantas, prefeitos, vereadores e grupos políticos locais.
+        </p>
+      </div>
+
+      
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th>Ordem Curadoria</th><th>Prioridade Curadoria</th><th>Prazo Curadoria</th><th>Municipio</th><th>Principal Lideranca</th><th>Relacao Gabi</th><th>Relacao Davi</th><th>Decisao Agenda</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>1</td><td>Imediata</td><td>Até 48h</td><td>Maceió</td><td>LUCIANO MARINHO</td><td>A CURAR</td><td>A CURAR</td><td>Aguardando curadoria</td></tr>
+<tr><td>2</td><td>Imediata</td><td>Até 48h</td><td>Arapiraca</td><td>ROGERIO NEZINHO</td><td>A CURAR</td><td>A CURAR</td><td>Aguardando curadoria</td></tr>
+<tr><td>3</td><td>Imediata</td><td>Até 48h</td><td>Rio Largo</td><td>BALA SOARES</td><td>A CURAR</td><td>A CURAR</td><td>Aguardando curadoria</td></tr>
+<tr><td>4</td><td>Imediata</td><td>Até 48h</td><td>Palmeira dos Índios</td><td>PEDRINHO GAIA</td><td>A CURAR</td><td>A CURAR</td><td>Aguardando curadoria</td></tr>
+<tr><td>5</td><td>Imediata</td><td>Até 48h</td><td>União dos Palmares</td><td>MILTON DO COMPLEMENTAR</td><td>A CURAR</td><td>A CURAR</td><td>Aguardando curadoria</td></tr>
+<tr><td>6</td><td>Imediata</td><td>Até 48h</td><td>Marechal Deodoro</td><td>THIAGO GONDIN</td><td>A CURAR</td><td>A CURAR</td><td>Aguardando curadoria</td></tr>
+<tr><td>7</td><td>Imediata</td><td>Até 48h</td><td>São Miguel dos Campos</td><td>DINEY TORRES</td><td>A CURAR</td><td>A CURAR</td><td>Aguardando curadoria</td></tr>
+<tr><td>8</td><td>Imediata</td><td>Até 48h</td><td>Coruripe</td><td>DALMO PORTO</td><td>A CURAR</td><td>A CURAR</td><td>Aguardando curadoria</td></tr>
+<tr><td>9</td><td>Imediata</td><td>Até 48h</td><td>Penedo</td><td>IVO COSTA</td><td>A CURAR</td><td>A CURAR</td><td>Aguardando curadoria</td></tr>
+<tr><td>10</td><td>Imediata</td><td>Até 48h</td><td>Delmiro Gouveia</td><td>EDNA DO TATUAKARA</td><td>A CURAR</td><td>A CURAR</td><td>Aguardando curadoria</td></tr>
+<tr><td>11</td><td>Alta</td><td>Até 5 dias</td><td>Atalaia</td><td>RUDINHO</td><td>A CURAR</td><td>A CURAR</td><td>Aguardando curadoria</td></tr>
+<tr><td>12</td><td>Alta</td><td>Até 5 dias</td><td>Santana do Ipanema</td><td>MIGUEL OLIVEIRA</td><td>A CURAR</td><td>A CURAR</td><td>Aguardando curadoria</td></tr>
+<tr><td>13</td><td>Alta</td><td>Até 5 dias</td><td>Pilar</td><td>ALEX CAVALCANTE</td><td>A CURAR</td><td>A CURAR</td><td>Aguardando curadoria</td></tr>
+<tr><td>14</td><td>Alta</td><td>Até 5 dias</td><td>Teotônio Vilela</td><td>SERGIO CELESTINO</td><td>A CURAR</td><td>A CURAR</td><td>Aguardando curadoria</td></tr>
+<tr><td>15</td><td>Alta</td><td>Até 5 dias</td><td>Girau do Ponciano</td><td>FLAVINHA BARROS</td><td>A CURAR</td><td>A CURAR</td><td>Aguardando curadoria</td></tr>
+<tr><td>16</td><td>Alta</td><td>Até 5 dias</td><td>São Sebastião</td><td>ANA PACHECO</td><td>A CURAR</td><td>A CURAR</td><td>Aguardando curadoria</td></tr>
+<tr><td>17</td><td>Alta</td><td>Até 5 dias</td><td>Maragogi</td><td>JUNIOR DO JOZEMIR</td><td>A CURAR</td><td>A CURAR</td><td>Aguardando curadoria</td></tr>
+<tr><td>18</td><td>Alta</td><td>Até 5 dias</td><td>Craíbas</td><td>CARLINHOS FOLHA</td><td>A CURAR</td><td>A CURAR</td><td>Aguardando curadoria</td></tr>
+<tr><td>19</td><td>Alta</td><td>Até 5 dias</td><td>Campo Alegre</td><td>JEANE NASCIMENTO</td><td>A CURAR</td><td>A CURAR</td><td>Aguardando curadoria</td></tr>
+<tr><td>20</td><td>Alta</td><td>Até 5 dias</td><td>São Luís do Quitunde</td><td>CABEÇA</td><td>A CURAR</td><td>A CURAR</td><td>Aguardando curadoria</td></tr>
+        </tbody>
+      </table>
+    </div>
+    
+    </section>
+
+    <section class="section">
+      <div class="section-header">
+        <p class="eyebrow">Encaminhamento</p>
+        <h2>Próximos passos recomendados</h2>
+        <p>
+          Após aprovação do Davi, a recomendação é iniciar a curadoria política dos municípios
+          de prioridade imediata, validar lideranças locais e transformar o roteiro preliminar
+          em agenda real de pré-campanha.
+        </p>
+      </div>
+
+      <div class="highlight-grid">
+        <article class="highlight">
+          <strong>1. Validar com Davi</strong>
+          <p>Confirmar se a leitura estratégica da parceria Davi + Gabi está aderente ao plano político.</p>
+        </article>
+
+        <article class="highlight">
+          <strong>2. Curar os 10 primeiros municípios</strong>
+          <p>Preencher relação política real, risco local, responsável pela articulação e decisão de agenda.</p>
+        </article>
+
+        <article class="highlight">
+          <strong>3. Preparar versão pública</strong>
+          <p>Após aprovação, publicar ou compartilhar o painel com acesso controlado para acompanhamento.</p>
+        </article>
+      </div>
+    </section>
+
+    <footer class="footer">
+      Relatório gerado automaticamente pelo projeto Alagoas Political Intelligence · Davi Maia + Gabi Gonçalves · 25/06/2026 11:53
+    </footer>
+  </div>
+</body>
+</html>

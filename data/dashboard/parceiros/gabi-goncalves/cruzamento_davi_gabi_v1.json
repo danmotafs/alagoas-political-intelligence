@@ -1,0 +1,1571 @@
+{
+  "metadata": {
+    "projeto": "Cruzamento Davi Maia + Gabi Gonçalves",
+    "versao": "sprint06_curadoria_politica",
+    "atualizacao": "25/06/2026 11:44",
+    "status": "Curadoria política incorporada ao cruzamento Davi + Gabi."
+  },
+  "eixo_politico": {
+    "descricao": "Davi Maia é tratado como eixo político principal da rede. Gabi Gonçalves é analisada como deputada estadual em mandato e candidata à reeleição.",
+    "hipotese_estrategica": "A combinação entre força territorial do Davi, prioridade eleitoral da Gabi e rede municipal de lideranças permite identificar onde uma agenda conjunta tem maior eficiência política."
+  },
+  "cards": [
+    {
+      "etiqueta": "Sinergia territorial",
+      "titulo": "Municípios prioritários",
+      "texto": "O cruzamento identifica os municípios onde a prioridade da Gabi, a força territorial do Davi e a rede local de lideranças aparecem de forma combinada."
+    },
+    {
+      "etiqueta": "Agenda conjunta",
+      "titulo": "Davi + Gabi",
+      "texto": "A agenda conjunta deve começar pelos municípios de maior score, validando lideranças locais e potencial de transferência para Federal e Estadual."
+    },
+    {
+      "etiqueta": "Decisão operacional",
+      "titulo": "Curadoria antes da visita",
+      "texto": "Antes de confirmar agendas públicas, os nomes mapeados precisam ser validados politicamente para evitar conflitos locais e sobreposição de apoios."
+    }
+  ],
+  "municipios_alta_sinergia_preliminar": [
+    {
+      "municipio": "Maceió",
+      "ranking_gabi_preliminar": 1,
+      "prioridade_gabi": "Muito alta",
+      "meta_referencia_gabi": 14996,
+      "score_gabi_preliminar": 100.0,
+      "status": "Alta prioridade para cruzamento com base Davi"
+    },
+    {
+      "municipio": "Arapiraca",
+      "ranking_gabi_preliminar": 2,
+      "prioridade_gabi": "Muito alta",
+      "meta_referencia_gabi": 3812,
+      "score_gabi_preliminar": 25.4,
+      "status": "Alta prioridade para cruzamento com base Davi"
+    },
+    {
+      "municipio": "Rio Largo",
+      "ranking_gabi_preliminar": 3,
+      "prioridade_gabi": "Muito alta",
+      "meta_referencia_gabi": 1561,
+      "score_gabi_preliminar": 10.41,
+      "status": "Alta prioridade para cruzamento com base Davi"
+    },
+    {
+      "municipio": "Palmeira dos Índios",
+      "ranking_gabi_preliminar": 4,
+      "prioridade_gabi": "Muito alta",
+      "meta_referencia_gabi": 1234,
+      "score_gabi_preliminar": 8.22,
+      "status": "Alta prioridade para cruzamento com base Davi"
+    },
+    {
+      "municipio": "União dos Palmares",
+      "ranking_gabi_preliminar": 5,
+      "prioridade_gabi": "Muito alta",
+      "meta_referencia_gabi": 1101,
+      "score_gabi_preliminar": 7.34,
+      "status": "Alta prioridade para cruzamento com base Davi"
+    },
+    {
+      "municipio": "Marechal Deodoro",
+      "ranking_gabi_preliminar": 6,
+      "prioridade_gabi": "Muito alta",
+      "meta_referencia_gabi": 1037,
+      "score_gabi_preliminar": 6.91,
+      "status": "Alta prioridade para cruzamento com base Davi"
+    },
+    {
+      "municipio": "São Miguel dos Campos",
+      "ranking_gabi_preliminar": 7,
+      "prioridade_gabi": "Muito alta",
+      "meta_referencia_gabi": 977,
+      "score_gabi_preliminar": 6.51,
+      "status": "Alta prioridade para cruzamento com base Davi"
+    },
+    {
+      "municipio": "Penedo",
+      "ranking_gabi_preliminar": 8,
+      "prioridade_gabi": "Muito alta",
+      "meta_referencia_gabi": 967,
+      "score_gabi_preliminar": 6.45,
+      "status": "Alta prioridade para cruzamento com base Davi"
+    },
+    {
+      "municipio": "Coruripe",
+      "ranking_gabi_preliminar": 9,
+      "prioridade_gabi": "Muito alta",
+      "meta_referencia_gabi": 945,
+      "score_gabi_preliminar": 6.29,
+      "status": "Alta prioridade para cruzamento com base Davi"
+    },
+    {
+      "municipio": "Delmiro Gouveia",
+      "ranking_gabi_preliminar": 10,
+      "prioridade_gabi": "Muito alta",
+      "meta_referencia_gabi": 911,
+      "score_gabi_preliminar": 6.07,
+      "status": "Alta prioridade para cruzamento com base Davi"
+    }
+  ],
+  "campos_futuros": [
+    "municipio",
+    "forca_davi",
+    "forca_gabi",
+    "sinergia_davi_gabi",
+    "liderancas_compartilhadas",
+    "agenda_conjunta_recomendada",
+    "potencial_transferencia_federal",
+    "potencial_transferencia_estadual",
+    "prioridade_operacional"
+  ],
+  "liderancas_prioritarias_preliminares": [
+    {
+      "rank": 1,
+      "municipio": "MACEIÓ",
+      "nome_lideranca": "LUCIANO MARINHO",
+      "partido": "PL",
+      "votos_2024": 8545,
+      "prioridade": "Muito alta",
+      "potencial_transferencia_10pct": 854
+    },
+    {
+      "rank": 2,
+      "municipio": "MACEIÓ",
+      "nome_lideranca": "DAVI DAVINO",
+      "partido": "PP",
+      "votos_2024": 5713,
+      "prioridade": "Muito alta",
+      "potencial_transferencia_10pct": 571
+    },
+    {
+      "rank": 3,
+      "municipio": "ARAPIRACA",
+      "nome_lideranca": "ROGERIO NEZINHO",
+      "partido": "MDB",
+      "votos_2024": 4543,
+      "prioridade": "Muito alta",
+      "potencial_transferencia_10pct": 454
+    },
+    {
+      "rank": 4,
+      "municipio": "MACEIÓ",
+      "nome_lideranca": "SIDERLANE MENDONÇA",
+      "partido": "PL",
+      "votos_2024": 4857,
+      "prioridade": "Muito alta",
+      "potencial_transferencia_10pct": 486
+    },
+    {
+      "rank": 5,
+      "municipio": "ARAPIRACA",
+      "nome_lideranca": "SERGIO DO SINDICATO",
+      "partido": "PP",
+      "votos_2024": 4328,
+      "prioridade": "Muito alta",
+      "potencial_transferencia_10pct": 433
+    },
+    {
+      "rank": 6,
+      "municipio": "MACEIÓ",
+      "nome_lideranca": "ZÉ MÁRCIO FILHO",
+      "partido": "MDB",
+      "votos_2024": 4727,
+      "prioridade": "Muito alta",
+      "potencial_transferencia_10pct": 473
+    },
+    {
+      "rank": 7,
+      "municipio": "MACEIÓ",
+      "nome_lideranca": "KELMANN",
+      "partido": "MDB",
+      "votos_2024": 4544,
+      "prioridade": "Muito alta",
+      "potencial_transferencia_10pct": 454
+    },
+    {
+      "rank": 8,
+      "municipio": "RIO LARGO",
+      "nome_lideranca": "BALA SOARES",
+      "partido": "PP",
+      "votos_2024": 2625,
+      "prioridade": "Muito alta",
+      "potencial_transferencia_10pct": 262
+    },
+    {
+      "rank": 9,
+      "municipio": "ARAPIRACA",
+      "nome_lideranca": "LEO SATURNINO",
+      "partido": "MDB",
+      "votos_2024": 3256,
+      "prioridade": "Muito alta",
+      "potencial_transferencia_10pct": 326
+    },
+    {
+      "rank": 10,
+      "municipio": "MACEIÓ",
+      "nome_lideranca": "BRIVALDO MARQUES",
+      "partido": "PL",
+      "votos_2024": 4099,
+      "prioridade": "Alta",
+      "potencial_transferencia_10pct": 410
+    },
+    {
+      "rank": 11,
+      "municipio": "PALMEIRA DOS ÍNDIOS",
+      "nome_lideranca": "PEDRINHO GAIA",
+      "partido": "MDB",
+      "votos_2024": 2237,
+      "prioridade": "Muito alta",
+      "potencial_transferencia_10pct": 224
+    },
+    {
+      "rank": 12,
+      "municipio": "RIO LARGO",
+      "nome_lideranca": "NADIELLE RUFINO",
+      "partido": "PP",
+      "votos_2024": 2002,
+      "prioridade": "Muito alta",
+      "potencial_transferencia_10pct": 200
+    },
+    {
+      "rank": 13,
+      "municipio": "ARAPIRACA",
+      "nome_lideranca": "ALISSON DA TIM",
+      "partido": "PP",
+      "votos_2024": 2677,
+      "prioridade": "Muito alta",
+      "potencial_transferencia_10pct": 268
+    },
+    {
+      "rank": 14,
+      "municipio": "MACEIÓ",
+      "nome_lideranca": "LEONARDO DIAS",
+      "partido": "PL",
+      "votos_2024": 3963,
+      "prioridade": "Alta",
+      "potencial_transferencia_10pct": 396
+    },
+    {
+      "rank": 15,
+      "municipio": "PALMEIRA DOS ÍNDIOS",
+      "nome_lideranca": "MAXWELL FEITOSA",
+      "partido": "MDB",
+      "votos_2024": 2157,
+      "prioridade": "Muito alta",
+      "potencial_transferencia_10pct": 216
+    },
+    {
+      "rank": 16,
+      "municipio": "UNIÃO DOS PALMARES",
+      "nome_lideranca": "MILTON DO COMPLEMENTAR",
+      "partido": "MDB",
+      "votos_2024": 1892,
+      "prioridade": "Muito alta",
+      "potencial_transferencia_10pct": 189
+    },
+    {
+      "rank": 17,
+      "municipio": "MARECHAL DEODORO",
+      "nome_lideranca": "THIAGO GONDIN",
+      "partido": "PDT",
+      "votos_2024": 2023,
+      "prioridade": "Muito alta",
+      "potencial_transferencia_10pct": 202
+    },
+    {
+      "rank": 18,
+      "municipio": "RIO LARGO",
+      "nome_lideranca": "ROGÉRIO SILVA",
+      "partido": "PP",
+      "votos_2024": 1922,
+      "prioridade": "Muito alta",
+      "potencial_transferencia_10pct": 192
+    },
+    {
+      "rank": 19,
+      "municipio": "ARAPIRACA",
+      "nome_lideranca": "ALDO VEIGA",
+      "partido": "MDB",
+      "votos_2024": 2655,
+      "prioridade": "Muito alta",
+      "potencial_transferencia_10pct": 266
+    },
+    {
+      "rank": 20,
+      "municipio": "SÃO MIGUEL DOS CAMPOS",
+      "nome_lideranca": "DINEY TORRES",
+      "partido": "MDB",
+      "votos_2024": 2081,
+      "prioridade": "Muito alta",
+      "potencial_transferencia_10pct": 208
+    },
+    {
+      "rank": 21,
+      "municipio": "MACEIÓ",
+      "nome_lideranca": "GALBA NETTO",
+      "partido": "PL",
+      "votos_2024": 3894,
+      "prioridade": "Alta",
+      "potencial_transferencia_10pct": 389
+    },
+    {
+      "rank": 22,
+      "municipio": "UNIÃO DOS PALMARES",
+      "nome_lideranca": "NENZINHA",
+      "partido": "MDB",
+      "votos_2024": 1597,
+      "prioridade": "Muito alta",
+      "potencial_transferencia_10pct": 160
+    },
+    {
+      "rank": 23,
+      "municipio": "RIO LARGO",
+      "nome_lideranca": "CARLINHOS REIS",
+      "partido": "PP",
+      "votos_2024": 1906,
+      "prioridade": "Muito alta",
+      "potencial_transferencia_10pct": 191
+    },
+    {
+      "rank": 24,
+      "municipio": "PALMEIRA DOS ÍNDIOS",
+      "nome_lideranca": "TONINHO GARROTE",
+      "partido": "PP",
+      "votos_2024": 1684,
+      "prioridade": "Muito alta",
+      "potencial_transferencia_10pct": 168
+    },
+    {
+      "rank": 25,
+      "municipio": "MARECHAL DEODORO",
+      "nome_lideranca": "JÚNIOR LOPES",
+      "partido": "PSB",
+      "votos_2024": 1790,
+      "prioridade": "Muito alta",
+      "potencial_transferencia_10pct": 179
+    },
+    {
+      "rank": 26,
+      "municipio": "ARAPIRACA",
+      "nome_lideranca": "MARCIO DO CANAÃ",
+      "partido": "MDB",
+      "votos_2024": 2580,
+      "prioridade": "Alta",
+      "potencial_transferencia_10pct": 258
+    },
+    {
+      "rank": 27,
+      "municipio": "CORURIPE",
+      "nome_lideranca": "DALMO PORTO",
+      "partido": "PSB",
+      "votos_2024": 2179,
+      "prioridade": "Muito alta",
+      "potencial_transferencia_10pct": 218
+    },
+    {
+      "rank": 28,
+      "municipio": "MACEIÓ",
+      "nome_lideranca": "MILTON RONALSA",
+      "partido": "PSB",
+      "votos_2024": 3849,
+      "prioridade": "Média",
+      "potencial_transferencia_10pct": 385
+    },
+    {
+      "rank": 29,
+      "municipio": "SÃO MIGUEL DOS CAMPOS",
+      "nome_lideranca": "JÓ DA DJANETE",
+      "partido": "PDT",
+      "votos_2024": 1991,
+      "prioridade": "Muito alta",
+      "potencial_transferencia_10pct": 199
+    },
+    {
+      "rank": 30,
+      "municipio": "DELMIRO GOUVEIA",
+      "nome_lideranca": "EDNA DO TATUAKARA",
+      "partido": "MDB",
+      "votos_2024": 2410,
+      "prioridade": "Muito alta",
+      "potencial_transferencia_10pct": 241
+    }
+  ],
+  "municipios_com_maior_rede_liderancas": [
+    {
+      "municipio": "MACEIÓ",
+      "liderancas_mapeadas": 310,
+      "principal_lideranca": "LUCIANO MARINHO",
+      "votos_liderancas_total": 241387,
+      "potencial_transferencia_10pct": 24122
+    },
+    {
+      "municipio": "ARAPIRACA",
+      "liderancas_mapeadas": 256,
+      "principal_lideranca": "ROGERIO NEZINHO",
+      "votos_liderancas_total": 76514,
+      "potencial_transferencia_10pct": 7645
+    },
+    {
+      "municipio": "RIO LARGO",
+      "liderancas_mapeadas": 65,
+      "principal_lideranca": "BALA SOARES",
+      "votos_liderancas_total": 29810,
+      "potencial_transferencia_10pct": 2978
+    },
+    {
+      "municipio": "PALMEIRA DOS ÍNDIOS",
+      "liderancas_mapeadas": 42,
+      "principal_lideranca": "PEDRINHO GAIA",
+      "votos_liderancas_total": 22687,
+      "potencial_transferencia_10pct": 2269
+    },
+    {
+      "municipio": "UNIÃO DOS PALMARES",
+      "liderancas_mapeadas": 62,
+      "principal_lideranca": "MILTON DO COMPLEMENTAR",
+      "votos_liderancas_total": 22246,
+      "potencial_transferencia_10pct": 2220
+    },
+    {
+      "municipio": "MARECHAL DEODORO",
+      "liderancas_mapeadas": 41,
+      "principal_lideranca": "THIAGO GONDIN",
+      "votos_liderancas_total": 19671,
+      "potencial_transferencia_10pct": 1968
+    },
+    {
+      "municipio": "SÃO MIGUEL DOS CAMPOS",
+      "liderancas_mapeadas": 31,
+      "principal_lideranca": "DINEY TORRES",
+      "votos_liderancas_total": 19607,
+      "potencial_transferencia_10pct": 1960
+    },
+    {
+      "municipio": "PENEDO",
+      "liderancas_mapeadas": 30,
+      "principal_lideranca": "IVO COSTA",
+      "votos_liderancas_total": 15743,
+      "potencial_transferencia_10pct": 1577
+    },
+    {
+      "municipio": "CORURIPE",
+      "liderancas_mapeadas": 39,
+      "principal_lideranca": "DALMO PORTO",
+      "votos_liderancas_total": 19916,
+      "potencial_transferencia_10pct": 1991
+    },
+    {
+      "municipio": "DELMIRO GOUVEIA",
+      "liderancas_mapeadas": 20,
+      "principal_lideranca": "EDNA DO TATUAKARA",
+      "votos_liderancas_total": 17619,
+      "potencial_transferencia_10pct": 1761
+    },
+    {
+      "municipio": "ATALAIA",
+      "liderancas_mapeadas": 38,
+      "principal_lideranca": "RUDINHO",
+      "votos_liderancas_total": 18928,
+      "potencial_transferencia_10pct": 1890
+    },
+    {
+      "municipio": "SANTANA DO IPANEMA",
+      "liderancas_mapeadas": 45,
+      "principal_lideranca": "MIGUEL OLIVEIRA",
+      "votos_liderancas_total": 15135,
+      "potencial_transferencia_10pct": 1512
+    },
+    {
+      "municipio": "TEOTÔNIO VILELA",
+      "liderancas_mapeadas": 32,
+      "principal_lideranca": "SERGIO CELESTINO",
+      "votos_liderancas_total": 11911,
+      "potencial_transferencia_10pct": 1192
+    },
+    {
+      "municipio": "PILAR",
+      "liderancas_mapeadas": 27,
+      "principal_lideranca": "ALEX CAVALCANTE",
+      "votos_liderancas_total": 15007,
+      "potencial_transferencia_10pct": 1499
+    },
+    {
+      "municipio": "GIRAU DO PONCIANO",
+      "liderancas_mapeadas": 11,
+      "principal_lideranca": "FLAVINHA BARROS",
+      "votos_liderancas_total": 13903,
+      "potencial_transferencia_10pct": 1390
+    }
+  ],
+  "indicadores": {
+    "municipios_analisados": 102,
+    "municipios_muito_alta_sinergia": 1,
+    "municipios_alta_sinergia": 0,
+    "agenda_conjunta_top30": 30
+  },
+  "municipios_alta_sinergia": [
+    {
+      "rank": 1,
+      "municipio": "Maceió",
+      "prioridade": "Muito alta",
+      "score": 100.0,
+      "principal_lideranca": "LUCIANO MARINHO",
+      "prefeito_2024": "JOAO HENRIQUE HOLANDA CALDAS",
+      "meta_referencia_gabi": 14996,
+      "acao_recomendada": "Agendar visita conjunta Davi + Gabi",
+      "justificativa": "Maceió combina alta prioridade territorial, presença na base estratégica do Davi, rede local com 310 liderança(s) mapeada(s) e meta de referência de 14996 votos para Gabi. Score de sinergia: 100.00."
+    },
+    {
+      "rank": 2,
+      "municipio": "Arapiraca",
+      "prioridade": "Monitoramento",
+      "score": 33.65,
+      "principal_lideranca": "ROGERIO NEZINHO",
+      "prefeito_2024": "JOSE LUCIANO BARBOSA DA SILVA",
+      "meta_referencia_gabi": 3812,
+      "acao_recomendada": "Monitorar",
+      "justificativa": "Arapiraca deve ser mantido em monitoramento até novas informações de apoio local, agenda ou aderência política. Score de sinergia: 33.65."
+    },
+    {
+      "rank": 3,
+      "municipio": "Rio Largo",
+      "prioridade": "Monitoramento",
+      "score": 19.57,
+      "principal_lideranca": "BALA SOARES",
+      "prefeito_2024": "PEDRO CARLOS DA SILVA NETO",
+      "meta_referencia_gabi": 1561,
+      "acao_recomendada": "Monitorar",
+      "justificativa": "Rio Largo deve ser mantido em monitoramento até novas informações de apoio local, agenda ou aderência política. Score de sinergia: 19.57."
+    },
+    {
+      "rank": 4,
+      "municipio": "Palmeira dos Índios",
+      "prioridade": "Monitoramento",
+      "score": 17.5,
+      "principal_lideranca": "PEDRINHO GAIA",
+      "prefeito_2024": "LUISA JULIA DUARTE",
+      "meta_referencia_gabi": 1234,
+      "acao_recomendada": "Monitorar",
+      "justificativa": "Palmeira dos Índios deve ser mantido em monitoramento até novas informações de apoio local, agenda ou aderência política. Score de sinergia: 17.50."
+    },
+    {
+      "rank": 5,
+      "municipio": "União dos Palmares",
+      "prioridade": "Monitoramento",
+      "score": 16.78,
+      "principal_lideranca": "MILTON DO COMPLEMENTAR",
+      "prefeito_2024": "JOSÉ IRAN MENEZES DA SILVA JUNIOR",
+      "meta_referencia_gabi": 1101,
+      "acao_recomendada": "Monitorar",
+      "justificativa": "União dos Palmares deve ser mantido em monitoramento até novas informações de apoio local, agenda ou aderência política. Score de sinergia: 16.78."
+    },
+    {
+      "rank": 6,
+      "municipio": "Marechal Deodoro",
+      "prioridade": "Monitoramento",
+      "score": 16.33,
+      "principal_lideranca": "THIAGO GONDIN",
+      "prefeito_2024": "ANDRÉ LUIZ BARROS DA SILVA",
+      "meta_referencia_gabi": 1037,
+      "acao_recomendada": "Monitorar",
+      "justificativa": "Marechal Deodoro deve ser mantido em monitoramento até novas informações de apoio local, agenda ou aderência política. Score de sinergia: 16.33."
+    },
+    {
+      "rank": 7,
+      "municipio": "São Miguel dos Campos",
+      "prioridade": "Monitoramento",
+      "score": 16.01,
+      "principal_lideranca": "DINEY TORRES",
+      "prefeito_2024": "GEORGE CLEMENTE VIEIRA",
+      "meta_referencia_gabi": 977,
+      "acao_recomendada": "Monitorar",
+      "justificativa": "São Miguel dos Campos deve ser mantido em monitoramento até novas informações de apoio local, agenda ou aderência política. Score de sinergia: 16.01."
+    },
+    {
+      "rank": 8,
+      "municipio": "Coruripe",
+      "prioridade": "Monitoramento",
+      "score": 15.86,
+      "principal_lideranca": "DALMO PORTO",
+      "prefeito_2024": "MARCELO BELTRÃO SIQUEIRA",
+      "meta_referencia_gabi": 945,
+      "acao_recomendada": "Monitorar",
+      "justificativa": "Coruripe deve ser mantido em monitoramento até novas informações de apoio local, agenda ou aderência política. Score de sinergia: 15.86."
+    },
+    {
+      "rank": 9,
+      "municipio": "Penedo",
+      "prioridade": "Monitoramento",
+      "score": 15.76,
+      "principal_lideranca": "IVO COSTA",
+      "prefeito_2024": "RONALDO PEREIRA LOPES",
+      "meta_referencia_gabi": 967,
+      "acao_recomendada": "Monitorar",
+      "justificativa": "Penedo deve ser mantido em monitoramento até novas informações de apoio local, agenda ou aderência política. Score de sinergia: 15.76."
+    },
+    {
+      "rank": 10,
+      "municipio": "Delmiro Gouveia",
+      "prioridade": "Monitoramento",
+      "score": 15.57,
+      "principal_lideranca": "EDNA DO TATUAKARA",
+      "prefeito_2024": "ELIZIANE FERREIRA COSTA LIMA",
+      "meta_referencia_gabi": 911,
+      "acao_recomendada": "Monitorar",
+      "justificativa": "Delmiro Gouveia deve ser mantido em monitoramento até novas informações de apoio local, agenda ou aderência política. Score de sinergia: 15.57."
+    },
+    {
+      "rank": 11,
+      "municipio": "Atalaia",
+      "prioridade": "Monitoramento",
+      "score": 12.32,
+      "principal_lideranca": "RUDINHO",
+      "prefeito_2024": "CECILIA LIMA HERRMANN",
+      "meta_referencia_gabi": 753,
+      "acao_recomendada": "Monitorar",
+      "justificativa": "Atalaia deve ser mantido em monitoramento até novas informações de apoio local, agenda ou aderência política. Score de sinergia: 12.32."
+    },
+    {
+      "rank": 12,
+      "municipio": "Santana do Ipanema",
+      "prioridade": "Monitoramento",
+      "score": 12.12,
+      "principal_lideranca": "MIGUEL OLIVEIRA",
+      "prefeito_2024": "JOAO EDUARDO BULHOES PORTELA DE MELO",
+      "meta_referencia_gabi": 750,
+      "acao_recomendada": "Monitorar",
+      "justificativa": "Santana do Ipanema deve ser mantido em monitoramento até novas informações de apoio local, agenda ou aderência política. Score de sinergia: 12.12."
+    },
+    {
+      "rank": 13,
+      "municipio": "Pilar",
+      "prioridade": "Monitoramento",
+      "score": 11.59,
+      "principal_lideranca": "ALEX CAVALCANTE",
+      "prefeito_2024": "MARIA DE FATIMA RESENDE ROCHA OITICICA",
+      "meta_referencia_gabi": 650,
+      "acao_recomendada": "Monitorar",
+      "justificativa": "Pilar deve ser mantido em monitoramento até novas informações de apoio local, agenda ou aderência política. Score de sinergia: 11.59."
+    },
+    {
+      "rank": 14,
+      "municipio": "Teotônio Vilela",
+      "prioridade": "Monitoramento",
+      "score": 11.55,
+      "principal_lideranca": "SERGIO CELESTINO",
+      "prefeito_2024": "PEDRO HENRIQUE DE JESUS PEREIRA",
+      "meta_referencia_gabi": 674,
+      "acao_recomendada": "Monitorar",
+      "justificativa": "Teotônio Vilela deve ser mantido em monitoramento até novas informações de apoio local, agenda ou aderência política. Score de sinergia: 11.55."
+    },
+    {
+      "rank": 15,
+      "municipio": "Girau do Ponciano",
+      "prioridade": "Monitoramento",
+      "score": 11.44,
+      "principal_lideranca": "FLAVINHA BARROS",
+      "prefeito_2024": "GILBERTO BEZERRA BARROS",
+      "meta_referencia_gabi": 632,
+      "acao_recomendada": "Monitorar",
+      "justificativa": "Girau do Ponciano deve ser mantido em monitoramento até novas informações de apoio local, agenda ou aderência política. Score de sinergia: 11.44."
+    },
+    {
+      "rank": 16,
+      "municipio": "São Sebastião",
+      "prioridade": "Monitoramento",
+      "score": 11.22,
+      "principal_lideranca": "ANA PACHECO",
+      "prefeito_2024": "CHARLES NUNES REGUEIRA",
+      "meta_referencia_gabi": 597,
+      "acao_recomendada": "Monitorar",
+      "justificativa": "São Sebastião deve ser mantido em monitoramento até novas informações de apoio local, agenda ou aderência política. Score de sinergia: 11.22."
+    },
+    {
+      "rank": 17,
+      "municipio": "Maragogi",
+      "prioridade": "Monitoramento",
+      "score": 10.88,
+      "principal_lideranca": "JUNIOR DO JOZEMIR",
+      "prefeito_2024": "DANIEL MENDES DE VASCONCELOS FERREIRA",
+      "meta_referencia_gabi": 546,
+      "acao_recomendada": "Monitorar",
+      "justificativa": "Maragogi deve ser mantido em monitoramento até novas informações de apoio local, agenda ou aderência política. Score de sinergia: 10.88."
+    },
+    {
+      "rank": 18,
+      "municipio": "Craíbas",
+      "prioridade": "Monitoramento",
+      "score": 10.85,
+      "principal_lideranca": "CARLINHOS FOLHA",
+      "prefeito_2024": "TEÓFILO JOSÉ BARROSO PEREIRA",
+      "meta_referencia_gabi": 506,
+      "acao_recomendada": "Monitorar",
+      "justificativa": "Craíbas deve ser mantido em monitoramento até novas informações de apoio local, agenda ou aderência política. Score de sinergia: 10.85."
+    },
+    {
+      "rank": 19,
+      "municipio": "Campo Alegre",
+      "prioridade": "Monitoramento",
+      "score": 10.81,
+      "principal_lideranca": "JEANE NASCIMENTO",
+      "prefeito_2024": "PAULINE DE FÁTIMA PEREIRA ALBUQUERQUE",
+      "meta_referencia_gabi": 557,
+      "acao_recomendada": "Monitorar",
+      "justificativa": "Campo Alegre deve ser mantido em monitoramento até novas informações de apoio local, agenda ou aderência política. Score de sinergia: 10.81."
+    },
+    {
+      "rank": 20,
+      "municipio": "São Luís do Quitunde",
+      "prioridade": "Monitoramento",
+      "score": 10.74,
+      "principal_lideranca": "CABEÇA",
+      "prefeito_2024": "MARCIA RAFAELA BARROS DE VASCONCELOS",
+      "meta_referencia_gabi": 523,
+      "acao_recomendada": "Monitorar",
+      "justificativa": "São Luís do Quitunde deve ser mantido em monitoramento até novas informações de apoio local, agenda ou aderência política. Score de sinergia: 10.74."
+    }
+  ],
+  "agenda_conjunta_recomendada": [
+    {
+      "ordem": 1,
+      "semana": "Semana 1",
+      "municipio": "Maceió",
+      "prioridade": "Muito alta",
+      "principal_lideranca": "LUCIANO MARINHO",
+      "acao_recomendada": "Agendar visita conjunta Davi + Gabi",
+      "formato": "Maceió: agenda conjunta Davi + Gabi; com validação da liderança LUCIANO MARINHO; e leitura do grupo do prefeito JOAO HENRIQUE HOLANDA CALDAS."
+    },
+    {
+      "ordem": 2,
+      "semana": "Semana 1",
+      "municipio": "Arapiraca",
+      "prioridade": "Monitoramento",
+      "principal_lideranca": "ROGERIO NEZINHO",
+      "acao_recomendada": "Monitorar",
+      "formato": "Arapiraca: monitoramento político; com validação da liderança ROGERIO NEZINHO; e leitura do grupo do prefeito JOSE LUCIANO BARBOSA DA SILVA."
+    },
+    {
+      "ordem": 3,
+      "semana": "Semana 1",
+      "municipio": "Rio Largo",
+      "prioridade": "Monitoramento",
+      "principal_lideranca": "BALA SOARES",
+      "acao_recomendada": "Monitorar",
+      "formato": "Rio Largo: monitoramento político; com validação da liderança BALA SOARES; e leitura do grupo do prefeito PEDRO CARLOS DA SILVA NETO."
+    },
+    {
+      "ordem": 4,
+      "semana": "Semana 1",
+      "municipio": "Palmeira dos Índios",
+      "prioridade": "Monitoramento",
+      "principal_lideranca": "PEDRINHO GAIA",
+      "acao_recomendada": "Monitorar",
+      "formato": "Palmeira dos Índios: monitoramento político; com validação da liderança PEDRINHO GAIA; e leitura do grupo do prefeito LUISA JULIA DUARTE."
+    },
+    {
+      "ordem": 5,
+      "semana": "Semana 1",
+      "municipio": "União dos Palmares",
+      "prioridade": "Monitoramento",
+      "principal_lideranca": "MILTON DO COMPLEMENTAR",
+      "acao_recomendada": "Monitorar",
+      "formato": "União dos Palmares: monitoramento político; com validação da liderança MILTON DO COMPLEMENTAR; e leitura do grupo do prefeito JOSÉ IRAN MENEZES DA SILVA JUNIOR."
+    },
+    {
+      "ordem": 6,
+      "semana": "Semana 1",
+      "municipio": "Marechal Deodoro",
+      "prioridade": "Monitoramento",
+      "principal_lideranca": "THIAGO GONDIN",
+      "acao_recomendada": "Monitorar",
+      "formato": "Marechal Deodoro: monitoramento político; com validação da liderança THIAGO GONDIN; e leitura do grupo do prefeito ANDRÉ LUIZ BARROS DA SILVA."
+    },
+    {
+      "ordem": 7,
+      "semana": "Semana 1",
+      "municipio": "São Miguel dos Campos",
+      "prioridade": "Monitoramento",
+      "principal_lideranca": "DINEY TORRES",
+      "acao_recomendada": "Monitorar",
+      "formato": "São Miguel dos Campos: monitoramento político; com validação da liderança DINEY TORRES; e leitura do grupo do prefeito GEORGE CLEMENTE VIEIRA."
+    },
+    {
+      "ordem": 8,
+      "semana": "Semana 1",
+      "municipio": "Coruripe",
+      "prioridade": "Monitoramento",
+      "principal_lideranca": "DALMO PORTO",
+      "acao_recomendada": "Monitorar",
+      "formato": "Coruripe: monitoramento político; com validação da liderança DALMO PORTO; e leitura do grupo do prefeito MARCELO BELTRÃO SIQUEIRA."
+    },
+    {
+      "ordem": 9,
+      "semana": "Semana 2",
+      "municipio": "Penedo",
+      "prioridade": "Monitoramento",
+      "principal_lideranca": "IVO COSTA",
+      "acao_recomendada": "Monitorar",
+      "formato": "Penedo: monitoramento político; com validação da liderança IVO COSTA; e leitura do grupo do prefeito RONALDO PEREIRA LOPES."
+    },
+    {
+      "ordem": 10,
+      "semana": "Semana 2",
+      "municipio": "Delmiro Gouveia",
+      "prioridade": "Monitoramento",
+      "principal_lideranca": "EDNA DO TATUAKARA",
+      "acao_recomendada": "Monitorar",
+      "formato": "Delmiro Gouveia: monitoramento político; com validação da liderança EDNA DO TATUAKARA; e leitura do grupo do prefeito ELIZIANE FERREIRA COSTA LIMA."
+    },
+    {
+      "ordem": 11,
+      "semana": "Semana 2",
+      "municipio": "Atalaia",
+      "prioridade": "Monitoramento",
+      "principal_lideranca": "RUDINHO",
+      "acao_recomendada": "Monitorar",
+      "formato": "Atalaia: monitoramento político; com validação da liderança RUDINHO; e leitura do grupo do prefeito CECILIA LIMA HERRMANN."
+    },
+    {
+      "ordem": 12,
+      "semana": "Semana 2",
+      "municipio": "Santana do Ipanema",
+      "prioridade": "Monitoramento",
+      "principal_lideranca": "MIGUEL OLIVEIRA",
+      "acao_recomendada": "Monitorar",
+      "formato": "Santana do Ipanema: monitoramento político; com validação da liderança MIGUEL OLIVEIRA; e leitura do grupo do prefeito JOAO EDUARDO BULHOES PORTELA DE MELO."
+    },
+    {
+      "ordem": 13,
+      "semana": "Semana 2",
+      "municipio": "Pilar",
+      "prioridade": "Monitoramento",
+      "principal_lideranca": "ALEX CAVALCANTE",
+      "acao_recomendada": "Monitorar",
+      "formato": "Pilar: monitoramento político; com validação da liderança ALEX CAVALCANTE; e leitura do grupo do prefeito MARIA DE FATIMA RESENDE ROCHA OITICICA."
+    },
+    {
+      "ordem": 14,
+      "semana": "Semana 2",
+      "municipio": "Teotônio Vilela",
+      "prioridade": "Monitoramento",
+      "principal_lideranca": "SERGIO CELESTINO",
+      "acao_recomendada": "Monitorar",
+      "formato": "Teotônio Vilela: monitoramento político; com validação da liderança SERGIO CELESTINO; e leitura do grupo do prefeito PEDRO HENRIQUE DE JESUS PEREIRA."
+    },
+    {
+      "ordem": 15,
+      "semana": "Semana 2",
+      "municipio": "Girau do Ponciano",
+      "prioridade": "Monitoramento",
+      "principal_lideranca": "FLAVINHA BARROS",
+      "acao_recomendada": "Monitorar",
+      "formato": "Girau do Ponciano: monitoramento político; com validação da liderança FLAVINHA BARROS; e leitura do grupo do prefeito GILBERTO BEZERRA BARROS."
+    },
+    {
+      "ordem": 16,
+      "semana": "Semana 2",
+      "municipio": "São Sebastião",
+      "prioridade": "Monitoramento",
+      "principal_lideranca": "ANA PACHECO",
+      "acao_recomendada": "Monitorar",
+      "formato": "São Sebastião: monitoramento político; com validação da liderança ANA PACHECO; e leitura do grupo do prefeito CHARLES NUNES REGUEIRA."
+    },
+    {
+      "ordem": 17,
+      "semana": "Semana 3",
+      "municipio": "Maragogi",
+      "prioridade": "Monitoramento",
+      "principal_lideranca": "JUNIOR DO JOZEMIR",
+      "acao_recomendada": "Monitorar",
+      "formato": "Maragogi: monitoramento político; com validação da liderança JUNIOR DO JOZEMIR; e leitura do grupo do prefeito DANIEL MENDES DE VASCONCELOS FERREIRA."
+    },
+    {
+      "ordem": 18,
+      "semana": "Semana 3",
+      "municipio": "Craíbas",
+      "prioridade": "Monitoramento",
+      "principal_lideranca": "CARLINHOS FOLHA",
+      "acao_recomendada": "Monitorar",
+      "formato": "Craíbas: monitoramento político; com validação da liderança CARLINHOS FOLHA; e leitura do grupo do prefeito TEÓFILO JOSÉ BARROSO PEREIRA."
+    },
+    {
+      "ordem": 19,
+      "semana": "Semana 3",
+      "municipio": "Campo Alegre",
+      "prioridade": "Monitoramento",
+      "principal_lideranca": "JEANE NASCIMENTO",
+      "acao_recomendada": "Monitorar",
+      "formato": "Campo Alegre: monitoramento político; com validação da liderança JEANE NASCIMENTO; e leitura do grupo do prefeito PAULINE DE FÁTIMA PEREIRA ALBUQUERQUE."
+    },
+    {
+      "ordem": 20,
+      "semana": "Semana 3",
+      "municipio": "São Luís do Quitunde",
+      "prioridade": "Monitoramento",
+      "principal_lideranca": "CABEÇA",
+      "acao_recomendada": "Monitorar",
+      "formato": "São Luís do Quitunde: monitoramento político; com validação da liderança CABEÇA; e leitura do grupo do prefeito MARCIA RAFAELA BARROS DE VASCONCELOS."
+    },
+    {
+      "ordem": 21,
+      "semana": "Semana 3",
+      "municipio": "Porto Calvo",
+      "prioridade": "Monitoramento",
+      "principal_lideranca": "MARCIO DO ANDRADE",
+      "acao_recomendada": "Monitorar",
+      "formato": "Porto Calvo: monitoramento político; com validação da liderança MARCIO DO ANDRADE; e leitura do grupo do prefeito ERONITA SPOSITO LEAO E LIMA."
+    },
+    {
+      "ordem": 22,
+      "semana": "Semana 3",
+      "municipio": "São José da Tapera",
+      "prioridade": "Monitoramento",
+      "principal_lideranca": "EVANDRO GORDINHO DO POVO",
+      "acao_recomendada": "Monitorar",
+      "formato": "São José da Tapera: monitoramento político; com validação da liderança EVANDRO GORDINHO DO POVO; e leitura do grupo do prefeito JARBAS PEREIRA RICARDO."
+    },
+    {
+      "ordem": 23,
+      "semana": "Semana 3",
+      "municipio": "Murici",
+      "prioridade": "Monitoramento",
+      "principal_lideranca": "MORAIS",
+      "acao_recomendada": "Monitorar",
+      "formato": "Murici: monitoramento político; com validação da liderança MORAIS; e leitura do grupo do prefeito REMI VASCONCELOS CALHEIROS FILHO."
+    },
+    {
+      "ordem": 24,
+      "semana": "Semana 3",
+      "municipio": "Viçosa",
+      "prioridade": "Monitoramento",
+      "principal_lideranca": "DAVI DO TÊDA",
+      "acao_recomendada": "Monitorar",
+      "formato": "Viçosa: monitoramento político; com validação da liderança DAVI DO TÊDA; e leitura do grupo do prefeito JOÃO VICTOR CALHEIROS AMORIM SANTOS."
+    },
+    {
+      "ordem": 25,
+      "semana": "Semana 4",
+      "municipio": "Feira Grande",
+      "prioridade": "Monitoramento",
+      "principal_lideranca": "QUEL",
+      "acao_recomendada": "Monitorar",
+      "formato": "Feira Grande: monitoramento político; com validação da liderança QUEL; e leitura do grupo do prefeito DÁRIO ROBERTO SILVA LIRA."
+    },
+    {
+      "ordem": 26,
+      "semana": "Semana 4",
+      "municipio": "Limoeiro de Anadia",
+      "prioridade": "Monitoramento",
+      "principal_lideranca": "TOINHO",
+      "acao_recomendada": "Monitorar",
+      "formato": "Limoeiro de Anadia: monitoramento político; com validação da liderança TOINHO; e leitura do grupo do prefeito JAMES MARLAN FERREIRA BARBOSA."
+    },
+    {
+      "ordem": 27,
+      "semana": "Semana 4",
+      "municipio": "Igaci",
+      "prioridade": "Monitoramento",
+      "principal_lideranca": "DERY FERREIRA",
+      "acao_recomendada": "Monitorar",
+      "formato": "Igaci: monitoramento político; com validação da liderança DERY FERREIRA; e leitura do grupo do prefeito JOSE PETRUCIO OLIVEIRA BARBOSA."
+    },
+    {
+      "ordem": 28,
+      "semana": "Semana 4",
+      "municipio": "Traipu",
+      "prioridade": "Monitoramento",
+      "principal_lideranca": "JUNIOR DA CAPIVARA",
+      "acao_recomendada": "Monitorar",
+      "formato": "Traipu: monitoramento político; com validação da liderança JUNIOR DA CAPIVARA; e leitura do grupo do prefeito MANUEL LUCAS KUMMER FREITAS DOS SANTOS."
+    },
+    {
+      "ordem": 29,
+      "semana": "Semana 4",
+      "municipio": "Piranhas",
+      "prioridade": "Monitoramento",
+      "principal_lideranca": "LAURA DE ZÉ VICENTE",
+      "acao_recomendada": "Monitorar",
+      "formato": "Piranhas: monitoramento político; com validação da liderança LAURA DE ZÉ VICENTE; e leitura do grupo do prefeito TIAGO TORRES FREITAS."
+    },
+    {
+      "ordem": 30,
+      "semana": "Semana 4",
+      "municipio": "Junqueiro",
+      "prioridade": "Monitoramento",
+      "principal_lideranca": "HELINHO SILVA",
+      "acao_recomendada": "Monitorar",
+      "formato": "Junqueiro: monitoramento político; com validação da liderança HELINHO SILVA; e leitura do grupo do prefeito CICERO LEANDRO PEREIRA DA SILVA."
+    }
+  ],
+  "roteiro_territorial": [
+    {
+      "ordem": 1,
+      "semana": "Semana 1",
+      "dia": "Segunda-feira",
+      "turno": "Manhã",
+      "municipio": "Maceió",
+      "macro_regiao": "Região Metropolitana / Maceió",
+      "lideranca": "LUCIANO MARINHO",
+      "tipo_agenda": "Agenda conjunta pública + reunião com lideranças",
+      "objetivo": "Confirmar agenda conjunta Davi + Gabi em Maceió com validação prévia da liderança LUCIANO MARINHO."
+    },
+    {
+      "ordem": 3,
+      "semana": "Semana 1",
+      "dia": "Segunda-feira",
+      "turno": "Tarde/Noite",
+      "municipio": "Rio Largo",
+      "macro_regiao": "Região Metropolitana / Maceió",
+      "lideranca": "BALA SOARES",
+      "tipo_agenda": "Monitoramento político",
+      "objetivo": "Monitorar oportunidade de aproximação política em Rio Largo."
+    },
+    {
+      "ordem": 6,
+      "semana": "Semana 1",
+      "dia": "Terça-feira",
+      "turno": "Manhã",
+      "municipio": "Marechal Deodoro",
+      "macro_regiao": "Região Metropolitana / Maceió",
+      "lideranca": "THIAGO GONDIN",
+      "tipo_agenda": "Monitoramento político",
+      "objetivo": "Monitorar oportunidade de aproximação política em Marechal Deodoro."
+    },
+    {
+      "ordem": 4,
+      "semana": "Semana 1",
+      "dia": "Terça-feira",
+      "turno": "Tarde/Noite",
+      "municipio": "Palmeira dos Índios",
+      "macro_regiao": "Eixo Serrano / Quebrangulo",
+      "lideranca": "PEDRINHO GAIA",
+      "tipo_agenda": "Monitoramento político",
+      "objetivo": "Monitorar oportunidade de aproximação política em Palmeira dos Índios."
+    },
+    {
+      "ordem": 5,
+      "semana": "Semana 1",
+      "dia": "Quarta-feira",
+      "turno": "Manhã",
+      "municipio": "União dos Palmares",
+      "macro_regiao": "Eixo Serrano / Quebrangulo",
+      "lideranca": "MILTON DO COMPLEMENTAR",
+      "tipo_agenda": "Monitoramento político",
+      "objetivo": "Monitorar oportunidade de aproximação política em União dos Palmares."
+    },
+    {
+      "ordem": 2,
+      "semana": "Semana 1",
+      "dia": "Quarta-feira",
+      "turno": "Tarde/Noite",
+      "municipio": "Arapiraca",
+      "macro_regiao": "Agreste / Arapiraca",
+      "lideranca": "ROGERIO NEZINHO",
+      "tipo_agenda": "Monitoramento político",
+      "objetivo": "Monitorar oportunidade de aproximação política em Arapiraca."
+    },
+    {
+      "ordem": 7,
+      "semana": "Semana 1",
+      "dia": "Quinta-feira",
+      "turno": "Manhã",
+      "municipio": "São Miguel dos Campos",
+      "macro_regiao": "Agreste / Arapiraca",
+      "lideranca": "DINEY TORRES",
+      "tipo_agenda": "Monitoramento político",
+      "objetivo": "Monitorar oportunidade de aproximação política em São Miguel dos Campos."
+    },
+    {
+      "ordem": 8,
+      "semana": "Semana 1",
+      "dia": "Quinta-feira",
+      "turno": "Tarde/Noite",
+      "municipio": "Coruripe",
+      "macro_regiao": "Litoral Sul",
+      "lideranca": "DALMO PORTO",
+      "tipo_agenda": "Monitoramento político",
+      "objetivo": "Monitorar oportunidade de aproximação política em Coruripe."
+    },
+    {
+      "ordem": 13,
+      "semana": "Semana 2",
+      "dia": "Segunda-feira",
+      "turno": "Manhã",
+      "municipio": "Pilar",
+      "macro_regiao": "Região Metropolitana / Maceió",
+      "lideranca": "ALEX CAVALCANTE",
+      "tipo_agenda": "Monitoramento político",
+      "objetivo": "Monitorar oportunidade de aproximação política em Pilar."
+    },
+    {
+      "ordem": 14,
+      "semana": "Semana 2",
+      "dia": "Segunda-feira",
+      "turno": "Tarde/Noite",
+      "municipio": "Teotônio Vilela",
+      "macro_regiao": "Agreste / Arapiraca",
+      "lideranca": "SERGIO CELESTINO",
+      "tipo_agenda": "Monitoramento político",
+      "objetivo": "Monitorar oportunidade de aproximação política em Teotônio Vilela."
+    },
+    {
+      "ordem": 15,
+      "semana": "Semana 2",
+      "dia": "Terça-feira",
+      "turno": "Manhã",
+      "municipio": "Girau do Ponciano",
+      "macro_regiao": "Agreste / Arapiraca",
+      "lideranca": "FLAVINHA BARROS",
+      "tipo_agenda": "Monitoramento político",
+      "objetivo": "Monitorar oportunidade de aproximação política em Girau do Ponciano."
+    },
+    {
+      "ordem": 16,
+      "semana": "Semana 2",
+      "dia": "Terça-feira",
+      "turno": "Tarde/Noite",
+      "municipio": "São Sebastião",
+      "macro_regiao": "Agreste / Arapiraca",
+      "lideranca": "ANA PACHECO",
+      "tipo_agenda": "Monitoramento político",
+      "objetivo": "Monitorar oportunidade de aproximação política em São Sebastião."
+    },
+    {
+      "ordem": 11,
+      "semana": "Semana 2",
+      "dia": "Quarta-feira",
+      "turno": "Manhã",
+      "municipio": "Atalaia",
+      "macro_regiao": "Zona da Mata",
+      "lideranca": "RUDINHO",
+      "tipo_agenda": "Monitoramento político",
+      "objetivo": "Monitorar oportunidade de aproximação política em Atalaia."
+    },
+    {
+      "ordem": 9,
+      "semana": "Semana 2",
+      "dia": "Quarta-feira",
+      "turno": "Tarde/Noite",
+      "municipio": "Penedo",
+      "macro_regiao": "Litoral Sul",
+      "lideranca": "IVO COSTA",
+      "tipo_agenda": "Monitoramento político",
+      "objetivo": "Monitorar oportunidade de aproximação política em Penedo."
+    },
+    {
+      "ordem": 10,
+      "semana": "Semana 2",
+      "dia": "Quinta-feira",
+      "turno": "Manhã",
+      "municipio": "Delmiro Gouveia",
+      "macro_regiao": "Sertão",
+      "lideranca": "EDNA DO TATUAKARA",
+      "tipo_agenda": "Monitoramento político",
+      "objetivo": "Monitorar oportunidade de aproximação política em Delmiro Gouveia."
+    },
+    {
+      "ordem": 12,
+      "semana": "Semana 2",
+      "dia": "Quinta-feira",
+      "turno": "Tarde/Noite",
+      "municipio": "Santana do Ipanema",
+      "macro_regiao": "Sertão",
+      "lideranca": "MIGUEL OLIVEIRA",
+      "tipo_agenda": "Monitoramento político",
+      "objetivo": "Monitorar oportunidade de aproximação política em Santana do Ipanema."
+    },
+    {
+      "ordem": 23,
+      "semana": "Semana 3",
+      "dia": "Segunda-feira",
+      "turno": "Manhã",
+      "municipio": "Murici",
+      "macro_regiao": "Eixo Serrano / Quebrangulo",
+      "lideranca": "MORAIS",
+      "tipo_agenda": "Monitoramento político",
+      "objetivo": "Monitorar oportunidade de aproximação política em Murici."
+    },
+    {
+      "ordem": 24,
+      "semana": "Semana 3",
+      "dia": "Segunda-feira",
+      "turno": "Tarde/Noite",
+      "municipio": "Viçosa",
+      "macro_regiao": "Eixo Serrano / Quebrangulo",
+      "lideranca": "DAVI DO TÊDA",
+      "tipo_agenda": "Monitoramento político",
+      "objetivo": "Monitorar oportunidade de aproximação política em Viçosa."
+    },
+    {
+      "ordem": 18,
+      "semana": "Semana 3",
+      "dia": "Terça-feira",
+      "turno": "Manhã",
+      "municipio": "Craíbas",
+      "macro_regiao": "Agreste / Arapiraca",
+      "lideranca": "CARLINHOS FOLHA",
+      "tipo_agenda": "Monitoramento político",
+      "objetivo": "Monitorar oportunidade de aproximação política em Craíbas."
+    },
+    {
+      "ordem": 19,
+      "semana": "Semana 3",
+      "dia": "Terça-feira",
+      "turno": "Tarde/Noite",
+      "municipio": "Campo Alegre",
+      "macro_regiao": "Agreste / Arapiraca",
+      "lideranca": "JEANE NASCIMENTO",
+      "tipo_agenda": "Monitoramento político",
+      "objetivo": "Monitorar oportunidade de aproximação política em Campo Alegre."
+    },
+    {
+      "ordem": 20,
+      "semana": "Semana 3",
+      "dia": "Quarta-feira",
+      "turno": "Manhã",
+      "municipio": "São Luís do Quitunde",
+      "macro_regiao": "Zona da Mata",
+      "lideranca": "CABEÇA",
+      "tipo_agenda": "Monitoramento político",
+      "objetivo": "Monitorar oportunidade de aproximação política em São Luís do Quitunde."
+    },
+    {
+      "ordem": 21,
+      "semana": "Semana 3",
+      "dia": "Quarta-feira",
+      "turno": "Tarde/Noite",
+      "municipio": "Porto Calvo",
+      "macro_regiao": "Zona da Mata",
+      "lideranca": "MARCIO DO ANDRADE",
+      "tipo_agenda": "Monitoramento político",
+      "objetivo": "Monitorar oportunidade de aproximação política em Porto Calvo."
+    },
+    {
+      "ordem": 17,
+      "semana": "Semana 3",
+      "dia": "Quinta-feira",
+      "turno": "Manhã",
+      "municipio": "Maragogi",
+      "macro_regiao": "Litoral Norte",
+      "lideranca": "JUNIOR DO JOZEMIR",
+      "tipo_agenda": "Monitoramento político",
+      "objetivo": "Monitorar oportunidade de aproximação política em Maragogi."
+    },
+    {
+      "ordem": 22,
+      "semana": "Semana 3",
+      "dia": "Quinta-feira",
+      "turno": "Tarde/Noite",
+      "municipio": "São José da Tapera",
+      "macro_regiao": "Sertão",
+      "lideranca": "EVANDRO GORDINHO DO POVO",
+      "tipo_agenda": "Monitoramento político",
+      "objetivo": "Monitorar oportunidade de aproximação política em São José da Tapera."
+    },
+    {
+      "ordem": 25,
+      "semana": "Semana 4",
+      "dia": "Segunda-feira",
+      "turno": "Manhã",
+      "municipio": "Feira Grande",
+      "macro_regiao": "Agreste / Arapiraca",
+      "lideranca": "QUEL",
+      "tipo_agenda": "Monitoramento político",
+      "objetivo": "Monitorar oportunidade de aproximação política em Feira Grande."
+    },
+    {
+      "ordem": 26,
+      "semana": "Semana 4",
+      "dia": "Segunda-feira",
+      "turno": "Tarde/Noite",
+      "municipio": "Limoeiro de Anadia",
+      "macro_regiao": "Agreste / Arapiraca",
+      "lideranca": "TOINHO",
+      "tipo_agenda": "Monitoramento político",
+      "objetivo": "Monitorar oportunidade de aproximação política em Limoeiro de Anadia."
+    },
+    {
+      "ordem": 28,
+      "semana": "Semana 4",
+      "dia": "Terça-feira",
+      "turno": "Manhã",
+      "municipio": "Traipu",
+      "macro_regiao": "Agreste / Arapiraca",
+      "lideranca": "JUNIOR DA CAPIVARA",
+      "tipo_agenda": "Monitoramento político",
+      "objetivo": "Monitorar oportunidade de aproximação política em Traipu."
+    },
+    {
+      "ordem": 30,
+      "semana": "Semana 4",
+      "dia": "Terça-feira",
+      "turno": "Tarde/Noite",
+      "municipio": "Junqueiro",
+      "macro_regiao": "Agreste / Arapiraca",
+      "lideranca": "HELINHO SILVA",
+      "tipo_agenda": "Monitoramento político",
+      "objetivo": "Monitorar oportunidade de aproximação política em Junqueiro."
+    },
+    {
+      "ordem": 29,
+      "semana": "Semana 4",
+      "dia": "Quarta-feira",
+      "turno": "Manhã",
+      "municipio": "Piranhas",
+      "macro_regiao": "Sertão",
+      "lideranca": "LAURA DE ZÉ VICENTE",
+      "tipo_agenda": "Monitoramento político",
+      "objetivo": "Monitorar oportunidade de aproximação política em Piranhas."
+    },
+    {
+      "ordem": 27,
+      "semana": "Semana 4",
+      "dia": "Quarta-feira",
+      "turno": "Tarde/Noite",
+      "municipio": "Igaci",
+      "macro_regiao": "Interior / Curadoria",
+      "lideranca": "DERY FERREIRA",
+      "tipo_agenda": "Monitoramento político",
+      "objetivo": "Monitorar oportunidade de aproximação política em Igaci."
+    }
+  ],
+  "resumo_semanal_roteiro": [
+    {
+      "semana": "Semana 1",
+      "municipios": "Maceió, Rio Largo, Marechal Deodoro, Palmeira dos Índios, União dos Palmares, Arapiraca, São Miguel dos Campos, Coruripe",
+      "regioes": "Agreste / Arapiraca, Eixo Serrano / Quebrangulo, Litoral Sul, Região Metropolitana / Maceió",
+      "objetivo": "Abrir agenda conjunta nos municípios de maior sinergia e validar lideranças prioritárias."
+    },
+    {
+      "semana": "Semana 2",
+      "municipios": "Pilar, Teotônio Vilela, Girau do Ponciano, São Sebastião, Atalaia, Penedo, Delmiro Gouveia, Santana do Ipanema",
+      "regioes": "Agreste / Arapiraca, Litoral Sul, Região Metropolitana / Maceió, Sertão, Zona da Mata",
+      "objetivo": "Expandir presença territorial e confirmar apoios municipais de segunda camada."
+    },
+    {
+      "semana": "Semana 3",
+      "municipios": "Murici, Viçosa, Craíbas, Campo Alegre, São Luís do Quitunde, Porto Calvo, Maragogi, São José da Tapera",
+      "regioes": "Agreste / Arapiraca, Eixo Serrano / Quebrangulo, Litoral Norte, Sertão, Zona da Mata",
+      "objetivo": "Consolidar municípios de média prioridade e corrigir lacunas de articulação."
+    },
+    {
+      "semana": "Semana 4",
+      "municipios": "Feira Grande, Limoeiro de Anadia, Traipu, Junqueiro, Piranhas, Igaci",
+      "regioes": "Agreste / Arapiraca, Interior / Curadoria, Sertão",
+      "objetivo": "Fechar ciclo inicial de visitas e organizar retorno aos municípios com maior resposta."
+    }
+  ],
+  "curadoria_politica": [
+    {
+      "ordem": 1,
+      "municipio": "Maceió",
+      "prioridade": "Imediata",
+      "pergunta_chave": "Confirmar se LUCIANO MARINHO em Maceió possui aderência real para operar agenda Davi + Gabi.",
+      "criterio_para_avancar": "Só avançar para agenda pública após validar relação política, ausência de conflito local, responsável pela mobilização e compatibilidade com o eixo Davi/Renan/Paulo Dantas."
+    },
+    {
+      "ordem": 2,
+      "municipio": "Arapiraca",
+      "prioridade": "Imediata",
+      "pergunta_chave": "Confirmar se ROGERIO NEZINHO em Arapiraca possui aderência real para operar agenda Davi + Gabi.",
+      "criterio_para_avancar": "Só avançar para agenda pública após validar relação política, ausência de conflito local, responsável pela mobilização e compatibilidade com o eixo Davi/Renan/Paulo Dantas."
+    },
+    {
+      "ordem": 3,
+      "municipio": "Rio Largo",
+      "prioridade": "Imediata",
+      "pergunta_chave": "Confirmar se BALA SOARES em Rio Largo possui aderência real para operar agenda Davi + Gabi.",
+      "criterio_para_avancar": "Só avançar para agenda pública após validar relação política, ausência de conflito local, responsável pela mobilização e compatibilidade com o eixo Davi/Renan/Paulo Dantas."
+    },
+    {
+      "ordem": 4,
+      "municipio": "Palmeira dos Índios",
+      "prioridade": "Imediata",
+      "pergunta_chave": "Confirmar se PEDRINHO GAIA em Palmeira dos Índios possui aderência real para operar agenda Davi + Gabi.",
+      "criterio_para_avancar": "Só avançar para agenda pública após validar relação política, ausência de conflito local, responsável pela mobilização e compatibilidade com o eixo Davi/Renan/Paulo Dantas."
+    },
+    {
+      "ordem": 5,
+      "municipio": "União dos Palmares",
+      "prioridade": "Imediata",
+      "pergunta_chave": "Confirmar se MILTON DO COMPLEMENTAR em União dos Palmares possui aderência real para operar agenda Davi + Gabi.",
+      "criterio_para_avancar": "Só avançar para agenda pública após validar relação política, ausência de conflito local, responsável pela mobilização e compatibilidade com o eixo Davi/Renan/Paulo Dantas."
+    },
+    {
+      "ordem": 6,
+      "municipio": "Marechal Deodoro",
+      "prioridade": "Imediata",
+      "pergunta_chave": "Confirmar se THIAGO GONDIN em Marechal Deodoro possui aderência real para operar agenda Davi + Gabi.",
+      "criterio_para_avancar": "Só avançar para agenda pública após validar relação política, ausência de conflito local, responsável pela mobilização e compatibilidade com o eixo Davi/Renan/Paulo Dantas."
+    },
+    {
+      "ordem": 7,
+      "municipio": "São Miguel dos Campos",
+      "prioridade": "Imediata",
+      "pergunta_chave": "Confirmar se DINEY TORRES em São Miguel dos Campos possui aderência real para operar agenda Davi + Gabi.",
+      "criterio_para_avancar": "Só avançar para agenda pública após validar relação política, ausência de conflito local, responsável pela mobilização e compatibilidade com o eixo Davi/Renan/Paulo Dantas."
+    },
+    {
+      "ordem": 8,
+      "municipio": "Coruripe",
+      "prioridade": "Imediata",
+      "pergunta_chave": "Confirmar se DALMO PORTO em Coruripe possui aderência real para operar agenda Davi + Gabi.",
+      "criterio_para_avancar": "Só avançar para agenda pública após validar relação política, ausência de conflito local, responsável pela mobilização e compatibilidade com o eixo Davi/Renan/Paulo Dantas."
+    },
+    {
+      "ordem": 9,
+      "municipio": "Penedo",
+      "prioridade": "Imediata",
+      "pergunta_chave": "Confirmar se IVO COSTA em Penedo possui aderência real para operar agenda Davi + Gabi.",
+      "criterio_para_avancar": "Só avançar para agenda pública após validar relação política, ausência de conflito local, responsável pela mobilização e compatibilidade com o eixo Davi/Renan/Paulo Dantas."
+    },
+    {
+      "ordem": 10,
+      "municipio": "Delmiro Gouveia",
+      "prioridade": "Imediata",
+      "pergunta_chave": "Confirmar se EDNA DO TATUAKARA em Delmiro Gouveia possui aderência real para operar agenda Davi + Gabi.",
+      "criterio_para_avancar": "Só avançar para agenda pública após validar relação política, ausência de conflito local, responsável pela mobilização e compatibilidade com o eixo Davi/Renan/Paulo Dantas."
+    },
+    {
+      "ordem": 11,
+      "municipio": "Atalaia",
+      "prioridade": "Alta",
+      "pergunta_chave": "Confirmar se RUDINHO em Atalaia possui aderência real para operar agenda Davi + Gabi.",
+      "criterio_para_avancar": "Só avançar para agenda pública após validar relação política, ausência de conflito local, responsável pela mobilização e compatibilidade com o eixo Davi/Renan/Paulo Dantas."
+    },
+    {
+      "ordem": 12,
+      "municipio": "Santana do Ipanema",
+      "prioridade": "Alta",
+      "pergunta_chave": "Confirmar se MIGUEL OLIVEIRA em Santana do Ipanema possui aderência real para operar agenda Davi + Gabi.",
+      "criterio_para_avancar": "Só avançar para agenda pública após validar relação política, ausência de conflito local, responsável pela mobilização e compatibilidade com o eixo Davi/Renan/Paulo Dantas."
+    },
+    {
+      "ordem": 13,
+      "municipio": "Pilar",
+      "prioridade": "Alta",
+      "pergunta_chave": "Confirmar se ALEX CAVALCANTE em Pilar possui aderência real para operar agenda Davi + Gabi.",
+      "criterio_para_avancar": "Só avançar para agenda pública após validar relação política, ausência de conflito local, responsável pela mobilização e compatibilidade com o eixo Davi/Renan/Paulo Dantas."
+    },
+    {
+      "ordem": 14,
+      "municipio": "Teotônio Vilela",
+      "prioridade": "Alta",
+      "pergunta_chave": "Confirmar se SERGIO CELESTINO em Teotônio Vilela possui aderência real para operar agenda Davi + Gabi.",
+      "criterio_para_avancar": "Só avançar para agenda pública após validar relação política, ausência de conflito local, responsável pela mobilização e compatibilidade com o eixo Davi/Renan/Paulo Dantas."
+    },
+    {
+      "ordem": 15,
+      "municipio": "Girau do Ponciano",
+      "prioridade": "Alta",
+      "pergunta_chave": "Confirmar se FLAVINHA BARROS em Girau do Ponciano possui aderência real para operar agenda Davi + Gabi.",
+      "criterio_para_avancar": "Só avançar para agenda pública após validar relação política, ausência de conflito local, responsável pela mobilização e compatibilidade com o eixo Davi/Renan/Paulo Dantas."
+    },
+    {
+      "ordem": 16,
+      "municipio": "São Sebastião",
+      "prioridade": "Alta",
+      "pergunta_chave": "Confirmar se ANA PACHECO em São Sebastião possui aderência real para operar agenda Davi + Gabi.",
+      "criterio_para_avancar": "Só avançar para agenda pública após validar relação política, ausência de conflito local, responsável pela mobilização e compatibilidade com o eixo Davi/Renan/Paulo Dantas."
+    },
+    {
+      "ordem": 17,
+      "municipio": "Maragogi",
+      "prioridade": "Alta",
+      "pergunta_chave": "Confirmar se JUNIOR DO JOZEMIR em Maragogi possui aderência real para operar agenda Davi + Gabi.",
+      "criterio_para_avancar": "Só avançar para agenda pública após validar relação política, ausência de conflito local, responsável pela mobilização e compatibilidade com o eixo Davi/Renan/Paulo Dantas."
+    },
+    {
+      "ordem": 18,
+      "municipio": "Craíbas",
+      "prioridade": "Alta",
+      "pergunta_chave": "Confirmar se CARLINHOS FOLHA em Craíbas possui aderência real para operar agenda Davi + Gabi.",
+      "criterio_para_avancar": "Só avançar para agenda pública após validar relação política, ausência de conflito local, responsável pela mobilização e compatibilidade com o eixo Davi/Renan/Paulo Dantas."
+    },
+    {
+      "ordem": 19,
+      "municipio": "Campo Alegre",
+      "prioridade": "Alta",
+      "pergunta_chave": "Confirmar se JEANE NASCIMENTO em Campo Alegre possui aderência real para operar agenda Davi + Gabi.",
+      "criterio_para_avancar": "Só avançar para agenda pública após validar relação política, ausência de conflito local, responsável pela mobilização e compatibilidade com o eixo Davi/Renan/Paulo Dantas."
+    },
+    {
+      "ordem": 20,
+      "municipio": "São Luís do Quitunde",
+      "prioridade": "Alta",
+      "pergunta_chave": "Confirmar se CABEÇA em São Luís do Quitunde possui aderência real para operar agenda Davi + Gabi.",
+      "criterio_para_avancar": "Só avançar para agenda pública após validar relação política, ausência de conflito local, responsável pela mobilização e compatibilidade com o eixo Davi/Renan/Paulo Dantas."
+    },
+    {
+      "ordem": 21,
+      "municipio": "Porto Calvo",
+      "prioridade": "Média",
+      "pergunta_chave": "Confirmar se MARCIO DO ANDRADE em Porto Calvo possui aderência real para operar agenda Davi + Gabi.",
+      "criterio_para_avancar": "Só avançar para agenda pública após validar relação política, ausência de conflito local, responsável pela mobilização e compatibilidade com o eixo Davi/Renan/Paulo Dantas."
+    },
+    {
+      "ordem": 22,
+      "municipio": "São José da Tapera",
+      "prioridade": "Média",
+      "pergunta_chave": "Confirmar se EVANDRO GORDINHO DO POVO em São José da Tapera possui aderência real para operar agenda Davi + Gabi.",
+      "criterio_para_avancar": "Só avançar para agenda pública após validar relação política, ausência de conflito local, responsável pela mobilização e compatibilidade com o eixo Davi/Renan/Paulo Dantas."
+    },
+    {
+      "ordem": 23,
+      "municipio": "Murici",
+      "prioridade": "Média",
+      "pergunta_chave": "Confirmar se MORAIS em Murici possui aderência real para operar agenda Davi + Gabi.",
+      "criterio_para_avancar": "Só avançar para agenda pública após validar relação política, ausência de conflito local, responsável pela mobilização e compatibilidade com o eixo Davi/Renan/Paulo Dantas."
+    },
+    {
+      "ordem": 24,
+      "municipio": "Viçosa",
+      "prioridade": "Média",
+      "pergunta_chave": "Confirmar se DAVI DO TÊDA em Viçosa possui aderência real para operar agenda Davi + Gabi.",
+      "criterio_para_avancar": "Só avançar para agenda pública após validar relação política, ausência de conflito local, responsável pela mobilização e compatibilidade com o eixo Davi/Renan/Paulo Dantas."
+    },
+    {
+      "ordem": 25,
+      "municipio": "Feira Grande",
+      "prioridade": "Média",
+      "pergunta_chave": "Confirmar se QUEL em Feira Grande possui aderência real para operar agenda Davi + Gabi.",
+      "criterio_para_avancar": "Só avançar para agenda pública após validar relação política, ausência de conflito local, responsável pela mobilização e compatibilidade com o eixo Davi/Renan/Paulo Dantas."
+    },
+    {
+      "ordem": 26,
+      "municipio": "Limoeiro de Anadia",
+      "prioridade": "Média",
+      "pergunta_chave": "Confirmar se TOINHO em Limoeiro de Anadia possui aderência real para operar agenda Davi + Gabi.",
+      "criterio_para_avancar": "Só avançar para agenda pública após validar relação política, ausência de conflito local, responsável pela mobilização e compatibilidade com o eixo Davi/Renan/Paulo Dantas."
+    },
+    {
+      "ordem": 27,
+      "municipio": "Igaci",
+      "prioridade": "Média",
+      "pergunta_chave": "Confirmar se DERY FERREIRA em Igaci possui aderência real para operar agenda Davi + Gabi.",
+      "criterio_para_avancar": "Só avançar para agenda pública após validar relação política, ausência de conflito local, responsável pela mobilização e compatibilidade com o eixo Davi/Renan/Paulo Dantas."
+    },
+    {
+      "ordem": 28,
+      "municipio": "Traipu",
+      "prioridade": "Média",
+      "pergunta_chave": "Confirmar se JUNIOR DA CAPIVARA em Traipu possui aderência real para operar agenda Davi + Gabi.",
+      "criterio_para_avancar": "Só avançar para agenda pública após validar relação política, ausência de conflito local, responsável pela mobilização e compatibilidade com o eixo Davi/Renan/Paulo Dantas."
+    },
+    {
+      "ordem": 29,
+      "municipio": "Piranhas",
+      "prioridade": "Média",
+      "pergunta_chave": "Confirmar se LAURA DE ZÉ VICENTE em Piranhas possui aderência real para operar agenda Davi + Gabi.",
+      "criterio_para_avancar": "Só avançar para agenda pública após validar relação política, ausência de conflito local, responsável pela mobilização e compatibilidade com o eixo Davi/Renan/Paulo Dantas."
+    },
+    {
+      "ordem": 30,
+      "municipio": "Junqueiro",
+      "prioridade": "Média",
+      "pergunta_chave": "Confirmar se HELINHO SILVA em Junqueiro possui aderência real para operar agenda Davi + Gabi.",
+      "criterio_para_avancar": "Só avançar para agenda pública após validar relação política, ausência de conflito local, responsável pela mobilização e compatibilidade com o eixo Davi/Renan/Paulo Dantas."
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "metadata": {
+    "projeto": "Meta Eleitoral Gabi Gonçalves 2026",
+    "versao": "sprint01_placeholder",
+    "status": "Aguardando definição estratégica"
+  },
+  "meta_eleitoral_gabi_2026": {
+    "cargo": "Deputada Estadual",
+    "meta_votos": null,
+    "observacao": "Meta será definida após análise do quociente eleitoral estadual, histórico de votação, base territorial e alianças firmadas."
+  },
+  "cenarios_transferencia": [
+    {
+      "cenario": "Conservador",
+      "percentual_transferencia_vereadores": null,
+      "descricao": "A definir após curadoria da rede de vereadores."
+    },
+    {
+      "cenario": "Moderado",
+      "percentual_transferencia_vereadores": null,
+      "descricao": "A definir após curadoria da rede de vereadores."
+    },
+    {
+      "cenario": "Agressivo",
+      "percentual_transferencia_vereadores": null,
+      "descricao": "A definir após curadoria da rede de vereadores."
+    }
+  ]
+}

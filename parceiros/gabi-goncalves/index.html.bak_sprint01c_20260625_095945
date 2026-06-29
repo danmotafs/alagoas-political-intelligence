@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gabi Gonçalves 2026 | Inteligência Territorial</title>
+  <meta name="description" content="Painel de inteligência territorial, eleitoral e política para Gabi Gonçalves 2026." />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+  <div class="page-shell">
+    <header class="hero">
+      <nav class="topbar">
+        <a class="back-link" href="../../dashboard_v2/">← Painel Davi Maia</a>
+
+        <div class="topbar-actions">
+          <a href="#visao-geral">Visão geral</a>
+          <a href="#dados">Dados</a>
+          <a href="#cruzamento">Davi x Gabi</a>
+          <a href="#proximos-passos">Próximos passos</a>
+        </div>
+      </nav>
+
+      <section class="hero-grid">
+        <div class="hero-content">
+          <p class="eyebrow">Módulo parceiro · Rede Davi Maia 2026</p>
+          <h1>Inteligência Territorial e Eleitoral</h1>
+          <h2>Gabi Gonçalves</h2>
+
+          <p class="hero-subtitle">
+            Painel individualizado para análise de expansão territorial, articulação municipal,
+            rede de lideranças e sinergia política com o eixo Davi Maia.
+          </p>
+
+          <div class="hero-tags">
+            <span>Deputada Estadual 2026</span>
+            <span>Alagoas</span>
+            <span>Pré-campanha</span>
+          </div>
+        </div>
+
+        <aside class="candidate-card candidate-card-complete">
+          <div class="candidate-photo-panel">
+            <div class="photo-glow photo-glow-yellow"></div>
+            <div class="photo-glow photo-glow-pink"></div>
+
+            <img
+              class="candidate-photo"
+              src="assets/foto-gabi.png"
+              alt="Foto de Gabi Gonçalves"
+            />
+
+            <div class="photo-gradient"></div>
+
+            <div class="candidate-photo-caption">
+              <span>Parceira política</span>
+              <strong>Gabi Gonçalves</strong>
+              <small>Pré-candidata a Deputada Estadual</small>
+            </div>
+          </div>
+
+          <div class="campaign-logo-panel">
+            <div class="logo-mini-label">Identidade 2026</div>
+
+            <img
+              class="campaign-logo-main"
+              src="assets/logo-gabi-2026.png"
+              alt="Logomarca Gabi Gonçalves 2026"
+            />
+
+            <p>
+              Módulo parceiro da rede de inteligência territorial Davi Maia 2026.
+            </p>
+          </div>
+        </aside>
+      </section>
+    </header>
+
+    <main>
+      <section class="section" id="visao-geral">
+        <div class="section-header">
+          <p class="eyebrow">Visão geral</p>
+          <h2>Indicadores Estratégicos</h2>
+          <p>
+            Estrutura inicial do painel parceiro. Os indicadores gerais de Alagoas foram herdados
+            da base matriz; os indicadores próprios da Gabi serão preenchidos nos próximos ETLs.
+          </p>
+        </div>
+
+        <div class="kpi-grid">
+          <article class="kpi-card">
+            <span>Municípios</span>
+            <strong id="kpiMunicipios">-</strong>
+            <small>Base territorial de Alagoas</small>
+          </article>
+
+          <article class="kpi-card">
+            <span>Eleitorado</span>
+            <strong id="kpiEleitorado">-</strong>
+            <small>Eleitorado total mapeado</small>
+          </article>
+
+          <article class="kpi-card">
+            <span>População</span>
+            <strong id="kpiPopulacao">-</strong>
+            <small>População estimada na base</small>
+          </article>
+
+          <article class="kpi-card">
+            <span>Vereadores</span>
+            <strong id="kpiVereadores">-</strong>
+            <small>Rede legislativa municipal</small>
+          </article>
+
+          <article class="kpi-card highlight">
+            <span>Meta Gabi</span>
+            <strong id="kpiMeta">A definir</strong>
+            <small>Meta estadual será calibrada</small>
+          </article>
+
+          <article class="kpi-card">
+            <span>Sinergia Davi x Gabi</span>
+            <strong id="kpiSinergia">Sprint 01</strong>
+            <small>Camada de cruzamento criada</small>
+          </article>
+        </div>
+      </section>
+
+      <section class="section strategy-section">
+        <div class="section-header">
+          <p class="eyebrow">Modelo político</p>
+          <h2>Davi Maia como eixo de articulação</h2>
+          <p>
+            A leitura estratégica deste módulo considera Davi Maia como hub político da rede,
+            com capacidade de apoio territorial e interlocução com lideranças estaduais.
+          </p>
+        </div>
+
+        <div class="strategy-grid">
+          <article class="strategy-card">
+            <span>01</span>
+            <h3>Painel matriz</h3>
+            <p>
+              O painel do Davi permanece como base principal da inteligência territorial,
+              reunindo municípios, lideranças, rede de poder e priorização estratégica.
+            </p>
+          </article>
+
+          <article class="strategy-card">
+            <span>02</span>
+            <h3>Painel parceiro</h3>
+            <p>
+              A Gabi passa a ter uma página própria, com identidade visual, cargo, meta eleitoral
+              e campos de análise individualizados.
+            </p>
+          </article>
+
+          <article class="strategy-card">
+            <span>03</span>
+            <h3>Cruzamento político</h3>
+            <p>
+              A próxima camada vai comparar territórios, lideranças e oportunidades para medir
+              onde a parceria Davi x Gabi tem maior eficiência eleitoral.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section two-columns" id="dados">
+        <div class="panel-card">
+          <div class="panel-header">
+            <div>
+              <p class="eyebrow">Ranking territorial</p>
+              <h2>Municípios Prioritários da Gabi</h2>
+            </div>
+
+            <span class="status-pill">Aguardando curadoria</span>
+          </div>
+
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>Rank</th>
+                  <th>Município</th>
+                  <th>Eleitorado</th>
+                  <th>Prioridade</th>
+                  <th>Status</th>
+                </tr>
+              </thead>
+              <tbody id="rankingTable"></tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="panel-card">
+          <div class="panel-header">
+            <div>
+              <p class="eyebrow">Lideranças</p>
+              <h2>Rede Política Inicial</h2>
+            </div>
+
+            <span class="status-pill">Sprint 02</span>
+          </div>
+
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>Município</th>
+                  <th>Liderança</th>
+                  <th>Tipo</th>
+                  <th>Potencial</th>
+                </tr>
+              </thead>
+              <tbody id="liderancasTable"></tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="cruzamento">
+        <div class="section-header">
+          <p class="eyebrow">Sinergia política</p>
+          <h2>Cruzamento Davi Maia x Gabi Gonçalves</h2>
+          <p>
+            Esta seção será usada para identificar territórios onde a presença de Davi pode
+            impulsionar a Gabi, territórios onde a Gabi já possui aderência própria e agendas
+            conjuntas com maior retorno político.
+          </p>
+        </div>
+
+        <div class="cross-grid" id="crossGrid"></div>
+      </section>
+
+      <section class="section roadmap" id="proximos-passos">
+        <div class="section-header">
+          <p class="eyebrow">Pipeline</p>
+          <h2>Próximos passos recomendados</h2>
+          <p>
+            Após a estrutura visual, os próximos sprints devem preencher a base própria da Gabi
+            e iniciar os cruzamentos territoriais com a base do Davi.
+          </p>
+        </div>
+
+        <div class="roadmap-list" id="roadmapList"></div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <p>Plataforma de Inteligência Política · Rede Davi Maia 2026 · Módulo Gabi Gonçalves</p>
+      <small id="lastUpdate">Atualização: -</small>
+    </footer>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

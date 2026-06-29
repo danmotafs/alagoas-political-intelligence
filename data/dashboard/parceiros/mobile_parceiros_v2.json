@@ -1,0 +1,991 @@
+{
+  "metadata": {
+    "titulo": "Dashboard Mobile Parceiros — Davi Maia 2026",
+    "versao": "v2",
+    "gerado_em": "2026-06-29 19:52:21",
+    "fonte": "base_dashboard_v2.json + módulo de parceiros estratégicos",
+    "observacao": "Versão simplificada para decisão rápida em celular. O painel completo continua sendo a base analítica."
+  },
+  "meta_davi_2026": 60000,
+  "legendas": {
+    "municipios_convergencia": "Municípios onde o parceiro teve presença eleitoral em 2022 e existem vereadores com votação relevante em 2024 nos mesmos territórios.",
+    "potencial_votos": "Estimativa operacional considerando 20% dos votos dos vereadores convergentes únicos.",
+    "votos_psd": "Votos do PSD na base territorial de vereadores 2024 disponível no projeto."
+  },
+  "parceiros": [
+    {
+      "id_parceiro": "gabi-goncalves",
+      "nome_parceiro": "Gabi Gonçalves",
+      "foto_parceiro": "assets/parceiros/foto-gabi.webp",
+      "cargo_atual": "Deputada Estadual",
+      "votos_2022": 29336,
+      "municipios_convergencia": 4,
+      "vereadores_convergentes": 76,
+      "potencial_votos": 17618,
+      "percentual_meta": 29.36,
+      "principal_municipio": "RIO LARGO",
+      "principal_local_votacao": "ESCOLA MUNICIPAL DR. GUSTAVO PAIVA",
+      "cidades": [
+        {
+          "municipio": "RIO LARGO",
+          "votos_totais_cidade": 29810,
+          "votos_parceiro_cidade": 125376,
+          "votos_psd_cidade": 0,
+          "vereadores_convergentes": 23,
+          "locais_convergentes": 23,
+          "potencial_votos": 72817,
+          "maior_indice_convergencia": 88.66
+        },
+        {
+          "municipio": "MACEIÓ",
+          "votos_totais_cidade": 242727,
+          "votos_parceiro_cidade": 6333,
+          "votos_psd_cidade": 5498,
+          "vereadores_convergentes": 23,
+          "locais_convergentes": 7,
+          "potencial_votos": 8016,
+          "maior_indice_convergencia": 39.02
+        },
+        {
+          "municipio": "PALMEIRA DOS ÍNDIOS",
+          "votos_totais_cidade": 22687,
+          "votos_parceiro_cidade": 795,
+          "votos_psd_cidade": 0,
+          "vereadores_convergentes": 15,
+          "locais_convergentes": 1,
+          "potencial_votos": 1717,
+          "maior_indice_convergencia": 23.53
+        },
+        {
+          "municipio": "SÃO MIGUEL DOS CAMPOS",
+          "votos_totais_cidade": 19607,
+          "votos_parceiro_cidade": 855,
+          "votos_psd_cidade": 0,
+          "vereadores_convergentes": 15,
+          "locais_convergentes": 1,
+          "potencial_votos": 1309,
+          "maior_indice_convergencia": 18.24
+        }
+      ],
+      "abordagem": [
+        {
+          "municipio": "RIO LARGO",
+          "local_votacao": "ESCOLA MUNICIPAL DR. GUSTAVO PAIVA",
+          "vereador": "MÁRCIO SOARES CAVALCANTE",
+          "partido_vereador": "PP",
+          "instagram_url": "nan",
+          "votos_parceiro_local": 1133,
+          "votos_vereador_local": 278,
+          "potencial_votos": 705,
+          "indice_convergencia": 88.66
+        },
+        {
+          "municipio": "RIO LARGO",
+          "local_votacao": "ESCOLA MUNICIPAL DR. GUSTAVO PAIVA",
+          "vereador": "NADIELLE NAYARA DA COSTA LOPES",
+          "partido_vereador": "PP",
+          "instagram_url": "nan",
+          "votos_parceiro_local": 1133,
+          "votos_vereador_local": 225,
+          "potencial_votos": 678,
+          "indice_convergencia": 84.9
+        },
+        {
+          "municipio": "RIO LARGO",
+          "local_votacao": "ESCOLA MUNICIPAL DR. GUSTAVO PAIVA",
+          "vereador": "RAFAEL RUDSON FEITOSA PINTO",
+          "partido_vereador": "PP",
+          "instagram_url": "nan",
+          "votos_parceiro_local": 1133,
+          "votos_vereador_local": 180,
+          "potencial_votos": 656,
+          "indice_convergencia": 81.76
+        },
+        {
+          "municipio": "RIO LARGO",
+          "local_votacao": "ESCOLA MUNICIPAL DR. GUSTAVO PAIVA",
+          "vereador": "ALINE BIANA CAVALCANTE",
+          "partido_vereador": "UNIÃO",
+          "instagram_url": "nan",
+          "votos_parceiro_local": 1133,
+          "votos_vereador_local": 172,
+          "potencial_votos": 652,
+          "indice_convergencia": 81.19
+        },
+        {
+          "municipio": "RIO LARGO",
+          "local_votacao": "ESCOLA MUNICIPAL DR. GUSTAVO PAIVA",
+          "vereador": "JOSE CARLOS REIS DOS SANTOS FILHO",
+          "partido_vereador": "PP",
+          "instagram_url": "nan",
+          "votos_parceiro_local": 1133,
+          "votos_vereador_local": 170,
+          "potencial_votos": 651,
+          "indice_convergencia": 81.05
+        },
+        {
+          "municipio": "RIO LARGO",
+          "local_votacao": "ESCOLA MUNICIPAL DR. GUSTAVO PAIVA",
+          "vereador": "IZAQUE PEREIRA SILVA",
+          "partido_vereador": "AVANTE",
+          "instagram_url": "nan",
+          "votos_parceiro_local": 1133,
+          "votos_vereador_local": 166,
+          "potencial_votos": 649,
+          "indice_convergencia": 80.77
+        },
+        {
+          "municipio": "RIO LARGO",
+          "local_votacao": "ESCOLA MUNICIPAL DR. GUSTAVO PAIVA",
+          "vereador": "JEFFERSON ALEXANDRE CAVALCANTE",
+          "partido_vereador": "AVANTE",
+          "instagram_url": "nan",
+          "votos_parceiro_local": 1133,
+          "votos_vereador_local": 158,
+          "potencial_votos": 645,
+          "indice_convergencia": 80.21
+        },
+        {
+          "municipio": "RIO LARGO",
+          "local_votacao": "ESCOLA MUNICIPAL DR. GUSTAVO PAIVA",
+          "vereador": "JOSÉ ROGÉRIO DA SILVA",
+          "partido_vereador": "PP",
+          "instagram_url": "nan",
+          "votos_parceiro_local": 1133,
+          "votos_vereador_local": 152,
+          "potencial_votos": 642,
+          "indice_convergencia": 79.78
+        },
+        {
+          "municipio": "RIO LARGO",
+          "local_votacao": "ESCOLA MUNICIPAL DR. GUSTAVO PAIVA",
+          "vereador": "MARCELO VITOR PRAXEDES TORRES",
+          "partido_vereador": "REPUBLICANOS",
+          "instagram_url": "nan",
+          "votos_parceiro_local": 1133,
+          "votos_vereador_local": 148,
+          "potencial_votos": 640,
+          "indice_convergencia": 79.5
+        },
+        {
+          "municipio": "RIO LARGO",
+          "local_votacao": "ESCOLA MUNICIPAL DR. GUSTAVO PAIVA",
+          "vereador": "CAMILLY CABRAL CORREIA ALVES DE OLIVEIRA",
+          "partido_vereador": "PDT",
+          "instagram_url": "nan",
+          "votos_parceiro_local": 1133,
+          "votos_vereador_local": 124,
+          "potencial_votos": 628,
+          "indice_convergencia": 77.81
+        },
+        {
+          "municipio": "RIO LARGO",
+          "local_votacao": "ESCOLA MUNICIPAL DR. GUSTAVO PAIVA",
+          "vereador": "CARLOS HENRIQUE ROLIM VASCONCELOS",
+          "partido_vereador": "PP",
+          "instagram_url": "nan",
+          "votos_parceiro_local": 1133,
+          "votos_vereador_local": 121,
+          "potencial_votos": 626,
+          "indice_convergencia": 77.58
+        },
+        {
+          "municipio": "RIO LARGO",
+          "local_votacao": "ESCOLA MUNICIPAL DR. GUSTAVO PAIVA",
+          "vereador": "LUZARDO DE ARAÚJO LISBOA NETO",
+          "partido_vereador": "PDT",
+          "instagram_url": "nan",
+          "votos_parceiro_local": 1133,
+          "votos_vereador_local": 115,
+          "potencial_votos": 624,
+          "indice_convergencia": 77.2
+        },
+        {
+          "municipio": "RIO LARGO",
+          "local_votacao": "ESCOLA MUNICIPAL DR. GUSTAVO PAIVA",
+          "vereador": "EFRAIN VERÇOLINO DA SILVA",
+          "partido_vereador": "AVANTE",
+          "instagram_url": "nan",
+          "votos_parceiro_local": 1133,
+          "votos_vereador_local": 112,
+          "potencial_votos": 622,
+          "indice_convergencia": 76.97
+        },
+        {
+          "municipio": "RIO LARGO",
+          "local_votacao": "ESCOLA MUNICIPAL DR. GUSTAVO PAIVA",
+          "vereador": "JOSÉ LAMARTINE LIMA DOS SANTOS",
+          "partido_vereador": "MDB",
+          "instagram_url": "nan",
+          "votos_parceiro_local": 1133,
+          "votos_vereador_local": 80,
+          "potencial_votos": 606,
+          "indice_convergencia": 74.72
+        },
+        {
+          "municipio": "RIO LARGO",
+          "local_votacao": "ESCOLA MUNICIPAL DR. GUSTAVO PAIVA",
+          "vereador": "DOUGLAS HENRIQUE DE FRANÇA COSTA",
+          "partido_vereador": "UNIÃO",
+          "instagram_url": "nan",
+          "votos_parceiro_local": 1133,
+          "votos_vereador_local": 79,
+          "potencial_votos": 606,
+          "indice_convergencia": 74.67
+        },
+        {
+          "municipio": "RIO LARGO",
+          "local_votacao": "COMPLEXO ESTADUAL PROFA CLAUDIZETE LIMA ELEUTERIO",
+          "vereador": "ANIELLE PATRÍCIA SILVA DO LIVRAMENTO",
+          "partido_vereador": "PL",
+          "instagram_url": "nan",
+          "votos_parceiro_local": 590,
+          "votos_vereador_local": 230,
+          "potencial_votos": 410,
+          "indice_convergencia": 52.18
+        },
+        {
+          "municipio": "RIO LARGO",
+          "local_votacao": "COMPLEXO ESTADUAL PROFA CLAUDIZETE LIMA ELEUTERIO",
+          "vereador": "ALBERTINA MARIA ALVES CABRAL",
+          "partido_vereador": "REPUBLICANOS",
+          "instagram_url": "nan",
+          "votos_parceiro_local": 590,
+          "votos_vereador_local": 169,
+          "potencial_votos": 379,
+          "indice_convergencia": 47.86
+        },
+        {
+          "municipio": "RIO LARGO",
+          "local_votacao": "COMPLEXO ESTADUAL PROFA CLAUDIZETE LIMA ELEUTERIO",
+          "vereador": "SAMEA RAFAELLA TORRES TENÓRIO MASCARENHAS",
+          "partido_vereador": "REPUBLICANOS",
+          "instagram_url": "nan",
+          "votos_parceiro_local": 590,
+          "votos_vereador_local": 54,
+          "potencial_votos": 322,
+          "indice_convergencia": 39.78
+        },
+        {
+          "municipio": "RIO LARGO",
+          "local_votacao": "ESCOLA DE ENS FUND PROFESSORA EVANDA CARNEIRO DE VASCONCELOS",
+          "vereador": "CICERO ALVES DE OMENA",
+          "partido_vereador": "MDB",
+          "instagram_url": "nan",
+          "votos_parceiro_local": 595,
+          "votos_vereador_local": 40,
+          "potencial_votos": 318,
+          "indice_convergencia": 39.13
+        },
+        {
+          "municipio": "RIO LARGO",
+          "local_votacao": "ESCOLA DE ENS FUND PROFESSORA EVANDA CARNEIRO DE VASCONCELOS",
+          "vereador": "ABERILDO MARIZ FERREIRA",
+          "partido_vereador": "MDB",
+          "instagram_url": "nan",
+          "votos_parceiro_local": 595,
+          "votos_vereador_local": 31,
+          "potencial_votos": 314,
+          "indice_convergencia": 38.52
+        },
+        {
+          "municipio": "MACEIÓ",
+          "local_votacao": "ESCOLA ESTADUAL MARIA AMÁLIA",
+          "vereador": "JOSÉ MÁRCIO DE MEDEIROS MAIA JÚNIOR",
+          "partido_vereador": "MDB",
+          "instagram_url": "nan",
+          "votos_parceiro_local": 53,
+          "votos_vereador_local": 509,
+          "potencial_votos": 280,
+          "indice_convergencia": 39.02
+        },
+        {
+          "municipio": "RIO LARGO",
+          "local_votacao": "ESCOLA MUNICIPAL TERESA CRISTINA LINS DE SOUZA COSTA",
+          "vereador": "MARCOS ROBERTO DUARTE DA SILVA",
+          "partido_vereador": "PSB",
+          "instagram_url": "nan",
+          "votos_parceiro_local": 506,
+          "votos_vereador_local": 32,
+          "potencial_votos": 269,
+          "indice_convergencia": 33.12
+        },
+        {
+          "municipio": "RIO LARGO",
+          "local_votacao": "ESCOLA MUNICIPAL TERESA CRISTINA LINS DE SOUZA COSTA",
+          "vereador": "FERNANDO HECTON DO NASCIMENTO SOUZA",
+          "partido_vereador": "PL",
+          "instagram_url": "nan",
+          "votos_parceiro_local": 506,
+          "votos_vereador_local": 30,
+          "potencial_votos": 268,
+          "indice_convergencia": 32.97
+        },
+        {
+          "municipio": "MACEIÓ",
+          "local_votacao": "ESCOLA ESTADUAL ROMEU DE AVELAR",
+          "vereador": "MARIA DE FÁTIMA GALINA FORTES FERREIRA SANTIAGO",
+          "partido_vereador": "MDB",
+          "instagram_url": "nan",
+          "votos_parceiro_local": 94,
+          "votos_vereador_local": 375,
+          "potencial_votos": 235,
+          "indice_convergencia": 32.15
+        },
+        {
+          "municipio": "RIO LARGO",
+          "local_votacao": "ESCOLA MUNICIPAL DE ENSINO F. PROFESSOR JOSÉ EDMILSON",
+          "vereador": "WEVERTON VICENTE DA SILVA OLIVEIRA",
+          "partido_vereador": "PSB",
+          "instagram_url": "nan",
+          "votos_parceiro_local": 411,
+          "votos_vereador_local": 31,
+          "potencial_votos": 222,
+          "indice_convergencia": 27.3
+        },
+        {
+          "municipio": "MACEIÓ",
+          "local_votacao": "ESCOLA ESTADUAL MARGAREZ M. S. LACET",
+          "vereador": "GALBA NOVAIS DE CASTRO NETTO",
+          "partido_vereador": "PL",
+          "instagram_url": "nan",
+          "votos_parceiro_local": 70,
+          "votos_vereador_local": 280,
+          "potencial_votos": 175,
+          "indice_convergencia": 23.98
+        },
+        {
+          "municipio": "PALMEIRA DOS ÍNDIOS",
+          "local_votacao": "COLÉGIO ESTADUAL HUMBERTO MENDES",
+          "vereador": "MAXWELL ROCHA FEITOSA",
+          "partido_vereador": "MDB",
+          "instagram_url": "nan",
+          "votos_parceiro_local": 53,
+          "votos_vereador_local": 289,
+          "potencial_votos": 170,
+          "indice_convergencia": 23.53
+        },
+        {
+          "municipio": "MACEIÓ",
+          "local_votacao": "COLÉGIO ROSALVO RIBEIRO DOS SANTOS",
+          "vereador": "DAVID CABRAL DAVINO",
+          "partido_vereador": "PP",
+          "instagram_url": "nan",
+          "votos_parceiro_local": 52,
+          "votos_vereador_local": 272,
+          "potencial_votos": 162,
+          "indice_convergencia": 22.32
+        },
+        {
+          "municipio": "PALMEIRA DOS ÍNDIOS",
+          "local_votacao": "COLÉGIO ESTADUAL HUMBERTO MENDES",
+          "vereador": "PEDRO RODRIGUES GAIA BISNETO",
+          "partido_vereador": "MDB",
+          "instagram_url": "nan",
+          "votos_parceiro_local": 53,
+          "votos_vereador_local": 255,
+          "potencial_votos": 154,
+          "indice_convergencia": 21.18
+        },
+        {
+          "municipio": "PALMEIRA DOS ÍNDIOS",
+          "local_votacao": "COLÉGIO ESTADUAL HUMBERTO MENDES",
+          "vereador": "GILENO COSTA SAMPAIO FILHO",
+          "partido_vereador": "PRD",
+          "instagram_url": "nan",
+          "votos_parceiro_local": 53,
+          "votos_vereador_local": 250,
+          "potencial_votos": 151,
+          "indice_convergencia": 20.81
+        },
+        {
+          "municipio": "PALMEIRA DOS ÍNDIOS",
+          "local_votacao": "COLÉGIO ESTADUAL HUMBERTO MENDES",
+          "vereador": "ANTONIO GARROTE DA SILVA FILHO",
+          "partido_vereador": "PP",
+          "instagram_url": "nan",
+          "votos_parceiro_local": 53,
+          "votos_vereador_local": 236,
+          "potencial_votos": 144,
+          "indice_convergencia": 19.83
+        },
+        {
+          "municipio": "MACEIÓ",
+          "local_votacao": "ESCOLA ESTADUAL DEPUTADO NENOI PINTO",
+          "vereador": "THALES LUIZ PEIXOTO CAVALCANTE",
+          "partido_vereador": "PSB",
+          "instagram_url": "nan",
+          "votos_parceiro_local": 74,
+          "votos_vereador_local": 212,
+          "potencial_votos": 143,
+          "indice_convergencia": 19.43
+        },
+        {
+          "municipio": "PALMEIRA DOS ÍNDIOS",
+          "local_votacao": "COLÉGIO ESTADUAL HUMBERTO MENDES",
+          "vereador": "SALOMÃO CAVALCANTE TORRES",
+          "partido_vereador": "MDB",
+          "instagram_url": "nan",
+          "votos_parceiro_local": 53,
+          "votos_vereador_local": 233,
+          "potencial_votos": 142,
+          "indice_convergencia": 19.59
+        },
+        {
+          "municipio": "MACEIÓ",
+          "local_votacao": "ESCOLA ESTADUAL MARIA AMÁLIA",
+          "vereador": "MARCELO PALMEIRA CAVALCANTE",
+          "partido_vereador": "PL",
+          "instagram_url": "nan",
+          "votos_parceiro_local": 53,
+          "votos_vereador_local": 231,
+          "potencial_votos": 142,
+          "indice_convergencia": 19.49
+        },
+        {
+          "municipio": "SÃO MIGUEL DOS CAMPOS",
+          "local_votacao": "COLEGIO MUNICIPAL LUZINETE E LINDALVA JATOBA",
+          "vereador": "JOSIVALDO JOSÉ DA SILVA",
+          "partido_vereador": "PDT",
+          "instagram_url": "nan",
+          "votos_parceiro_local": 57,
+          "votos_vereador_local": 210,
+          "potencial_votos": 133,
+          "indice_convergencia": 18.24
+        },
+        {
+          "municipio": "MACEIÓ",
+          "local_votacao": "ESCOLA ESTADUAL ROMEU DE AVELAR",
+          "vereador": "LUCIANO MARINHO DA SILVA",
+          "partido_vereador": "PL",
+          "instagram_url": "nan",
+          "votos_parceiro_local": 94,
+          "votos_vereador_local": 170,
+          "potencial_votos": 132,
+          "indice_convergencia": 17.7
+        },
+        {
+          "municipio": "SÃO MIGUEL DOS CAMPOS",
+          "local_votacao": "COLEGIO MUNICIPAL LUZINETE E LINDALVA JATOBA",
+          "vereador": "DINEY SOARES TORRES NETO",
+          "partido_vereador": "MDB",
+          "instagram_url": "nan",
+          "votos_parceiro_local": 57,
+          "votos_vereador_local": 193,
+          "potencial_votos": 124,
+          "indice_convergencia": 17.02
+        },
+        {
+          "municipio": "SÃO MIGUEL DOS CAMPOS",
+          "local_votacao": "COLEGIO MUNICIPAL LUZINETE E LINDALVA JATOBA",
+          "vereador": "ADRIANA DE CARVALHO SILVA DE OMENA",
+          "partido_vereador": "PDT",
+          "instagram_url": "nan",
+          "votos_parceiro_local": 57,
+          "votos_vereador_local": 192,
+          "potencial_votos": 124,
+          "indice_convergencia": 16.97
+        },
+        {
+          "municipio": "PALMEIRA DOS ÍNDIOS",
+          "local_votacao": "COLÉGIO ESTADUAL HUMBERTO MENDES",
+          "vereador": "LUCIO CARLOS FONSECA MEDEIROS",
+          "partido_vereador": "UNIÃO",
+          "instagram_url": "nan",
+          "votos_parceiro_local": 53,
+          "votos_vereador_local": 196,
+          "potencial_votos": 124,
+          "indice_convergencia": 17.01
+        },
+        {
+          "municipio": "PALMEIRA DOS ÍNDIOS",
+          "local_votacao": "COLÉGIO ESTADUAL HUMBERTO MENDES",
+          "vereador": "JANIO BARBOSA MARQUES",
+          "partido_vereador": "MDB",
+          "instagram_url": "nan",
+          "votos_parceiro_local": 53,
+          "votos_vereador_local": 183,
+          "potencial_votos": 118,
+          "indice_convergencia": 16.12
+        },
+        {
+          "municipio": "PALMEIRA DOS ÍNDIOS",
+          "local_votacao": "COLÉGIO ESTADUAL HUMBERTO MENDES",
+          "vereador": "SIDINY TARGINO DA SILVA",
+          "partido_vereador": "PT",
+          "instagram_url": "nan",
+          "votos_parceiro_local": 53,
+          "votos_vereador_local": 180,
+          "potencial_votos": 116,
+          "indice_convergencia": 15.88
+        },
+        {
+          "municipio": "SÃO MIGUEL DOS CAMPOS",
+          "local_votacao": "COLEGIO MUNICIPAL LUZINETE E LINDALVA JATOBA",
+          "vereador": "EDINALDO PEREIRA DOS SANTOS",
+          "partido_vereador": "MDB",
+          "instagram_url": "nan",
+          "votos_parceiro_local": 57,
+          "votos_vereador_local": 157,
+          "potencial_votos": 106,
+          "indice_convergencia": 14.49
+        },
+        {
+          "municipio": "MACEIÓ",
+          "local_votacao": "ESCOLA ESTADUAL ROMEU DE AVELAR",
+          "vereador": "FRANCISCO HOLANDA COSTA FILHO",
+          "partido_vereador": "PL",
+          "instagram_url": "nan",
+          "votos_parceiro_local": 94,
+          "votos_vereador_local": 114,
+          "potencial_votos": 104,
+          "indice_convergencia": 13.76
+        },
+        {
+          "municipio": "PALMEIRA DOS ÍNDIOS",
+          "local_votacao": "COLÉGIO ESTADUAL HUMBERTO MENDES",
+          "vereador": "RONALDO CORREIA DOS SANTOS JÚNIOR",
+          "partido_vereador": "PRD",
+          "instagram_url": "nan",
+          "votos_parceiro_local": 53,
+          "votos_vereador_local": 153,
+          "potencial_votos": 102,
+          "indice_convergencia": 13.96
+        },
+        {
+          "municipio": "PALMEIRA DOS ÍNDIOS",
+          "local_votacao": "COLÉGIO ESTADUAL HUMBERTO MENDES",
+          "vereador": "MADSON LUCIANO MONTEIRO SANTOS DA SILVA",
+          "partido_vereador": "PV",
+          "instagram_url": "nan",
+          "votos_parceiro_local": 53,
+          "votos_vereador_local": 147,
+          "potencial_votos": 100,
+          "indice_convergencia": 13.58
+        },
+        {
+          "municipio": "SÃO MIGUEL DOS CAMPOS",
+          "local_votacao": "COLEGIO MUNICIPAL LUZINETE E LINDALVA JATOBA",
+          "vereador": "ALEXANDRE PEREIRA DOS SANTOS",
+          "partido_vereador": "PDT",
+          "instagram_url": "nan",
+          "votos_parceiro_local": 57,
+          "votos_vereador_local": 137,
+          "potencial_votos": 96,
+          "indice_convergencia": 13.08
+        },
+        {
+          "municipio": "PALMEIRA DOS ÍNDIOS",
+          "local_votacao": "COLÉGIO ESTADUAL HUMBERTO MENDES",
+          "vereador": "JOSE HELENILDO RIBEIRO MONTEIRO NETO",
+          "partido_vereador": "REPUBLICANOS",
+          "instagram_url": "nan",
+          "votos_parceiro_local": 53,
+          "votos_vereador_local": 141,
+          "potencial_votos": 96,
+          "indice_convergencia": 13.12
+        },
+        {
+          "municipio": "SÃO MIGUEL DOS CAMPOS",
+          "local_votacao": "COLEGIO MUNICIPAL LUZINETE E LINDALVA JATOBA",
+          "vereador": "ROBSON ALFREDO DA SILVA MOURA",
+          "partido_vereador": "MDB",
+          "instagram_url": "nan",
+          "votos_parceiro_local": 57,
+          "votos_vereador_local": 117,
+          "potencial_votos": 86,
+          "indice_convergencia": 11.67
+        },
+        {
+          "municipio": "MACEIÓ",
+          "local_votacao": "ESCOLA ESTADUAL MARGAREZ M. S. LACET",
+          "vereador": "LEONARDO DA FONSECA DIAS",
+          "partido_vereador": "PL",
+          "instagram_url": "nan",
+          "votos_parceiro_local": 70,
+          "votos_vereador_local": 100,
+          "potencial_votos": 85,
+          "indice_convergencia": 11.31
+        },
+        {
+          "municipio": "SÃO MIGUEL DOS CAMPOS",
+          "local_votacao": "COLEGIO MUNICIPAL LUZINETE E LINDALVA JATOBA",
+          "vereador": "JORGE JOSÉ DOS SANTOS CAVALCANTE",
+          "partido_vereador": "PDT",
+          "instagram_url": "nan",
+          "votos_parceiro_local": 57,
+          "votos_vereador_local": 113,
+          "potencial_votos": 84,
+          "indice_convergencia": 11.39
+        },
+        {
+          "municipio": "SÃO MIGUEL DOS CAMPOS",
+          "local_votacao": "COLEGIO MUNICIPAL LUZINETE E LINDALVA JATOBA",
+          "vereador": "BERNARD BOMFIM CORREIA",
+          "partido_vereador": "PDT",
+          "instagram_url": "nan",
+          "votos_parceiro_local": 57,
+          "votos_vereador_local": 110,
+          "potencial_votos": 83,
+          "indice_convergencia": 11.2
+        },
+        {
+          "municipio": "PALMEIRA DOS ÍNDIOS",
+          "local_votacao": "COLÉGIO ESTADUAL HUMBERTO MENDES",
+          "vereador": "FABIANO GOMES DE SOUZA",
+          "partido_vereador": "REPUBLICANOS",
+          "instagram_url": "nan",
+          "votos_parceiro_local": 53,
+          "votos_vereador_local": 114,
+          "potencial_votos": 83,
+          "indice_convergencia": 11.24
+        },
+        {
+          "municipio": "MACEIÓ",
+          "local_votacao": "ESCOLA ESTADUAL PROFª. MARIA SALETE GUSMAO DE ARAUJO",
+          "vereador": "OLÍVIA COIMBRA TENÓRIO VILAÇA",
+          "partido_vereador": "PP",
+          "instagram_url": "nan",
+          "votos_parceiro_local": 55,
+          "votos_vereador_local": 103,
+          "potencial_votos": 80,
+          "indice_convergencia": 10.65
+        },
+        {
+          "municipio": "PALMEIRA DOS ÍNDIOS",
+          "local_votacao": "COLÉGIO ESTADUAL HUMBERTO MENDES",
+          "vereador": "JOSÉ FÁBIO SILVA TARGINO",
+          "partido_vereador": "SOLIDARIEDADE",
+          "instagram_url": "nan",
+          "votos_parceiro_local": 53,
+          "votos_vereador_local": 109,
+          "potencial_votos": 80,
+          "indice_convergencia": 10.86
+        },
+        {
+          "municipio": "PALMEIRA DOS ÍNDIOS",
+          "local_votacao": "COLÉGIO ESTADUAL HUMBERTO MENDES",
+          "vereador": "GERALDO RIBEIRO LIMA JUNIOR",
+          "partido_vereador": "SOLIDARIEDADE",
+          "instagram_url": "nan",
+          "votos_parceiro_local": 53,
+          "votos_vereador_local": 106,
+          "potencial_votos": 79,
+          "indice_convergencia": 10.68
+        },
+        {
+          "municipio": "MACEIÓ",
+          "local_votacao": "ESCOLA ESTADUAL ROMEU DE AVELAR",
+          "vereador": "BRIVALDO MARQUES SILVA NETO",
+          "partido_vereador": "PL",
+          "instagram_url": "nan",
+          "votos_parceiro_local": 94,
+          "votos_vereador_local": 60,
+          "potencial_votos": 77,
+          "indice_convergencia": 9.96
+        },
+        {
+          "municipio": "MACEIÓ",
+          "local_votacao": "ESCOLA ESTADUAL MARGAREZ M. S. LACET",
+          "vereador": "THIAGO PRADO OLIVEIRA SILVEIRA",
+          "partido_vereador": "PP",
+          "instagram_url": "nan",
+          "votos_parceiro_local": 70,
+          "votos_vereador_local": 84,
+          "potencial_votos": 77,
+          "indice_convergencia": 10.18
+        },
+        {
+          "municipio": "MACEIÓ",
+          "local_votacao": "ESCOLA ESTADUAL ROMEU DE AVELAR",
+          "vereador": "KELMANN VIEIRA DE OLIVEIRA",
+          "partido_vereador": "MDB",
+          "instagram_url": "nan",
+          "votos_parceiro_local": 94,
+          "votos_vereador_local": 58,
+          "potencial_votos": 76,
+          "indice_convergencia": 9.82
+        },
+        {
+          "municipio": "MACEIÓ",
+          "local_votacao": "ESCOLA ESTADUAL ROMEU DE AVELAR",
+          "vereador": "JOSÉ NILTON LIMA DE OLIVEIRA",
+          "partido_vereador": "REPUBLICANOS",
+          "instagram_url": "nan",
+          "votos_parceiro_local": 94,
+          "votos_vereador_local": 56,
+          "potencial_votos": 75,
+          "indice_convergencia": 9.68
+        },
+        {
+          "municipio": "MACEIÓ",
+          "local_votacao": "ESCOLA ESTADUAL MARGAREZ M. S. LACET",
+          "vereador": "TEREZA NELMA PORTO VIANA SOARES",
+          "partido_vereador": "PT",
+          "instagram_url": "nan",
+          "votos_parceiro_local": 70,
+          "votos_vereador_local": 80,
+          "potencial_votos": 75,
+          "indice_convergencia": 9.9
+        },
+        {
+          "municipio": "SÃO MIGUEL DOS CAMPOS",
+          "local_votacao": "COLEGIO MUNICIPAL LUZINETE E LINDALVA JATOBA",
+          "vereador": "DIOGENES ALLYSON ALMEIDA NOVAIS",
+          "partido_vereador": "PP",
+          "instagram_url": "nan",
+          "votos_parceiro_local": 57,
+          "votos_vereador_local": 94,
+          "potencial_votos": 75,
+          "indice_convergencia": 10.07
+        },
+        {
+          "municipio": "SÃO MIGUEL DOS CAMPOS",
+          "local_votacao": "COLEGIO MUNICIPAL LUZINETE E LINDALVA JATOBA",
+          "vereador": "JOSE VENANCIO DOS SANTOS",
+          "partido_vereador": "MDB",
+          "instagram_url": "nan",
+          "votos_parceiro_local": 57,
+          "votos_vereador_local": 94,
+          "potencial_votos": 75,
+          "indice_convergencia": 10.07
+        },
+        {
+          "municipio": "MACEIÓ",
+          "local_votacao": "ESCOLA ESTADUAL ROMEU DE AVELAR",
+          "vereador": "ALLAN PIERRE VASCONCELOS",
+          "partido_vereador": "MDB",
+          "instagram_url": "nan",
+          "votos_parceiro_local": 94,
+          "votos_vereador_local": 51,
+          "potencial_votos": 73,
+          "indice_convergencia": 9.35
+        },
+        {
+          "municipio": "MACEIÓ",
+          "local_votacao": "ESCOLA ESTADUAL MARGAREZ M. S. LACET",
+          "vereador": "WARLLEN DAVID BEZERRA NASCIMENTO MESQUITA",
+          "partido_vereador": "UNIÃO",
+          "instagram_url": "nan",
+          "votos_parceiro_local": 70,
+          "votos_vereador_local": 77,
+          "potencial_votos": 73,
+          "indice_convergencia": 9.67
+        },
+        {
+          "municipio": "MACEIÓ",
+          "local_votacao": "ESCOLA ESTADUAL MARGAREZ M. S. LACET",
+          "vereador": "MILTON LUNA BARROS NETO",
+          "partido_vereador": "PSB",
+          "instagram_url": "nan",
+          "votos_parceiro_local": 70,
+          "votos_vereador_local": 75,
+          "potencial_votos": 73,
+          "indice_convergencia": 9.57
+        },
+        {
+          "municipio": "MACEIÓ",
+          "local_votacao": "COLÉGIO ROSALVO RIBEIRO DOS SANTOS",
+          "vereador": "ALDO ROBERTO DA ROCHA LOUREIRO",
+          "partido_vereador": "PDT",
+          "instagram_url": "nan",
+          "votos_parceiro_local": 52,
+          "votos_vereador_local": 94,
+          "potencial_votos": 73,
+          "indice_convergencia": 9.79
+        },
+        {
+          "municipio": "MACEIÓ",
+          "local_votacao": "COLÉGIO ROSALVO RIBEIRO DOS SANTOS",
+          "vereador": "CLAUDIO MOREIRA DA SILVA",
+          "partido_vereador": "PL",
+          "instagram_url": "nan",
+          "votos_parceiro_local": 52,
+          "votos_vereador_local": 94,
+          "potencial_votos": 73,
+          "indice_convergencia": 9.79
+        },
+        {
+          "municipio": "SÃO MIGUEL DOS CAMPOS",
+          "local_votacao": "COLEGIO MUNICIPAL LUZINETE E LINDALVA JATOBA",
+          "vereador": "JOSEPH ROBERT SANTOS MARTINIANO",
+          "partido_vereador": "MDB",
+          "instagram_url": "nan",
+          "votos_parceiro_local": 57,
+          "votos_vereador_local": 81,
+          "potencial_votos": 68,
+          "indice_convergencia": 9.14
+        },
+        {
+          "municipio": "SÃO MIGUEL DOS CAMPOS",
+          "local_votacao": "COLEGIO MUNICIPAL LUZINETE E LINDALVA JATOBA",
+          "vereador": "SIMONE DE LIMA E SILVA",
+          "partido_vereador": "PV",
+          "instagram_url": "nan",
+          "votos_parceiro_local": 57,
+          "votos_vereador_local": 78,
+          "potencial_votos": 67,
+          "indice_convergencia": 8.94
+        },
+        {
+          "municipio": "SÃO MIGUEL DOS CAMPOS",
+          "local_votacao": "COLEGIO MUNICIPAL LUZINETE E LINDALVA JATOBA",
+          "vereador": "GISELDA RODRIGUES CAVALCANTE",
+          "partido_vereador": "MDB",
+          "instagram_url": "nan",
+          "votos_parceiro_local": 57,
+          "votos_vereador_local": 71,
+          "potencial_votos": 64,
+          "indice_convergencia": 8.48
+        },
+        {
+          "municipio": "SÃO MIGUEL DOS CAMPOS",
+          "local_votacao": "COLEGIO MUNICIPAL LUZINETE E LINDALVA JATOBA",
+          "vereador": "JOSÉ FEITOSA DA SILVA",
+          "partido_vereador": "PDT",
+          "instagram_url": "nan",
+          "votos_parceiro_local": 57,
+          "votos_vereador_local": 70,
+          "potencial_votos": 63,
+          "indice_convergencia": 8.38
+        },
+        {
+          "municipio": "SÃO MIGUEL DOS CAMPOS",
+          "local_votacao": "COLEGIO MUNICIPAL LUZINETE E LINDALVA JATOBA",
+          "vereador": "JALON CABRAL DE OLIVEIRA SILVA",
+          "partido_vereador": "PP",
+          "instagram_url": "nan",
+          "votos_parceiro_local": 57,
+          "votos_vereador_local": 66,
+          "potencial_votos": 61,
+          "indice_convergencia": 8.1
+        },
+        {
+          "municipio": "MACEIÓ",
+          "local_votacao": "COLÉGIO ROSALVO RIBEIRO DOS SANTOS",
+          "vereador": "SAMYR MALTA AMARAL",
+          "partido_vereador": "PODE",
+          "instagram_url": "nan",
+          "votos_parceiro_local": 52,
+          "votos_vereador_local": 70,
+          "potencial_votos": 61,
+          "indice_convergencia": 8.1
+        },
+        {
+          "municipio": "PALMEIRA DOS ÍNDIOS",
+          "local_votacao": "COLÉGIO ESTADUAL HUMBERTO MENDES",
+          "vereador": "CLAUDEMIR PEREIRA DA SILVA",
+          "partido_vereador": "UNIÃO",
+          "instagram_url": "nan",
+          "votos_parceiro_local": 53,
+          "votos_vereador_local": 64,
+          "potencial_votos": 58,
+          "indice_convergencia": 7.72
+        },
+        {
+          "municipio": "MACEIÓ",
+          "local_votacao": "ESCOLA ESTADUAL MARIA AMÁLIA",
+          "vereador": "JEANNYNE BELTRÃO LIMA SIQUEIRA",
+          "partido_vereador": "PL",
+          "instagram_url": "nan",
+          "votos_parceiro_local": 53,
+          "votos_vereador_local": 63,
+          "potencial_votos": 58,
+          "indice_convergencia": 7.67
+        },
+        {
+          "municipio": "MACEIÓ",
+          "local_votacao": "COLÉGIO ROSALVO RIBEIRO DOS SANTOS",
+          "vereador": "JOSÉ EDUARDO ACCIOLY CANUTO",
+          "partido_vereador": "PL",
+          "instagram_url": "nan",
+          "votos_parceiro_local": 52,
+          "votos_vereador_local": 63,
+          "potencial_votos": 58,
+          "indice_convergencia": 7.63
+        }
+      ],
+      "relevancia": [
+        {
+          "tipo": "parceiro",
+          "nome": "Gabi Gonçalves",
+          "valor": 17618,
+          "percentual_meta": 29.36
+        },
+        {
+          "tipo": "vereador",
+          "nome": "MÁRCIO SOARES CAVALCANTE",
+          "municipio": "RIO LARGO",
+          "valor": 705,
+          "percentual_meta": 1.18
+        },
+        {
+          "tipo": "vereador",
+          "nome": "NADIELLE NAYARA DA COSTA LOPES",
+          "municipio": "RIO LARGO",
+          "valor": 678,
+          "percentual_meta": 1.13
+        },
+        {
+          "tipo": "vereador",
+          "nome": "RAFAEL RUDSON FEITOSA PINTO",
+          "municipio": "RIO LARGO",
+          "valor": 656,
+          "percentual_meta": 1.09
+        },
+        {
+          "tipo": "vereador",
+          "nome": "ALINE BIANA CAVALCANTE",
+          "municipio": "RIO LARGO",
+          "valor": 652,
+          "percentual_meta": 1.09
+        },
+        {
+          "tipo": "vereador",
+          "nome": "JOSE CARLOS REIS DOS SANTOS FILHO",
+          "municipio": "RIO LARGO",
+          "valor": 651,
+          "percentual_meta": 1.08
+        },
+        {
+          "tipo": "vereador",
+          "nome": "IZAQUE PEREIRA SILVA",
+          "municipio": "RIO LARGO",
+          "valor": 649,
+          "percentual_meta": 1.08
+        },
+        {
+          "tipo": "vereador",
+          "nome": "JEFFERSON ALEXANDRE CAVALCANTE",
+          "municipio": "RIO LARGO",
+          "valor": 645,
+          "percentual_meta": 1.07
+        },
+        {
+          "tipo": "vereador",
+          "nome": "JOSÉ ROGÉRIO DA SILVA",
+          "municipio": "RIO LARGO",
+          "valor": 642,
+          "percentual_meta": 1.07
+        },
+        {
+          "tipo": "vereador",
+          "nome": "MARCELO VITOR PRAXEDES TORRES",
+          "municipio": "RIO LARGO",
+          "valor": 640,
+          "percentual_meta": 1.07
+        },
+        {
+          "tipo": "vereador",
+          "nome": "CAMILLY CABRAL CORREIA ALVES DE OLIVEIRA",
+          "municipio": "RIO LARGO",
+          "valor": 628,
+          "percentual_meta": 1.05
+        }
+      ],
+      "cargo_generico": "deputada",
+      "cargo_generico_artigo": "a deputada",
+      "cargo_generico_artigo_maiusculo": "A deputada"
+    }
+  ]
+}

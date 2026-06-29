@@ -1,0 +1,351 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <title>Relatório Analítico — Inteligência Territorial e Eleitoral</title>
+  <style>
+    :root {
+      --green-dark: #063b20;
+      --green: #0f5b2d;
+      --green-soft: #eaf4ee;
+      --gold: #f2c300;
+      --text: #0b1726;
+      --muted: #64748b;
+      --bg: #f5f7f4;
+      --white: #ffffff;
+      --border: #dbe5df;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: Arial, Helvetica, sans-serif;
+      line-height: 1.45;
+    }
+
+    .page {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 32px;
+    }
+
+    .hero {
+      background: linear-gradient(135deg, var(--green-dark), var(--green));
+      color: white;
+      border-radius: 28px;
+      padding: 44px;
+      margin-bottom: 28px;
+      box-shadow: 0 18px 50px rgba(0,0,0,.16);
+      display: grid;
+      grid-template-columns: 1.4fr .8fr;
+      gap: 28px;
+      align-items: center;
+    }
+
+    .eyebrow {
+      color: var(--gold);
+      text-transform: uppercase;
+      letter-spacing: 4px;
+      font-weight: 800;
+      font-size: 13px;
+      margin-bottom: 12px;
+    }
+
+    h1 {
+      font-size: 48px;
+      line-height: 1.05;
+      margin: 0 0 18px;
+    }
+
+    .subtitle {
+      font-size: 18px;
+      opacity: .94;
+      max-width: 780px;
+    }
+
+    .hero-card {
+      background: rgba(255,255,255,.10);
+      border: 1px solid rgba(255,255,255,.20);
+      border-radius: 24px;
+      padding: 24px;
+    }
+
+    .hero-card h2 {
+      margin: 0 0 8px;
+      font-size: 26px;
+    }
+
+    .tag {
+      display: inline-block;
+      border: 1px solid rgba(242,195,0,.7);
+      color: white;
+      padding: 8px 14px;
+      border-radius: 999px;
+      margin-right: 8px;
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    .section {
+      background: var(--white);
+      border-radius: 24px;
+      padding: 28px;
+      margin-bottom: 24px;
+      border: 1px solid var(--border);
+      box-shadow: 0 8px 24px rgba(15, 23, 42, .05);
+    }
+
+    .section-title {
+      margin: 0 0 6px;
+      font-size: 28px;
+      color: var(--green-dark);
+    }
+
+    .section-subtitle {
+      margin: 0 0 22px;
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+    }
+
+    .card {
+      border-top: 5px solid var(--gold);
+      background: #fbfdfc;
+      border-radius: 18px;
+      padding: 18px;
+      border-left: 1px solid var(--border);
+      border-right: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .card .label {
+      color: var(--muted);
+      font-size: 13px;
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+
+    .card .value {
+      color: var(--green-dark);
+      font-size: 28px;
+      font-weight: 900;
+    }
+
+    .highlight-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+    }
+
+    .highlight {
+      background: var(--green-soft);
+      border-left: 6px solid var(--green);
+      padding: 18px;
+      border-radius: 16px;
+    }
+
+    .highlight strong {
+      color: var(--green-dark);
+      display: block;
+      margin-bottom: 6px;
+    }
+
+    .highlight span {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .table-wrap {
+      overflow-x: auto;
+      border-radius: 18px;
+      border: 1px solid var(--border);
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 13px;
+      background: white;
+    }
+
+    th {
+      background: var(--green-dark);
+      color: white;
+      text-align: left;
+      padding: 12px 10px;
+      white-space: nowrap;
+    }
+
+    td {
+      border-bottom: 1px solid #edf2ef;
+      padding: 10px;
+      vertical-align: top;
+    }
+
+    tr:nth-child(even) td {
+      background: #fbfdfc;
+    }
+
+    .note {
+      border: 1px solid #f4d66a;
+      background: #fff9db;
+      padding: 16px;
+      border-radius: 16px;
+      color: #5a4600;
+      font-size: 14px;
+    }
+
+    .muted {
+      color: var(--muted);
+    }
+
+    .footer {
+      text-align: center;
+      color: var(--muted);
+      font-size: 12px;
+      padding: 22px;
+    }
+
+    @media print {
+      body {
+        background: white;
+      }
+      .page {
+        padding: 0;
+      }
+      .section, .hero {
+        box-shadow: none;
+        break-inside: avoid;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <section class="hero">
+      <div>
+        <div class="eyebrow">Plataforma de Inteligência Política</div>
+        <h1>Relatório Analítico<br>Territorial e Eleitoral</h1>
+        <p class="subtitle">
+          Síntese executiva do dashboard de pré-campanha de Davi Maia, com highlights estratégicos,
+          leitura das principais tabelas e roteiro semanal inicial de visitas orientado pela meta de 60 mil votos.
+        </p>
+        <div style="margin-top: 22px;">
+          <span class="tag">Pré-Campanha 2026</span>
+          <span class="tag">Deputado Federal</span>
+          <span class="tag">Alagoas</span>
+        </div>
+      </div>
+      <div class="hero-card">
+        <h2>Davi Maia</h2>
+        <p>Pré-candidato a Deputado Federal</p>
+        <p><strong>Gerado em:</strong> 24/06/2026 19:54</p>
+        <p><strong>Base:</strong> Dashboard V2 — Inteligência Territorial e Eleitoral</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2 class="section-title">1. Visão Geral dos Indicadores</h2>
+      <p class="section-subtitle">Resumo dos principais números consolidados no dashboard.</p>
+      <div class="cards">
+        <div class="card"><div class="label">Municípios</div><div class="value">102</div></div>
+        <div class="card"><div class="label">Eleitorado</div><div class="value">2.442.894</div></div>
+        <div class="card"><div class="label">População</div><div class="value">3.220.104</div></div>
+        <div class="card"><div class="label">Vereadores mapeados</div><div class="value">2.462</div></div>
+        <div class="card"><div class="label">Meta Davi 2026</div><div class="value">60.000</div></div>
+        <div class="card"><div class="label">Potencial 10%</div><div class="value">111.359</div></div>
+        <div class="card"><div class="label">Potencial 15%</div><div class="value">167.109</div></div>
+        <div class="card"><div class="label">Potencial 20%</div><div class="value">222.838</div></div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2 class="section-title">2. Highlights Executivos</h2>
+      <p class="section-subtitle">Principais leituras extraídas automaticamente das tabelas do painel.</p>
+      <div class="highlight-grid">
+        <div class='highlight'><strong>Visão Geral — Base territorial analisada</strong><span>O painel consolida 102 municípios, 2.442.894 eleitores e 2.462 vereadores mapeados.</span></div><div class='highlight'><strong>Meta Eleitoral — Meta Davi Maia 2026</strong><span>A meta operacional foi fixada em 60.000 votos. No cenário conservador de 10%, o potencial bruto mapeado é de 111.359 votos.</span></div><div class='highlight'><strong>Ranking Estratégico — Município com maior índice estratégico</strong><span>Maceió lidera o ranking estratégico, com eleitorado de 632.812 e índice de 27,40%.</span></div><div class='highlight'><strong>Não Visitados — Principal cidade prioritária ainda não visitada</strong><span>Arapiraca aparece como prioridade não visitada, com eleitorado de 155.982.</span></div><div class='highlight'><strong>Competitividade Municipal — Menor margem de vitória</strong><span>Quebrangulo teve margem de vitória de apenas 0,06%, indicando ambiente político competitivo.</span></div><div class='highlight'><strong>Score Político — Maior score de articulação</strong><span>Maceió possui score de articulação de 82. Esse score deve ser lido como priorização operacional, não como previsão eleitoral.</span></div><div class='highlight'><strong>Vereadores — Principal contribuição individual potencial</strong><span>LUCIANO MARINHO em MACEIÓ recebeu 8.545 votos em 2024. No teto operacional de 20%, pode representar 1.709 votos potenciais.</span></div><div class='highlight'><strong>Contribuição por Município — Cidade com maior potencial bruto de vereadores</strong><span>MACEIÓ lidera o potencial bruto municipal, com 48.281 votos no teto de 20%.</span></div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2 class="section-title">3. Ranking Estratégico Territorial</h2>
+      <p class="section-subtitle">Municípios com maior índice estratégico, combinando peso eleitoral e relevância territorial.</p>
+      <div class='table-wrap'><table><thead><tr><th>Município</th><th>Eleitorado</th><th>Índice Estratégico</th><th>Prefeito</th><th>Partido</th><th>Prioridade</th></tr></thead><tbody><tr><td>Maceió</td><td>632.812</td><td>27,40%</td><td>JOAO HENRIQUE HOLANDA CALDAS</td><td>PL</td><td>Alta Prioridade</td></tr><tr><td>Arapiraca</td><td>155.982</td><td>6,74%</td><td>JOSE LUCIANO BARBOSA DA SILVA</td><td>MDB</td><td>Alta Prioridade</td></tr><tr><td>Rio Largo</td><td>67.172</td><td>2,83%</td><td>PEDRO CARLOS DA SILVA NETO</td><td>PP</td><td>Alta Prioridade</td></tr><tr><td>Palmeira dos Índios</td><td>54.858</td><td>2,26%</td><td>LUISA JULIA DUARTE</td><td>MDB</td><td>Média Prioridade</td></tr><tr><td>União dos Palmares</td><td>48.920</td><td>1,97%</td><td>JOSÉ IRAN MENEZES DA SILVA JUNIOR</td><td>MDB</td><td>Média Prioridade</td></tr><tr><td>Marechal Deodoro</td><td>46.217</td><td>1,91%</td><td>ANDRÉ LUIZ BARROS DA SILVA</td><td>MDB</td><td>Alta Prioridade</td></tr><tr><td>Penedo</td><td>44.517</td><td>1,84%</td><td>RONALDO PEREIRA LOPES</td><td>MDB</td><td>Alta Prioridade</td></tr><tr><td>São Miguel dos Campos</td><td>43.990</td><td>1,76%</td><td>GEORGE CLEMENTE VIEIRA</td><td>MDB</td><td>Alta Prioridade</td></tr><tr><td>Coruripe</td><td>42.038</td><td>1,69%</td><td>MARCELO BELTRÃO SIQUEIRA</td><td>PP</td><td>Alta Prioridade</td></tr><tr><td>Delmiro Gouveia</td><td>41.113</td><td>1,67%</td><td>ELIZIANE FERREIRA COSTA LIMA</td><td>MDB</td><td>Alta Prioridade</td></tr><tr><td>Santana do Ipanema</td><td>33.506</td><td>1,40%</td><td>JOAO EDUARDO BULHOES PORTELA DE MELO</td><td>MDB</td><td>Média Prioridade</td></tr><tr><td>Atalaia</td><td>32.883</td><td>1,30%</td><td>CECILIA LIMA HERRMANN</td><td>MDB</td><td>Média Prioridade</td></tr><tr><td>Teotônio Vilela</td><td>31.976</td><td>1,28%</td><td>PEDRO HENRIQUE DE JESUS PEREIRA</td><td>PP</td><td>Média Prioridade</td></tr><tr><td>Pilar</td><td>29.137</td><td>1,17%</td><td>MARIA DE FATIMA RESENDE ROCHA OITICICA</td><td>MDB</td><td>Média Prioridade</td></tr><tr><td>Girau do Ponciano</td><td>28.487</td><td>1,16%</td><td>GILBERTO BEZERRA BARROS</td><td>PP</td><td>Média Prioridade</td></tr></tbody></table></div>
+    </section>
+
+    <section class="section">
+      <h2 class="section-title">4. Municípios Prioritários Ainda Não Visitados</h2>
+      <p class="section-subtitle">Cidades relevantes para priorização de agenda física.</p>
+      <div class='table-wrap'><table><thead><tr><th>Município</th><th>Eleitorado</th><th>Índice Estratégico</th><th>Prefeito</th><th>Partido</th><th>Prioridade</th></tr></thead><tbody><tr><td>Arapiraca</td><td>155.982</td><td>6,74%</td><td>JOSE LUCIANO BARBOSA DA SILVA</td><td>MDB</td><td>Alta Prioridade</td></tr><tr><td>Rio Largo</td><td>67.172</td><td>2,83%</td><td>PEDRO CARLOS DA SILVA NETO</td><td>PP</td><td>Alta Prioridade</td></tr><tr><td>Marechal Deodoro</td><td>46.217</td><td>1,91%</td><td>ANDRÉ LUIZ BARROS DA SILVA</td><td>MDB</td><td>Alta Prioridade</td></tr><tr><td>Penedo</td><td>44.517</td><td>1,84%</td><td>RONALDO PEREIRA LOPES</td><td>MDB</td><td>Alta Prioridade</td></tr><tr><td>São Miguel dos Campos</td><td>43.990</td><td>1,76%</td><td>GEORGE CLEMENTE VIEIRA</td><td>MDB</td><td>Alta Prioridade</td></tr><tr><td>Coruripe</td><td>42.038</td><td>1,69%</td><td>MARCELO BELTRÃO SIQUEIRA</td><td>PP</td><td>Alta Prioridade</td></tr><tr><td>Delmiro Gouveia</td><td>41.113</td><td>1,67%</td><td>ELIZIANE FERREIRA COSTA LIMA</td><td>MDB</td><td>Alta Prioridade</td></tr><tr><td>Santana do Ipanema</td><td>33.506</td><td>1,40%</td><td>JOAO EDUARDO BULHOES PORTELA DE MELO</td><td>MDB</td><td>Média Prioridade</td></tr><tr><td>Atalaia</td><td>32.883</td><td>1,30%</td><td>CECILIA LIMA HERRMANN</td><td>MDB</td><td>Média Prioridade</td></tr><tr><td>Teotônio Vilela</td><td>31.976</td><td>1,28%</td><td>PEDRO HENRIQUE DE JESUS PEREIRA</td><td>PP</td><td>Média Prioridade</td></tr><tr><td>Pilar</td><td>29.137</td><td>1,17%</td><td>MARIA DE FATIMA RESENDE ROCHA OITICICA</td><td>MDB</td><td>Média Prioridade</td></tr><tr><td>Girau do Ponciano</td><td>28.487</td><td>1,16%</td><td>GILBERTO BEZERRA BARROS</td><td>PP</td><td>Média Prioridade</td></tr><tr><td>São Sebastião</td><td>27.531</td><td>1,09%</td><td>CHARLES NUNES REGUEIRA</td><td>PP</td><td>Média Prioridade</td></tr><tr><td>Campo Alegre</td><td>27.202</td><td>1,08%</td><td>PAULINE DE FÁTIMA PEREIRA ALBUQUERQUE</td><td>PP</td><td>Média Prioridade</td></tr><tr><td>Maragogi</td><td>25.140</td><td>1,03%</td><td>DANIEL MENDES DE VASCONCELOS FERREIRA</td><td>PP</td><td>Média Prioridade</td></tr></tbody></table></div>
+    </section>
+
+    <section class="section">
+      <h2 class="section-title">5. Força Política dos Vereadores</h2>
+      <p class="section-subtitle">Vereadores com maior contribuição potencial corrigida, usando o teto operacional de 20%.</p>
+      <div class='table-wrap'><table><thead><tr><th>Município</th><th>Vereador</th><th>Partido</th><th>Votos 2024</th><th>Potencial 10%</th><th>Potencial 15%</th><th>Potencial 20%</th><th>% Meta 20%</th></tr></thead><tbody><tr><td>MACEIÓ</td><td>LUCIANO MARINHO</td><td>PL</td><td>8.545</td><td>854</td><td>1.282</td><td>1.709</td><td>2,85%</td></tr><tr><td>MACEIÓ</td><td>DAVI DAVINO</td><td>PP</td><td>5.713</td><td>571</td><td>857</td><td>1.143</td><td>1,91%</td></tr><tr><td>MACEIÓ</td><td>SIDERLANE MENDONÇA</td><td>PL</td><td>4.857</td><td>486</td><td>729</td><td>971</td><td>1,62%</td></tr><tr><td>MACEIÓ</td><td>ZÉ MÁRCIO FILHO</td><td>MDB</td><td>4.727</td><td>473</td><td>709</td><td>945</td><td>1,57%</td></tr><tr><td>MACEIÓ</td><td>KELMANN</td><td>MDB</td><td>4.544</td><td>454</td><td>682</td><td>909</td><td>1,51%</td></tr><tr><td>ARAPIRACA</td><td>ROGERIO NEZINHO</td><td>MDB</td><td>4.543</td><td>454</td><td>681</td><td>909</td><td>1,51%</td></tr><tr><td>ARAPIRACA</td><td>SERGIO DO SINDICATO</td><td>PP</td><td>4.328</td><td>433</td><td>649</td><td>866</td><td>1,44%</td></tr><tr><td>MACEIÓ</td><td>BRIVALDO MARQUES</td><td>PL</td><td>4.099</td><td>410</td><td>615</td><td>820</td><td>1,37%</td></tr><tr><td>MACEIÓ</td><td>LEONARDO DIAS</td><td>PL</td><td>3.963</td><td>396</td><td>594</td><td>793</td><td>1,32%</td></tr><tr><td>MACEIÓ</td><td>GALBA NETTO</td><td>PL</td><td>3.894</td><td>389</td><td>584</td><td>779</td><td>1,30%</td></tr><tr><td>MACEIÓ</td><td>MILTON RONALSA</td><td>PSB</td><td>3.849</td><td>385</td><td>577</td><td>770</td><td>1,28%</td></tr><tr><td>MACEIÓ</td><td>SILVANIA BARBOSA</td><td>SOLIDARIEDADE</td><td>3.703</td><td>370</td><td>555</td><td>741</td><td>1,24%</td></tr><tr><td>MACEIÓ</td><td>ALLAN PIERRE</td><td>MDB</td><td>3.680</td><td>368</td><td>552</td><td>736</td><td>1,23%</td></tr><tr><td>MACEIÓ</td><td>ZÉ MÁRCIO FILHO</td><td>MDB</td><td>3.572</td><td>357</td><td>536</td><td>714</td><td>1,19%</td></tr><tr><td>MACEIÓ</td><td>GALBA NETTO</td><td>PL</td><td>3.353</td><td>335</td><td>503</td><td>671</td><td>1,12%</td></tr><tr><td>MACEIÓ</td><td>TECA NELMA</td><td>PT</td><td>3.284</td><td>328</td><td>493</td><td>657</td><td>1,09%</td></tr><tr><td>ARAPIRACA</td><td>LEO SATURNINO</td><td>MDB</td><td>3.256</td><td>326</td><td>488</td><td>651</td><td>1,08%</td></tr><tr><td>MACEIÓ</td><td>MARCELO PALMEIRA</td><td>PL</td><td>3.185</td><td>318</td><td>478</td><td>637</td><td>1,06%</td></tr><tr><td>MACEIÓ</td><td>CAL MOREIRA</td><td>PL</td><td>3.014</td><td>301</td><td>452</td><td>603</td><td>1,00%</td></tr><tr><td>MACEIÓ</td><td>GALBA NETTO</td><td>PL</td><td>2.947</td><td>295</td><td>442</td><td>589</td><td>0,98%</td></tr><tr><td>MACEIÓ</td><td>ZÉ MÁRCIO FILHO</td><td>MDB</td><td>2.876</td><td>288</td><td>431</td><td>575</td><td>0,96%</td></tr><tr><td>MACEIÓ</td><td>DAVI DAVINO</td><td>PP</td><td>2.742</td><td>274</td><td>411</td><td>548</td><td>0,91%</td></tr><tr><td>ARAPIRACA</td><td>ALISSON DA TIM</td><td>PP</td><td>2.677</td><td>268</td><td>402</td><td>535</td><td>0,89%</td></tr><tr><td>ARAPIRACA</td><td>ALDO VEIGA</td><td>MDB</td><td>2.655</td><td>266</td><td>398</td><td>531</td><td>0,89%</td></tr><tr><td>MACEIÓ</td><td>LUCIANO MARINHO</td><td>PL</td><td>2.630</td><td>263</td><td>394</td><td>526</td><td>0,88%</td></tr></tbody></table></div>
+    </section>
+
+    <section class="section">
+      <h2 class="section-title">6. Contribuição Potencial por Município</h2>
+      <p class="section-subtitle">Cidades com maior concentração de votos potenciais entre vereadores mapeados.</p>
+      <div class='table-wrap'><table><thead><tr><th>Município</th><th>Vereadores</th><th>Total de Votos</th><th>Potencial 10%</th><th>Potencial 15%</th><th>Potencial 20%</th><th>% Meta 20%</th><th>Principal liderança</th></tr></thead><tbody><tr><td>MACEIÓ</td><td>306</td><td>241.387</td><td>24.122</td><td>36.201</td><td>48.281</td><td>80,47%</td><td>LUCIANO MARINHO DA SILVA</td></tr><tr><td>ARAPIRACA</td><td>250</td><td>76.514</td><td>7.645</td><td>11.477</td><td>15.306</td><td>25,51%</td><td>ROGERIO PEREIRA MELO</td></tr><tr><td>RIO LARGO</td><td>64</td><td>29.810</td><td>2.978</td><td>4.472</td><td>5.966</td><td>9,94%</td><td>MÁRCIO SOARES CAVALCANTE</td></tr><tr><td>PALMEIRA DOS ÍNDIOS</td><td>42</td><td>22.687</td><td>2.269</td><td>3.406</td><td>4.535</td><td>7,56%</td><td>PEDRO RODRIGUES GAIA BISNETO</td></tr><tr><td>UNIÃO DOS PALMARES</td><td>61</td><td>22.246</td><td>2.220</td><td>3.340</td><td>4.452</td><td>7,42%</td><td>EDMILTON RODRIGUES DA SILVA</td></tr><tr><td>CORURIPE</td><td>39</td><td>19.916</td><td>1.991</td><td>2.986</td><td>3.984</td><td>6,64%</td><td>DALMO PORTO SOUZA</td></tr><tr><td>MARECHAL DEODORO</td><td>41</td><td>19.671</td><td>1.968</td><td>2.951</td><td>3.933</td><td>6,55%</td><td>THIAGO HENRIQUE GONDIN TORRES</td></tr><tr><td>SÃO MIGUEL DOS CAMPOS</td><td>31</td><td>19.607</td><td>1.960</td><td>2.942</td><td>3.924</td><td>6,54%</td><td>DINEY SOARES TORRES NETO</td></tr><tr><td>ATALAIA</td><td>38</td><td>18.928</td><td>1.890</td><td>2.840</td><td>3.786</td><td>6,31%</td><td>RUMMENIGGE RODRIGUES DE ALMEIDA</td></tr><tr><td>DELMIRO GOUVEIA</td><td>20</td><td>17.619</td><td>1.761</td><td>2.644</td><td>3.524</td><td>5,87%</td><td>EDNA GOMES BERNARDO</td></tr><tr><td>PENEDO</td><td>30</td><td>15.743</td><td>1.577</td><td>2.360</td><td>3.149</td><td>5,25%</td><td>IVO CARLOS MOURA COSTA</td></tr><tr><td>SANTANA DO IPANEMA</td><td>44</td><td>15.135</td><td>1.512</td><td>2.271</td><td>3.028</td><td>5,05%</td><td>MIGUEL ANTONIO OLIVEIRA SILVA</td></tr><tr><td>PILAR</td><td>27</td><td>15.007</td><td>1.499</td><td>2.251</td><td>3.001</td><td>5,00%</td><td>CLAUDIO ALEX CAVALCANTE SILVA</td></tr><tr><td>CRAÍBAS</td><td>25</td><td>14.815</td><td>1.482</td><td>2.224</td><td>2.962</td><td>4,94%</td><td>ANTONIO CARLOS BARBOSA GAMA</td></tr><tr><td>GIRAU DO PONCIANO</td><td>11</td><td>13.903</td><td>1.390</td><td>2.086</td><td>2.781</td><td>4,63%</td><td>FLAVIANA CINTIA DA SILVA BARROS</td></tr><tr><td>SÃO SEBASTIÃO</td><td>23</td><td>13.164</td><td>1.315</td><td>1.975</td><td>2.632</td><td>4,39%</td><td>ANA MARIA REGUEIRA PACHECO</td></tr><tr><td>PORTO CALVO</td><td>24</td><td>12.606</td><td>1.261</td><td>1.890</td><td>2.521</td><td>4,20%</td><td>MARCIO ANDRADE E SILVA</td></tr><tr><td>FEIRA GRANDE</td><td>23</td><td>11.985</td><td>1.199</td><td>1.797</td><td>2.397</td><td>4,00%</td><td>TELMO PEREIRA DE LIRA</td></tr><tr><td>TEOTÔNIO VILELA</td><td>32</td><td>11.911</td><td>1.192</td><td>1.789</td><td>2.382</td><td>3,97%</td><td>SERGIO CELESTINO DA PAIXÃO</td></tr><tr><td>MARAGOGI</td><td>31</td><td>11.613</td><td>1.161</td><td>1.742</td><td>2.323</td><td>3,87%</td><td>JOZEMIR CAVALCANTI DA SILVA JUNIOR</td></tr></tbody></table></div>
+    </section>
+
+    <section class="section">
+      <h2 class="section-title">7. Competitividade Municipal — Menores Margens</h2>
+      <p class="section-subtitle">Municípios onde o ambiente político local foi mais competitivo.</p>
+      <div class='table-wrap'><table><thead><tr><th>Município</th><th>Prefeito</th><th>Partido</th><th>Segundo colocado</th><th>Margem %</th><th>Margem votos</th></tr></thead><tbody><tr><td>Quebrangulo</td><td>MANOEL COSTA TENÓRIO</td><td>PSDB</td><td>EMANOEL CARDOSO DE ALBUQUERQUE</td><td>0,06%</td><td>5</td></tr><tr><td>Tanque d'Arca</td><td>JUVENIL LOPES DE OLIVEIRA</td><td>MDB</td><td>ADRIANA WANDERLEY DOS SANTOS</td><td>1,42%</td><td>65</td></tr><tr><td>Porto de Pedras</td><td>ALLAN DE JESUS SILVA</td><td>MDB</td><td>LUIZ CARLOS BORGHETTI ROCHA</td><td>2,69%</td><td>194</td></tr><tr><td>Coqueiro Seco</td><td>JADIELSON SILVA DO NASCIMENTO</td><td>MDB</td><td>RONALDO ALEXANDRE SILVA DOS SANTOS</td><td>3,09%</td><td>145</td></tr><tr><td>Igreja Nova</td><td>TIAGO GOMES DOS SANTOS</td><td>MDB</td><td>GERALDO NUNES CADETE NETO</td><td>3,73%</td><td>527</td></tr><tr><td>Maragogi</td><td>DANIEL MENDES DE VASCONCELOS FERREIRA</td><td>PP</td><td>MARCOS JOSÉ DIAS VIANA</td><td>4,34%</td><td>874</td></tr><tr><td>Roteiro</td><td>PAULO JOSÉ LEITE TEIXEIRA</td><td>MDB</td><td>THIAGO HENRIQUE TEIXEIRA CURSINO</td><td>6,18%</td><td>299</td></tr><tr><td>Taquarana</td><td>GERALDO CICERO DA SILVA</td><td>MDB</td><td>SEBASTIÃO ANTONIO DA SILVA</td><td>6,92%</td><td>844</td></tr><tr><td>Mata Grande</td><td>MARIA FABIANA FARIAS DE ALENCAR</td><td>MDB</td><td>WALLYSSON FIRMO DE HOLANDA SOARES</td><td>7,94%</td><td>1.137</td></tr><tr><td>Anadia</td><td>PAULO VICTOR PEREIRA ROCHA</td><td>PP</td><td>AMÓS DE ALMEIDA ROCHA</td><td>8,00%</td><td>807</td></tr><tr><td>Junqueiro</td><td>CICERO LEANDRO PEREIRA DA SILVA</td><td>MDB</td><td>JOÃO JOSÉ PEREIRA FILHO</td><td>9,08%</td><td>1.468</td></tr><tr><td>Maravilha</td><td>ANTÔNIO JORGE RODRIGUES</td><td>REPUBLICANOS</td><td>JAMIS LUIT SANTANA DOS SANTOS</td><td>9,76%</td><td>680</td></tr></tbody></table></div>
+    </section>
+
+    <section class="section">
+      <h2 class="section-title">8. Maior Score Político</h2>
+      <p class="section-subtitle">Municípios com maior score de articulação no painel.</p>
+      <div class='table-wrap'><table><thead><tr><th>Município</th><th>Prefeito</th><th>Partido</th><th>Grupo</th><th>Relação Davi</th><th>Score</th><th>Prioridade</th></tr></thead><tbody><tr><td>Maceió</td><td>JOAO HENRIQUE HOLANDA CALDAS</td><td>PL</td><td>Independente</td><td>adversario_potencial</td><td>82.40</td><td>Alta Prioridade</td></tr><tr><td>Arapiraca</td><td>JOSE LUCIANO BARBOSA DA SILVA</td><td>MDB</td><td>Calheiros</td><td>aliado_forte</td><td>81.74</td><td>Alta Prioridade</td></tr><tr><td>Rio Largo</td><td>PEDRO CARLOS DA SILVA NETO</td><td>PP</td><td>Calheiros</td><td>aliado</td><td>72.83</td><td>Alta Prioridade</td></tr><tr><td>Marechal Deodoro</td><td>ANDRÉ LUIZ BARROS DA SILVA</td><td>MDB</td><td>Calheiros</td><td>aliado</td><td>71.91</td><td>Alta Prioridade</td></tr><tr><td>Penedo</td><td>RONALDO PEREIRA LOPES</td><td>MDB</td><td>Calheiros</td><td>aliado</td><td>71.84</td><td>Alta Prioridade</td></tr><tr><td>São Miguel dos Campos</td><td>GEORGE CLEMENTE VIEIRA</td><td>MDB</td><td>Calheiros</td><td>aliado_forte</td><td>71.76</td><td>Alta Prioridade</td></tr><tr><td>Coruripe</td><td>MARCELO BELTRÃO SIQUEIRA</td><td>PP</td><td>Independente</td><td>potencial_aliado</td><td>71.69</td><td>Alta Prioridade</td></tr><tr><td>Delmiro Gouveia</td><td>ELIZIANE FERREIRA COSTA LIMA</td><td>MDB</td><td>Calheiros</td><td>aliado</td><td>71.67</td><td>Alta Prioridade</td></tr><tr><td>Pilar</td><td>MARIA DE FATIMA RESENDE ROCHA OITICICA</td><td>MDB</td><td>Calheiros</td><td>aliado_forte</td><td>61.17</td><td>Média Prioridade</td></tr><tr><td>Santana do Ipanema</td><td>JOAO EDUARDO BULHOES PORTELA DE MELO</td><td>MDB</td><td>Calheiros</td><td>aliado</td><td>56.40</td><td>Média Prioridade</td></tr><tr><td>Atalaia</td><td>CECILIA LIMA HERRMANN</td><td>MDB</td><td>Calheiros</td><td>aliado</td><td>56.30</td><td>Média Prioridade</td></tr><tr><td>Teotônio Vilela</td><td>PEDRO HENRIQUE DE JESUS PEREIRA</td><td>PP</td><td>Independente</td><td>potencial_aliado</td><td>56.28</td><td>Média Prioridade</td></tr></tbody></table></div>
+    </section>
+
+    <section class="section">
+      <h2 class="section-title">9. Roteiro Semanal Inicial de Visitas</h2>
+      <p class="section-subtitle">
+        Agenda inicial priorizando vereadores/cidades próximos à base Renan Filho / Paulo Dantas,
+        com Maceió como residência/base logística e Quebrangulo como referência territorial e afetiva.
+      </p>
+      <div class="note">
+        As distâncias são estimativas logísticas iniciais. Para execução de agenda, validar deslocamento real no Google Maps ou Waze.
+        O potencial de votos é cálculo de conversão, não previsão eleitoral nem apoio confirmado.
+      </div>
+      <br>
+      <div class='table-wrap'><table><thead><tr><th>Semana</th><th>Dia</th><th>Município</th><th>Corredor</th><th>Base saída</th><th>Dist. Maceió km</th><th>Dist. Quebrangulo km</th><th>Vereadores</th><th>Principal vereador</th><th>Partido</th><th>Potencial 20%</th><th>Acumulado</th><th>% Meta acumulado</th></tr></thead><tbody><tr><td>1</td><td>Terça-feira</td><td>ARAPIRACA</td><td>Eixo Agreste / Quebrangulo</td><td>Quebrangulo ou Maceió</td><td>131.30</td><td>65.60</td><td>28</td><td>ROGERIO NEZINHO</td><td>MDB</td><td>10.578</td><td>10.578</td><td>17,63%</td></tr><tr><td>1</td><td>Quarta-feira</td><td>MACEIÓ</td><td>Eixo Maceió / Região Metropolitana</td><td>Maceió</td><td></td><td></td><td>13</td><td>ZÉ MÁRCIO FILHO</td><td>MDB</td><td>6.507</td><td>17.085</td><td>28,48%</td></tr><tr><td>1</td><td>Quinta-feira</td><td>PALMEIRA DOS ÍNDIOS</td><td>Eixo Agreste / Quebrangulo</td><td>Quebrangulo ou Maceió</td><td></td><td></td><td>13</td><td>PEDRINHO GAIA</td><td>MDB</td><td>3.830</td><td>20.915</td><td>34,86%</td></tr><tr><td>1</td><td>Sexta-feira</td><td>UNIÃO DOS PALMARES</td><td>Eixo complementar</td><td>Maceió</td><td></td><td></td><td>13</td><td>MILTON DO COMPLEMENTAR</td><td>MDB</td><td>3.532</td><td>24.447</td><td>40,74%</td></tr><tr><td>2</td><td>Terça-feira</td><td>SÃO MIGUEL DOS CAMPOS</td><td>Eixo Sul / Baixo São Francisco</td><td>Maceió</td><td></td><td></td><td>12</td><td>DINEY TORRES</td><td>MDB</td><td>3.120</td><td>27.567</td><td>45,94%</td></tr><tr><td>2</td><td>Quarta-feira</td><td>MARECHAL DEODORO</td><td>Eixo Maceió / Região Metropolitana</td><td>Maceió</td><td>26.80</td><td>96.10</td><td>10</td><td>THIAGO GONDIN</td><td>PDT</td><td>3.055</td><td>30.622</td><td>51,04%</td></tr><tr><td>2</td><td>Quinta-feira</td><td>DELMIRO GOUVEIA</td><td>Eixo Sertão</td><td>Quebrangulo ou pernoite regional</td><td>316.10</td><td>209.50</td><td>9</td><td>EDNA DO TATUAKARA</td><td>MDB</td><td>2.910</td><td>33.532</td><td>55,89%</td></tr><tr><td>2</td><td>Sexta-feira</td><td>ATALAIA</td><td>Eixo Maceió / Região Metropolitana</td><td>Maceió</td><td>47.70</td><td>66.70</td><td>11</td><td>RUDINHO</td><td>MDB</td><td>2.859</td><td>36.391</td><td>60,65%</td></tr><tr><td>3</td><td>Terça-feira</td><td>SANTANA DO IPANEMA</td><td>Eixo Sertão</td><td>Quebrangulo ou pernoite regional</td><td>214</td><td>106.30</td><td>10</td><td>MIGUEL OLIVEIRA</td><td>MDB</td><td>2.457</td><td>38.848</td><td>64,75%</td></tr><tr><td>3</td><td>Quarta-feira</td><td>PILAR</td><td>Eixo Maceió / Região Metropolitana</td><td>Maceió</td><td>34.70</td><td>80.70</td><td>8</td><td>ALEX CAVALCANTE</td><td>MDB</td><td>2.184</td><td>41.032</td><td>68,39%</td></tr><tr><td>3</td><td>Quinta-feira</td><td>PENEDO</td><td>Eixo Sul / Baixo São Francisco</td><td>Maceió</td><td>149.30</td><td>135.50</td><td>8</td><td>IVO COSTA</td><td>PV</td><td>1.869</td><td>42.901</td><td>71,50%</td></tr><tr><td>3</td><td>Sexta-feira</td><td>MURICI</td><td>Eixo complementar</td><td>Maceió</td><td></td><td></td><td>8</td><td>MORAIS</td><td>MDB</td><td>1.701</td><td>44.602</td><td>74,34%</td></tr><tr><td>4</td><td>Terça-feira</td><td>PORTO CALVO</td><td>Eixo complementar</td><td>Maceió</td><td></td><td></td><td>6</td><td>MARCIO DO ANDRADE</td><td>MDB</td><td>1.405</td><td>46.007</td><td>76,68%</td></tr><tr><td>4</td><td>Quarta-feira</td><td>VIÇOSA</td><td>Eixo Agreste / Quebrangulo</td><td>Quebrangulo ou Maceió</td><td></td><td></td><td>5</td><td>DAVI DO TÊDA</td><td>REPUBLICANOS</td><td>1.225</td><td>47.232</td><td>78,72%</td></tr><tr><td>4</td><td>Quinta-feira</td><td>MATRIZ DE CAMARAGIBE</td><td>Eixo complementar</td><td>Maceió</td><td></td><td></td><td>6</td><td>LEUNAM</td><td>MDB</td><td>1.185</td><td>48.417</td><td>80,69%</td></tr><tr><td>4</td><td>Sexta-feira</td><td>FEIRA GRANDE</td><td>Eixo complementar</td><td>Maceió</td><td></td><td></td><td>4</td><td>QUEL</td><td>PSB</td><td>1.172</td><td>49.589</td><td>82,65%</td></tr><tr><td>5</td><td>Terça-feira</td><td>TRAIPU</td><td>Eixo complementar</td><td>Maceió</td><td></td><td></td><td>5</td><td>JUNIOR DA CAPIVARA</td><td>PSB</td><td>1.171</td><td>50.760</td><td>84,60%</td></tr><tr><td>5</td><td>Quarta-feira</td><td>MATA GRANDE</td><td>Eixo Sertão</td><td>Quebrangulo ou pernoite regional</td><td>287.10</td><td>175</td><td>5</td><td>COCADA MANDU</td><td>MDB</td><td>1.091</td><td>51.851</td><td>86,42%</td></tr><tr><td>5</td><td>Quinta-feira</td><td>SÃO JOSÉ DA LAJE</td><td>Eixo complementar</td><td>Maceió</td><td></td><td></td><td>5</td><td>MARCOS DINIZ BOIADEIRO</td><td>PP</td><td>1.038</td><td>52.889</td><td>88,15%</td></tr><tr><td>5</td><td>Sexta-feira</td><td>CORURIPE</td><td>Eixo Sul / Baixo São Francisco</td><td>Maceió</td><td>92</td><td>119.30</td><td>4</td><td>GUTTE BRÊDA</td><td>MDB</td><td>1.031</td><td>53.920</td><td>89,87%</td></tr><tr><td>6</td><td>Terça-feira</td><td>SÃO LUÍS DO QUITUNDE</td><td>Eixo Litoral Norte</td><td>Maceió</td><td></td><td></td><td>5</td><td>CABEÇA</td><td>MDB</td><td>992</td><td>54.912</td><td>91,52%</td></tr><tr><td>6</td><td>Quarta-feira</td><td>JUNQUEIRO</td><td>Eixo complementar</td><td>Maceió</td><td></td><td></td><td>3</td><td>HELINHO SILVA</td><td>MDB</td><td>768</td><td>55.680</td><td>92,80%</td></tr><tr><td>6</td><td>Quinta-feira</td><td>IGREJA NOVA</td><td>Eixo Agreste / Quebrangulo</td><td>Quebrangulo ou Maceió</td><td>146.20</td><td>115</td><td>3</td><td>CIDÁRIO</td><td>MDB</td><td>555</td><td>56.235</td><td>93,72%</td></tr><tr><td>6</td><td>Sexta-feira</td><td>MAJOR ISIDORO</td><td>Eixo complementar</td><td>Maceió</td><td></td><td></td><td>3</td><td>CHICÃO</td><td>PSB</td><td>553</td><td>56.788</td><td>94,65%</td></tr><tr><td>7</td><td>Terça-feira</td><td>IGACI</td><td>Eixo complementar</td><td>Maceió</td><td></td><td></td><td>2</td><td>DERY FERREIRA</td><td>MDB</td><td>475</td><td>57.263</td><td>95,44%</td></tr><tr><td>7</td><td>Quarta-feira</td><td>PARIPUEIRA</td><td>Eixo complementar</td><td>Maceió</td><td></td><td></td><td>2</td><td>HAROLDO NASCIMENTO</td><td>MDB</td><td>440</td><td>57.703</td><td>96,17%</td></tr><tr><td>7</td><td>Quinta-feira</td><td>PÃO DE AÇÚCAR</td><td>Eixo complementar</td><td>Maceió</td><td></td><td></td><td>2</td><td>DYEGO CORREIA</td><td>PSB</td><td>426</td><td>58.129</td><td>96,88%</td></tr><tr><td>7</td><td>Sexta-feira</td><td>BATALHA</td><td>Eixo complementar</td><td>Maceió</td><td></td><td></td><td>2</td><td>MIKAEL TENÓRIO</td><td>MDB</td><td>366</td><td>58.495</td><td>97,49%</td></tr><tr><td>8</td><td>Terça-feira</td><td>NOVO LINO</td><td>Eixo complementar</td><td>Maceió</td><td></td><td></td><td>1</td><td>NUBIA LIMA</td><td>MDB</td><td>207</td><td>58.702</td><td>97,84%</td></tr><tr><td>8</td><td>Quarta-feira</td><td>TAQUARANA</td><td>Eixo Agreste / Quebrangulo</td><td>Quebrangulo ou Maceió</td><td>108.10</td><td>45.50</td><td>1</td><td>JOÃO BREU</td><td>UNIÃO</td><td>205</td><td>58.907</td><td>98,18%</td></tr><tr><td>8</td><td>Quinta-feira</td><td>OLIVENÇA</td><td>Eixo complementar</td><td>Maceió</td><td></td><td></td><td>1</td><td>RONNY AFONSO</td><td>PSB</td><td>202</td><td>59.109</td><td>98,52%</td></tr><tr><td>8</td><td>Sexta-feira</td><td>ESTRELA DE ALAGOAS</td><td>Eixo complementar</td><td>Maceió</td><td></td><td></td><td>1</td><td>DEIVID MOURA</td><td>MDB</td><td>201</td><td>59.310</td><td>98,85%</td></tr><tr><td>9</td><td>Terça-feira</td><td>COLÔNIA LEOPOLDINA</td><td>Eixo complementar</td><td>Maceió</td><td></td><td></td><td>1</td><td>ADRIANO DA VILA NOVA</td><td>MDB</td><td>194</td><td>59.504</td><td>99,17%</td></tr><tr><td>9</td><td>Quarta-feira</td><td>SÃO JOSÉ DA TAPERA</td><td>Eixo Sertão</td><td>Quebrangulo ou pernoite regional</td><td></td><td></td><td>1</td><td>EVANDRO GORDINHO DO POVO</td><td>MDB</td><td>189</td><td>59.693</td><td>99,49%</td></tr><tr><td>9</td><td>Quinta-feira</td><td>PIRANHAS</td><td>Eixo complementar</td><td>Maceió</td><td></td><td></td><td>1</td><td>LAURA DE ZÉ VICENTE</td><td>MDB</td><td>182</td><td>59.875</td><td>99,79%</td></tr><tr><td>9</td><td>Sexta-feira</td><td>CANAPI</td><td>Eixo complementar</td><td>Maceió</td><td></td><td></td><td>1</td><td>ARNALDO BARBOSA</td><td>MDB</td><td>181</td><td>60.056</td><td>100,09%</td></tr></tbody></table></div>
+    </section>
+
+    <section class="section">
+      <h2 class="section-title">10. Leitura Estratégica Final</h2>
+      <p>
+        O painel mostra que a meta de 60 mil votos deve ser tratada como uma construção territorial progressiva,
+        combinando apoios de vereadores, validação política municipal e presença física nos corredores mais relevantes.
+        A estratégia inicial recomendada é começar pela base politicamente mais próxima de Renan Filho e Paulo Dantas,
+        priorizando municípios com alto potencial de contribuição e boa viabilidade logística a partir de Maceió e Quebrangulo.
+      </p>
+      <p>
+        O roteiro deve ser lido como uma primeira versão operacional. Após cada visita, recomenda-se atualizar a base com:
+        apoio confirmado, apoio em negociação, resistência local, interlocutor responsável, bairros/redutos prioritários e próxima ação.
+      </p>
+    </section>
+
+    <div class="footer">
+      Relatório gerado automaticamente a partir do Dashboard V2 — Alagoas Political Intelligence.
+    </div>
+  </main>
+</body>
+</html>
